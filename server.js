@@ -86,7 +86,7 @@ app.get("/live-status", async (req, res) => {
  * -----------------------------
  * NOTICES
  * -----------------------------
- * bbsNo만 각자 채우면 됨
+ * bbsNo 전부 실제 숫자로 채워야 함
  */
 const NOTICE_TARGETS = [
   { name: "김윤환", userId: "brainzerg7", bbsNo: "54143154" },
@@ -119,6 +119,12 @@ let noticeCache = {
 
 let noticeRefreshing = false;
 let noticeRefreshPromise = null;
+
+let noticeDebug = {
+  skipped: [],
+  failed: [],
+  success: []
+};
 
 function normalizeUrl(url) {
   if (!url) return "";
@@ -203,7 +209,7 @@ async function runWithConcurrency(items, limit, worker) {
       try {
         const result = await worker(items[current], current);
         if (result) results.push(result);
-      } catch (e) {}
+      } catch (_) {}
     }
   }
 
@@ -219,9 +225,19 @@ async function runWithConcurrency(items, limit, worker) {
 async function doRefreshNotices() {
   const collected = [];
 
+  noticeDebug = {
+    skipped: [],
+    failed: [],
+    success: []
+  };
+
   await runWithConcurrency(NOTICE_TARGETS, 3, async (target) => {
     try {
       if (!target.bbsNo || target.bbsNo === "여기입력") {
+        noticeDebug.skipped.push({
+          userId: target.userId,
+          reason: "missing bbsNo"
+        });
         console.warn(`[notices] skip ${target.userId} - missing bbsNo`);
         return;
       }
@@ -237,7 +253,18 @@ async function doRefreshNotices() {
         : [];
 
       collected.push(...pinnedItems, ...boardItems);
+
+      noticeDebug.success.push({
+        userId: target.userId,
+        count: pinnedItems.length + boardItems.length
+      });
     } catch (error) {
+      noticeDebug.failed.push({
+        userId: target.userId,
+        reason: error.message,
+        status: error.response ? error.response.status : null,
+        body: error.response && error.response.data ? error.response.data : null
+      });
       console.error(`[notices] failed for ${target.userId}: ${error.message}`);
     }
   });
@@ -250,7 +277,6 @@ async function doRefreshNotices() {
   }
 
   const deduped = Array.from(dedupedMap.values());
-
   deduped.sort((a, b) => b.timestamp - a.timestamp);
 
   const visibleItems = deduped.slice(0, 10);
@@ -290,7 +316,8 @@ app.get("/notices", async (req, res) => {
         items: noticeCache.items,
         checkedAt: noticeCache.checkedAt,
         cached: true,
-        visibleCount: noticeCache.items.length
+        visibleCount: noticeCache.items.length,
+        debug: noticeDebug
       });
     }
 
@@ -301,7 +328,8 @@ app.get("/notices", async (req, res) => {
       checkedAt: data.checkedAt,
       cached: false,
       totalCollected: data.totalCollected,
-      visibleCount: data.visibleCount
+      visibleCount: data.visibleCount,
+      debug: noticeDebug
     });
   } catch (error) {
     if (noticeCache.checkedAt) {
@@ -311,13 +339,15 @@ app.get("/notices", async (req, res) => {
         cached: true,
         stale: true,
         error: error.message,
-        visibleCount: noticeCache.items.length
+        visibleCount: noticeCache.items.length,
+        debug: noticeDebug
       });
     }
 
     return res.status(500).json({
       error: "Failed to fetch notices",
-      detail: error.message
+      detail: error.message,
+      debug: noticeDebug
     });
   }
 });

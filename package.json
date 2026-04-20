@@ -1,12 +1,11 @@
 {
-  "name": "soop-test",
+  "name": "soop-notice-scraper",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "scrape_notices.js",
   "scripts": {
-    "start": "node server.js"
+    "scrape": "node scrape_notices.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
     "puppeteer": "^22.15.0"
   }
 }

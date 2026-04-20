@@ -200,26 +200,7 @@ app.get("/live-status", (req, res) => {
   });
 });
 
-// 헬스체크
-app.get("/", (req, res) => {
-  res.send("SOOP live status cache server is running.");
-});
-
-// 시작
-app.listen(PORT, "0.0.0.0", async () => {
-  console.log(`Server running on port ${PORT}`);
-
-  try {
-    // 시작 직후 1회 갱신
-    await refreshStatuses();
-  } catch (e) {
-    console.error("Initial refresh failed:", e.message);
-  }
-
-  // 12초마다 백그라운드 갱신
-  setInterval(() => {
-    refreshStatuses();
-  }, 12000);
+// ✅ 여기에 위치해야 함
 app.get("/test-stationinfo", async (req, res) => {
   try {
     const response = await axios.get(
@@ -240,4 +221,24 @@ app.get("/test-stationinfo", async (req, res) => {
       data: e.response?.data
     });
   }
+});
+
+// 헬스체크
+app.get("/", (req, res) => {
+  res.send("SOOP live status cache server is running.");
+});
+
+// 시작
+app.listen(PORT, "0.0.0.0", async () => {
+  console.log(`Server running on port ${PORT}`);
+
+  try {
+    await refreshStatuses();
+  } catch (e) {
+    console.error("Initial refresh failed:", e.message);
+  }
+
+  setInterval(() => {
+    refreshStatuses();
+  }, 12000);
 });

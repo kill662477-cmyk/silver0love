@@ -39,48 +39,42 @@ async function crawlNotices(target) {
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
     );
 
-    await page.setRequestInterception(true);
-    page.on("request", (request) => {
-      const type = request.resourceType();
-      if (["image", "media", "font"].includes(type)) {
-        request.abort();
-      } else {
-        request.continue();
-      }
-    });
-
     await page.goto(url, {
-      waitUntil: "domcontentloaded",
+      waitUntil: "networkidle2",
       timeout: 45000
     });
 
     await sleep(3000);
 
     const items = await page.evaluate((targetInfo) => {
-      const links = Array.from(document.querySelectorAll("a"));
+      const anchors = Array.from(document.querySelectorAll("a"));
       const result = [];
       const seen = new Set();
 
-      for (const a of links) {
+      for (const a of anchors) {
         const href = a.href || "";
-        const text = (a.innerText || "").trim();
-
         if (!href.includes(`/station/${targetInfo.userId}/post/`)) continue;
-        if (!text) continue;
         if (seen.has(href)) continue;
-
         seen.add(href);
 
-        const container = a.closest("li, article, div, tr");
-        const blockText = (container?.innerText || text).replace(/\s+/g, " ").trim();
+        const ownText = (a.innerText || "").replace(/\s+/g, " ").trim();
+        const parentText = (a.closest("li, article, div, tr")?.innerText || "")
+          .replace(/\s+/g, " ")
+          .trim();
 
-        const dateMatch = blockText.match(/\d{4}-\d{2}-\d{2}|\d{4}\.\d{2}\.\d{2}/);
+        const fullText = ownText || parentText;
+        if (!fullText) continue;
+
+        const dateMatch = fullText.match(/\d{4}-\d{2}-\d{2}|\d{4}\.\d{2}\.\d{2}/);
+
+        let title = fullText.split("Notice").pop().trim();
+        if (!title) title = fullText.slice(0, 60);
 
         result.push({
           stationName: targetInfo.name,
           writer: targetInfo.name,
-          title: text.split("\n")[0].replace(/^Notice/, "").trim(),
-          summary: blockText.slice(0, 200),
+          title: title,
+          summary: fullText.slice(0, 220),
           time: dateMatch ? dateMatch[0].replace(/\./g, "-") : "",
           link: href
         });
@@ -89,11 +83,13 @@ async function crawlNotices(target) {
       return result.slice(0, 10);
     }, target);
 
-    await page.close();
     return { ok: true, url, items };
   } catch (e) {
-    try { await page.close(); } catch (_) {}
     return { ok: false, url, error: e.message };
+  } finally {
+    try {
+      await page.close();
+    } catch (_) {}
   }
 }
 
@@ -114,5 +110,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on ${PORT}`);
 });

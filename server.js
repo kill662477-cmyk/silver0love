@@ -201,24 +201,33 @@ app.get("/live-status", (req, res) => {
 });
 
 // ✅ 여기에 위치해야 함
+const qs = require("querystring");
+
 app.get("/test-stationinfo", async (req, res) => {
   try {
-    const response = await axios.get(
+    const accessToken = process.env.SOOP_ACCESS_TOKEN;
+
+    const response = await axios.post(
       "https://openapi.sooplive.com/user/stationinfo",
+      qs.stringify({
+        access_token: accessToken
+      }),
       {
-        params: {
-          client_id: process.env.SOOP_CLIENT_ID,
-          bj_id: "soju2022"
-        }
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "*/*"
+        },
+        timeout: 10000
       }
     );
 
-    res.json(response.data);
+    return res.json(response.data);
   } catch (e) {
-    res.json({
+    return res.json({
       error: true,
       status: e.response?.status,
-      data: e.response?.data
+      data: e.response?.data || null,
+      message: e.message
     });
   }
 });

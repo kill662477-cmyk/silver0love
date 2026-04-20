@@ -2,7 +2,26 @@ const fs = require("fs");
 const puppeteer = require("puppeteer");
 
 const TARGETS = [
-  { name: "소주양", userId: "soju2022", bbsNo: "94261720" }
+  { name: "김윤환", userId: "brainzerg7", bbsNo: "54143154" },
+  { name: "이경민", userId: "rudals5467", bbsNo: "65249107" },
+  { name: "박준오", userId: "h78ert", bbsNo: "1489236" },
+  { name: "박수범", userId: "jihoon002", bbsNo: "106970519" },
+  { name: "사테", userId: "hoonykkk", bbsNo: "1371967" },
+  { name: "지동원", userId: "rondobba", bbsNo: "40202570" },
+  { name: "배성흠", userId: "goodzerg", bbsNo: "58482962" },
+  { name: "파도튜브", userId: "kthrs9207", bbsNo: "4130352" },
+  { name: "토마토", userId: "freshtomato", bbsNo: "79127541" },
+  { name: "지두두", userId: "wjswlgns09", bbsNo: "41739132" },
+  { name: "햇살", userId: "thelddl", bbsNo: "19332732" },
+  { name: "찌킹", userId: "alaelddl97", bbsNo: "122264133" },
+  { name: "치리", userId: "db001202", bbsNo: "102538363" },
+  { name: "주하랑", userId: "fpahsdltu1", bbsNo: "88012442" },
+  { name: "소주양", userId: "soju2022", bbsNo: "94261520" },
+  { name: "임조이", userId: "dlaguswl501", bbsNo: "101549531" },
+  { name: "비타밍", userId: "seemin88", bbsNo: "105540651" },
+  { name: "먼진", userId: "2meonjin", bbsNo: "119304089" },
+  { name: "아리송이", userId: "vldpfm2", bbsNo: "89090859" },
+  { name: "진땅콩", userId: "wlswn6565", bbsNo: "117225449" }
 ];
 
 function sleep(ms) {
@@ -103,12 +122,21 @@ async function main() {
 
   const debug = {
     success: [],
-    failed: []
+    failed: [],
+    skipped: []
   };
 
   const collected = [];
 
   for (const target of TARGETS) {
+    if (!target.bbsNo || target.bbsNo === "여기입력") {
+      debug.skipped.push({
+        userId: target.userId,
+        reason: "missing bbsNo"
+      });
+      continue;
+    }
+
     const result = await crawlTarget(browser, target);
 
     if (result.ok) {

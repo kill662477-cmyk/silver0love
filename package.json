@@ -1,7 +1,6 @@
 {
-  "name": "soop-notice-server",
+  "name": "soop-test",
   "version": "1.0.0",
-  "description": "SOOP notice crawler server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

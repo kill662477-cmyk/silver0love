@@ -4,8 +4,6 @@ const puppeteer = require("puppeteer");
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-const TARGET = { name: "소주양", userId: "soju2022", bbsNo: "94261720" };
-
 let browser = null;
 
 function sleep(ms) {
@@ -29,78 +27,63 @@ async function getBrowser() {
   return browser;
 }
 
-async function crawlDebug(target) {
-  const url = `https://www.sooplive.com/station/${target.userId}/board/${target.bbsNo}`;
-  const browser = await getBrowser();
-  const page = await browser.newPage();
+app.get("/", (req, res) => {
+  res.send("OK");
+});
+
+app.get("/notices", async (req, res) => {
+  const targetUrl = "https://www.sooplive.com/station/soju2022/board/94261720";
 
   try {
+    const browser = await getBrowser();
+    const page = await browser.newPage();
+
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
     );
 
-    await page.goto(url, {
-      waitUntil: "networkidle2",
-      timeout: 30000
+    // 무거운 리소스 차단
+    await page.setRequestInterception(true);
+    page.on("request", (request) => {
+      const type = request.resourceType();
+      if (["image", "media", "font"].includes(type)) {
+        request.abort();
+      } else {
+        request.continue();
+      }
+    });
+
+    await page.goto(targetUrl, {
+      waitUntil: "domcontentloaded",
+      timeout: 45000
     });
 
     await sleep(3000);
 
-    const result = await page.evaluate(() => {
-      const title = document.title;
-
-      const bodyText = (document.body?.innerText || "").replace(/\s+/g, " ").trim().slice(0, 1500);
-
-      const links = Array.from(document.querySelectorAll("a"))
-        .map(a => ({
-          text: (a.innerText || "").trim(),
-          href: a.href || ""
-        }))
-        .filter(x => x.text || x.href)
-        .slice(0, 30);
-
-      const boardLike = Array.from(document.querySelectorAll("a"))
-        .map(a => ({
-          text: (a.innerText || "").trim(),
-          href: a.href || ""
-        }))
-        .filter(x => x.href.includes("/board/"));
-
+    const data = await page.evaluate(() => {
       return {
-        title,
-        bodyText,
-        links,
-        boardLikeCount: boardLike.length,
-        boardLike: boardLike.slice(0, 20)
+        title: document.title,
+        bodyPreview: (document.body?.innerText || "")
+          .replace(/\s+/g, " ")
+          .slice(0, 500),
+        linkCount: document.querySelectorAll("a").length
       };
     });
 
-    return { ok: true, url, ...result };
-  } catch (e) {
-    return {
-      ok: false,
-      url,
-      error: e.message
-    };
-  } finally {
     await page.close();
-  }
-}
 
-app.get("/notices", async (req, res) => {
-  try {
-    const result = await crawlDebug(TARGET);
-    res.json(result);
+    res.json({
+      ok: true,
+      url: targetUrl,
+      ...data
+    });
   } catch (e) {
     res.status(500).json({
-      error: "Failed",
-      detail: e.message
+      ok: false,
+      url: targetUrl,
+      error: e.message
     });
   }
-});
-
-app.get("/", (req, res) => {
-  res.send("OK");
 });
 
 app.listen(PORT, "0.0.0.0", () => {

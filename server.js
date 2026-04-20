@@ -231,7 +231,37 @@ app.get("/test-stationinfo", async (req, res) => {
     });
   }
 });
+const qs = require("querystring");
 
+app.get("/get-token", async (req, res) => {
+  try {
+    const code = req.query.code;
+
+    const response = await axios.post(
+      "https://openapi.sooplive.com/auth/token",
+      qs.stringify({
+        grant_type: "authorization_code",
+        client_id: process.env.SOOP_CLIENT_ID,
+        client_secret: process.env.SOOP_CLIENT_SECRET,
+        redirect_uri: process.env.SOOP_REDIRECT_URI,
+        code: code
+      }),
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      }
+    );
+
+    res.json(response.data);
+  } catch (e) {
+    res.json({
+      error: true,
+      status: e.response?.status,
+      data: e.response?.data
+    });
+  }
+});
 // 헬스체크
 app.get("/", (req, res) => {
   res.send("SOOP live status cache server is running.");

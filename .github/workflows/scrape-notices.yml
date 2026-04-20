@@ -3,14 +3,20 @@ name: Scrape SOOP Notices
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
 
 permissions:
   contents: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    concurrency:
+      group: scrape-soop-notices
+      cancel-in-progress: false
 
     steps:
       - name: Checkout
@@ -20,6 +26,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm install

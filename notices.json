@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-04-20T19:50:12.531Z",
+  "checkedAt": "2026-04-20T22:10:54.872Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "배성흠",
+      "writer": "배성흠",
+      "userId": "goodzerg",
+      "title": "오늘은 하루 쉬어갑니다! 수요일날 올께용!!",
+      "summary": "오늘은 하루 쉬어갑니다! 수요일날 올께용!!",
+      "time": "",
+      "link": "https://www.sooplive.com/station/goodzerg/post/193396597"
+    },
     {
       "stationName": "비타밍",
       "writer": "비타밍",
@@ -82,15 +91,6 @@
       "summary": "오늘~!! ㄹㅈㄷ asl경기 사테쌤 응원방 갑니댜아 =3 5시 40분쯤올게용",
       "time": "",
       "link": "https://www.sooplive.com/station/freshtomato/post/193330563"
-    },
-    {
-      "stationName": "주하랑",
-      "writer": "주하랑",
-      "userId": "fpahsdltu1",
-      "title": "오늘 6시에 오겠습미당 사테쌤 응원방송 이따보쟈아",
-      "summary": "오늘 6시에 오겠습미당 사테쌤 응원방송 이따보쟈아",
-      "time": "",
-      "link": "https://www.sooplive.com/station/fpahsdltu1/post/193330101"
     }
   ],
   "debug": {

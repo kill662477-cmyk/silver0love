@@ -221,9 +221,9 @@ app.get("/test-stationinfo", async (req, res) => {
       }
     );
 
-    return res.json(response.data);
+    res.json(response.data);
   } catch (e) {
-    return res.json({
+    res.json({
       error: true,
       status: e.response?.status,
       data: e.response?.data || null,

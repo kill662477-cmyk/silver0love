@@ -42,29 +42,21 @@ function getPostNo(link) {
 
 function normalizeTimeText(text) {
   const t = String(text || "").trim();
-
   if (!t) return "";
 
-  // 한국어 상대시간
-  const krRelativeMatch = t.match(/(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)/i);
-  if (krRelativeMatch) {
-    return krRelativeMatch[1].replace(/\s+/g, "");
-  }
+  const kr = t.match(/(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)/i);
+  if (kr) return kr[1].replace(/\s+/g, "");
 
-  // 영어 상대시간
-  const enRelativeMatch = t.match(
+  const en = t.match(
     /(\d+\s*(second|seconds|minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years)\s+ago)/i
   );
-  if (enRelativeMatch) {
-    return enRelativeMatch[1].replace(/\s+/g, " ").trim();
-  }
+  if (en) return en[1].replace(/\s+/g, " ").trim();
 
-  // 절대 날짜/시간
-  const absoluteMatch = t.match(
+  const abs = t.match(
     /(\d{4}[.\-\/]\d{1,2}[.\-\/]\d{1,2}(?:\s+\d{1,2}:\d{2})?)/
   );
-  if (absoluteMatch) {
-    return absoluteMatch[1]
+  if (abs) {
+    return abs[1]
       .replace(/\//g, "-")
       .replace(/\./g, "-")
       .replace(/\s+/g, " ")
@@ -77,43 +69,13 @@ function normalizeTimeText(text) {
 function cleanSummaryText(summary, item) {
   let s = cleanText(summary);
 
-  if (!s) return "";
-
-  // station / writer 제거
-  const removableWords = [
-    item.stationName,
-    item.writer,
-    "공지사항",
-    "General Board",
-    "방송공지",
-    "방송일정공지",
-    "공지",
-    "Notice"
-  ].filter(Boolean);
-
-  for (const word of removableWords) {
-    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    s = s.replace(new RegExp(escaped, "gi"), " ");
-  }
-
-  // 시간 제거
+  // ✔ 시간만 제거 (이것만 유지)
   if (item.time) {
-    const escapedTime = item.time.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    s = s.replace(new RegExp(escapedTime, "gi"), " ");
+    const escaped = item.time.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    s = s.replace(new RegExp(`\\b${escaped}\\b`, "gi"), " ");
   }
 
-  // 메타 숫자 뭉치 제거 (좋아요/댓글/조회수 영역)
-  s = s.replace(/\b\d{1,3}(?:,\d{3})*\b/g, " ");
-
-  // 하트/이모지성 게시판 장식 제거
-  s = s.replace(/[❤❤️♥♡★☆•·]+/g, " ");
-
-  // title이 summary 안에 중복되면 제거
-  if (item.title) {
-    const escapedTitle = item.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    s = s.replace(new RegExp(escapedTitle, "i"), " ");
-  }
-
+  // ✔ 공백 정리만
   s = s.replace(/\s+/g, " ").trim();
 
   return s;
@@ -125,7 +87,7 @@ async function crawlTarget(browser, target) {
 
   try {
     await page.setUserAgent(
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
     );
 
     await page.goto(url, {
@@ -137,27 +99,25 @@ async function crawlTarget(browser, target) {
 
     const items = await page.evaluate((targetInfo) => {
       function normalize(str) {
-        return String(str || "")
-          .replace(/\s+/g, " ")
-          .trim();
+        return String(str || "").replace(/\s+/g, " ").trim();
       }
 
       function pickTime(text) {
         const t = normalize(text);
 
-        const krRelative = t.match(/(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)/i);
-        if (krRelative) return krRelative[1].replace(/\s+/g, "");
+        const kr = t.match(/(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)/i);
+        if (kr) return kr[1].replace(/\s+/g, "");
 
-        const enRelative = t.match(
+        const en = t.match(
           /(\d+\s*(second|seconds|minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years)\s+ago)/i
         );
-        if (enRelative) return enRelative[1].replace(/\s+/g, " ").trim();
+        if (en) return en[1].replace(/\s+/g, " ").trim();
 
-        const absolute = t.match(
+        const abs = t.match(
           /(\d{4}[.\-\/]\d{1,2}[.\-\/]\d{1,2}(?:\s+\d{1,2}:\d{2})?)/
         );
-        if (absolute) {
-          return absolute[1]
+        if (abs) {
+          return abs[1]
             .replace(/\//g, "-")
             .replace(/\./g, "-")
             .replace(/\s+/g, " ")
@@ -171,8 +131,6 @@ async function crawlTarget(browser, target) {
         return (
           anchor.closest("li") ||
           anchor.closest("article") ||
-          anchor.closest('[class*="post"]') ||
-          anchor.closest('[class*="list"]') ||
           anchor.closest("div")
         );
       }
@@ -186,8 +144,7 @@ async function crawlTarget(browser, target) {
 
       for (const a of anchors) {
         const href = a.href || "";
-        if (!href) continue;
-        if (seen.has(href)) continue;
+        if (!href || seen.has(href)) continue;
         seen.add(href);
 
         const card = findCardRoot(a);
@@ -198,54 +155,12 @@ async function crawlTarget(browser, target) {
 
         const time = pickTime(cardText);
 
-        let title = ownText;
-        let summary = "";
-
-        const lines = (card?.innerText || "")
-          .split("\n")
-          .map(v => normalize(v))
-          .filter(Boolean);
-
-        // 제목이 링크 텍스트로 잡히면 우선 사용
-        if (!title) {
-          const titleCandidate = lines.find(line =>
-            line &&
-            !line.includes("공지사항") &&
-            !line.includes("게시판") &&
-            !line.match(/^\d+$/) &&
-            !pickTime(line)
-          );
-          title = titleCandidate || "";
-        }
-
-        // summary는 title 다음 줄 우선
-        const lineIndex = lines.findIndex(v => v === title);
-        if (lineIndex >= 0 && lines[lineIndex + 1]) {
-          summary = lines[lineIndex + 1];
-        }
-
-        // 없으면 카드 전체에서 title/time 뺀 값
-        if (!summary) {
-          summary = cardText;
-        }
-
-        title = normalize(title)
-          .replace(/^공지\s*/i, "")
-          .replace(/^Notice\s*/i, "")
-          .trim();
-
-        summary = normalize(summary)
-          .replace(/^공지\s*/i, "")
-          .replace(/^Notice\s*/i, "")
-          .trim();
-
-        if (!title && !summary) continue;
+        let summary = ownText || cardText;
 
         result.push({
           stationName: targetInfo.name,
           writer: targetInfo.name,
           userId: targetInfo.userId,
-          title,
           summary,
           time,
           link: href
@@ -260,18 +175,15 @@ async function crawlTarget(browser, target) {
       userId: target.userId,
       items: items.map(item => {
         const normalized = {
-          ...item,
-          title: cleanText(item.title).slice(0, 120),
+          stationName: item.stationName,
+          writer: item.writer,
+          userId: item.userId,
           time: normalizeTimeText(item.time),
+          link: item.link,
           postNo: getPostNo(item.link)
         };
 
         normalized.summary = cleanSummaryText(item.summary, normalized).slice(0, 220);
-
-        // summary가 비면 title을 fallback
-        if (!normalized.summary) {
-          normalized.summary = normalized.title;
-        }
 
         return normalized;
       })
@@ -291,62 +203,30 @@ async function crawlTarget(browser, target) {
 async function main() {
   const browser = await puppeteer.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    args: ["--no-sandbox"]
   });
-
-  const debug = {
-    success: [],
-    failed: [],
-    skipped: []
-  };
 
   const collected = [];
 
   for (const target of TARGETS) {
     const result = await crawlTarget(browser, target);
-
-    if (result.ok) {
-      debug.success.push({
-        userId: result.userId,
-        count: result.items.length
-      });
-      collected.push(...result.items);
-    } else {
-      debug.failed.push({
-        userId: result.userId,
-        reason: result.error
-      });
-    }
-
+    if (result.ok) collected.push(...result.items);
     await sleep(1000);
   }
 
   await browser.close();
 
-  const dedupedMap = new Map();
-  for (const item of collected) {
-    if (!dedupedMap.has(item.link)) {
-      dedupedMap.set(item.link, item);
-    }
-  }
-
-  const deduped = Array.from(dedupedMap.values());
+  const deduped = Array.from(new Map(collected.map(i => [i.link, i])).values());
   deduped.sort((a, b) => b.postNo - a.postNo);
-
-  const visibleItems = deduped.slice(0, 10).map(({ postNo, ...rest }) => rest);
 
   const output = {
     checkedAt: new Date().toISOString(),
-    visibleCount: visibleItems.length,
-    items: visibleItems,
-    debug
+    visibleCount: 10,
+    items: deduped.slice(0, 10).map(({ postNo, ...rest }) => rest)
   };
 
   fs.writeFileSync("notices.json", JSON.stringify(output, null, 2), "utf-8");
-  console.log("notices.json updated");
+  console.log("done");
 }
 
-main().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+main();

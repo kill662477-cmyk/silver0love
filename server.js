@@ -206,7 +206,7 @@ const qs = require("querystring");
 app.get("/test-oembed", async (req, res) => {
   try {
     const vodUrl =
-      req.query.vod_url || "https://vod.sooplive.com/player/71021072";
+      req.query.vod_url || "https://www.sooplive.com/station/2meonjin/board/119304089";
 
     const response = await axios.get(
       "https://openapi.sooplive.com/oembed/embedinfo",

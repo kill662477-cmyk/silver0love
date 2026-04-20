@@ -1,13 +1,12 @@
 {
-  "name": "soop-integrated-server",
+  "name": "soop-notice-server",
   "version": "1.0.0",
-  "description": "SOOP live status + notice crawler server",
+  "description": "SOOP notice crawler server",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "axios": "^1.7.2",
     "express": "^4.19.2",
     "puppeteer": "^22.15.0"
   }

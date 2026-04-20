@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 10000;
 
 // 공지 대상
 const NOTICE_TARGETS = [
-  { name: "김윤환", userId: "brainzerg7", bbsNo: "54143154" },
+   { name: "김윤환", userId: "brainzerg7", bbsNo: "54143154" },
   { name: "이경민", userId: "rudals5467", bbsNo: "65249107" },
   { name: "박준오", userId: "h78ert", bbsNo: "1489236" },
   { name: "박수범", userId: "jihoon002", bbsNo: "106970519" },
@@ -28,6 +28,7 @@ const NOTICE_TARGETS = [
   { name: "진땅콩", userId: "wlswn6565", bbsNo: "여기입력" }
 ];
 
+// CORS
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   next();
@@ -61,7 +62,7 @@ async function getBrowser() {
   if (browser) return browser;
 
   browser = await puppeteer.launch({
-    headless: "new",
+    headless: true,
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
@@ -97,10 +98,11 @@ async function crawlBoardList(target) {
 
     await page.goto(url, {
       waitUntil: "domcontentloaded",
-      timeout: 15000
+      timeout: 20000
     });
 
-    await page.waitForTimeout(2000);
+    // waitForTimeout 대신 기본 JS 대기
+    await sleep(2000);
 
     const items = await page.evaluate((targetInfo) => {
       const links = Array.from(document.querySelectorAll("a"));
@@ -182,7 +184,7 @@ async function doRefreshNotices() {
       collected.push(...items);
     }
 
-    // 512MB 보호용
+    // 512MB 보호용 딜레이
     await sleep(800);
   }
 

@@ -1,288 +1,273 @@
 const express = require("express");
-const axios = require("axios");
+const puppeteer = require("puppeteer");
 
 const app = express();
 const PORT = process.env.PORT || 10000;
-const SOOP_CLIENT_ID = process.env.SOOP_CLIENT_ID || "";
 
-// 확인할 20명
-const TARGETS = [
-  "brainzerg7", "rudals5467", "h78ert", "jihoon002",
-  "hoonykkk", "rondobba", "goodzerg", "kthrs9207", "freshtomato",
-  "wjswlgns09", "thelddl", "alaelddl97", "db001202", "fpahsdltu1",
-  "soju2022", "dlaguswl501", "seemin88", "2meonjin", "vldpfm2", "wlswn6565"
+// 공지 대상
+const NOTICE_TARGETS = [
+  { name: "김윤환", userId: "brainzerg7", bbsNo: "54143154" },
+  { name: "이경민", userId: "rudals5467", bbsNo: "65249107" },
+  { name: "박준오", userId: "h78ert", bbsNo: "1489236" },
+  { name: "박수범", userId: "jihoon002", bbsNo: "106970519" },
+  { name: "사테", userId: "hoonykkk", bbsNo: "1371967" },
+  { name: "지동원", userId: "rondobba", bbsNo: "40202570" },
+  { name: "배성흠", userId: "goodzerg", bbsNo: "58482962" },
+  { name: "파도튜브", userId: "kthrs9207", bbsNo: "여기입력" },
+  { name: "토마토", userId: "freshtomato", bbsNo: "여기입력" },
+  { name: "지두두", userId: "wjswlgns09", bbsNo: "여기입력" },
+  { name: "햇살", userId: "thelddl", bbsNo: "여기입력" },
+  { name: "찌킹", userId: "alaelddl97", bbsNo: "여기입력" },
+  { name: "치리", userId: "db001202", bbsNo: "여기입력" },
+  { name: "주하랑", userId: "fpahsdltu1", bbsNo: "여기입력" },
+  { name: "소주양", userId: "soju2022", bbsNo: "94261720" },
+  { name: "임조이", userId: "dlaguswl501", bbsNo: "여기입력" },
+  { name: "비타밍", userId: "seemin88", bbsNo: "여기입력" },
+  { name: "먼진", userId: "2meonjin", bbsNo: "여기입력" },
+  { name: "아리송이", userId: "vldpfm2", bbsNo: "여기입력" },
+  { name: "진땅콩", userId: "wlswn6565", bbsNo: "여기입력" }
 ];
 
-// 표시용 이름
-const DISPLAY_NAMES = {
-  brainzerg7: "김윤환",
-  rudals5467: "이경민",
-  h78ert: "박준오",
-  jihoon002: "박수범",
-  hoonykkk: "사테",
-  rondobba: "지동원",
-  goodzerg: "배성흠",
-  kthrs9207: "파도튜브",
-  freshtomato: "토마토",
-  wjswlgns09: "지두두",
-  thelddl: "햇살",
-  alaelddl97: "찌킹",
-  db001202: "치리",
-  fpahsdltu1: "주하랑",
-  soju2022: "소주양",
-  dlaguswl501: "임조이",
-  seemin88: "비타밍",
-  "2meonjin": "먼진",
-  vldpfm2: "아리송이",
-  wlswn6565: "진땅콩"
-};
-
-// 캐시
-let cache = {
-  statuses: {},
-  lives: [],
-  checkedAt: null,
-  sourcePagesChecked: 0,
-  refreshMs: 12000
-};
-
-let isRefreshing = false;
-
-// CORS
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   next();
 });
 
-// 공식 broad/list 호출
-async function fetchBroadList(pageNo = 1) {
-  const response = await axios.get("https://openapi.sooplive.com/broad/list", {
-    params: {
-      client_id: SOOP_CLIENT_ID,
-      page_no: pageNo
-    },
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-      "Accept": "*/*"
-    },
-    timeout: 8000
-  });
+let browser = null;
+let noticeRefreshing = false;
+let noticeRefreshPromise = null;
 
-  return response.data;
+let noticeCache = {
+  items: [],
+  checkedAt: null,
+  expiresAt: 0,
+  debug: {
+    skipped: [],
+    failed: [],
+    success: []
+  }
+};
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// 백그라운드 갱신
-async function refreshStatuses() {
-  if (!SOOP_CLIENT_ID) {
-    throw new Error("SOOP_CLIENT_ID is missing");
+function toTimestamp(v) {
+  const t = new Date(v).getTime();
+  return Number.isNaN(t) ? 0 : t;
+}
+
+async function getBrowser() {
+  if (browser) return browser;
+
+  browser = await puppeteer.launch({
+    headless: "new",
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-gpu",
+      "--no-zygote",
+      "--single-process"
+    ]
+  });
+
+  return browser;
+}
+
+async function crawlBoardList(target) {
+  const result = {
+    items: [],
+    error: null
+  };
+
+  if (!target.bbsNo || target.bbsNo === "여기입력") {
+    result.error = "missing bbsNo";
+    return result;
   }
 
-  // 중복 실행 방지
-  if (isRefreshing) return;
-  isRefreshing = true;
+  const url = `https://www.sooplive.com/station/${target.userId}/board/${target.bbsNo}`;
+  const browser = await getBrowser();
+  const page = await browser.newPage();
 
   try {
-    const remaining = new Set(TARGETS);
-    const liveMap = new Map();
-
-    // 방송 수가 많을 수 있으므로 넉넉하게
-    const MAX_PAGES = 100;
-
-    // 3페이지씩 병렬 조회
-    const PAGE_BATCH = 3;
-
-    let pagesChecked = 0;
-
-    for (let startPage = 1; startPage <= MAX_PAGES; startPage += PAGE_BATCH) {
-      const pageNumbers = [];
-
-      for (let i = 0; i < PAGE_BATCH; i++) {
-        const pageNo = startPage + i;
-        if (pageNo <= MAX_PAGES) {
-          pageNumbers.push(pageNo);
-        }
-      }
-
-      const results = await Promise.all(
-        pageNumbers.map(pageNo =>
-          fetchBroadList(pageNo).catch(() => null)
-        )
-      );
-
-      for (const data of results) {
-        if (!data) continue;
-
-        const broadList = Array.isArray(data?.broad) ? data.broad : [];
-        pagesChecked++;
-
-        // 빈 페이지면 이후도 없을 가능성 높음
-        if (!broadList.length) continue;
-
-        for (const item of broadList) {
-          const id = item.user_id;
-          if (!id) continue;
-
-          if (remaining.has(id)) {
-            liveMap.set(id, {
-              userId: id,
-              userNick: item.user_nick || DISPLAY_NAMES[id] || id,
-              displayName: DISPLAY_NAMES[id] || item.user_nick || id,
-              title: item.broad_title || "",
-              broadNo: item.broad_no || "",
-              thumbnail: item.broad_thumb
-                ? (String(item.broad_thumb).startsWith("//")
-                    ? "https:" + item.broad_thumb
-                    : item.broad_thumb)
-                : "",
-              startTime: item.broad_start || "",
-              totalViewCnt: item.total_view_cnt || "0",
-              profileImg: item.profile_img
-                ? (String(item.profile_img).startsWith("//")
-                    ? "https:" + item.profile_img
-                    : item.profile_img)
-                : "",
-              stationUrl: `https://www.sooplive.com/station/${id}`,
-              playUrl: item.broad_no
-                ? `https://play.sooplive.com/${id}/${item.broad_no}`
-                : `https://play.sooplive.com/${id}`
-            });
-
-            remaining.delete(id);
-          }
-        }
-      }
-
-      // 20명 전부 찾으면 즉시 종료
-      if (remaining.size === 0) {
-        break;
-      }
-    }
-
-    const statuses = {};
-    const lives = [];
-
-    for (const id of TARGETS) {
-      const info = liveMap.get(id);
-      statuses[id] = !!info;
-
-      if (info) {
-        lives.push(info);
-      }
-    }
-
-    cache = {
-      statuses,
-      lives,
-      checkedAt: new Date().toISOString(),
-      sourcePagesChecked: pagesChecked,
-      refreshMs: 12000
-    };
-
-    console.log(
-      `[LIVE REFRESH] checkedAt=${cache.checkedAt}, pages=${pagesChecked}, liveCount=${lives.length}`
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
     );
+
+    await page.goto(url, {
+      waitUntil: "domcontentloaded",
+      timeout: 15000
+    });
+
+    await page.waitForTimeout(2000);
+
+    const items = await page.evaluate((targetInfo) => {
+      const links = Array.from(document.querySelectorAll("a"));
+      const found = [];
+      const seen = new Set();
+
+      for (const a of links) {
+        const href = a.href || "";
+        const text = (a.innerText || "").trim();
+
+        if (!href || !text) continue;
+        if (!href.includes(`/station/${targetInfo.userId}/board/${targetInfo.bbsNo}`)) continue;
+        if (seen.has(href)) continue;
+
+        seen.add(href);
+
+        let container = a.closest("li, tr, article, div");
+        let blockText = container ? (container.innerText || "") : "";
+        blockText = blockText.replace(/\s+/g, " ").trim();
+
+        const dateMatch = blockText.match(/\d{4}[-.]\d{2}[-.]\d{2}(\s+\d{2}:\d{2}(:\d{2})?)?/);
+
+        found.push({
+          stationName: targetInfo.name,
+          writer: targetInfo.name,
+          userId: targetInfo.userId,
+          title: text,
+          time: dateMatch ? dateMatch[0].replace(/\./g, "-") : "",
+          summary: blockText.slice(0, 180),
+          link: href
+        });
+      }
+
+      return found.slice(0, 3);
+    }, target);
+
+    result.items = items;
+    return result;
   } catch (error) {
-    console.error("[LIVE REFRESH ERROR]", error.message);
+    result.error = error.message;
+    return result;
   } finally {
-    isRefreshing = false;
+    try {
+      await page.close();
+    } catch (_) {}
   }
 }
 
-// 사용자는 캐시만 즉시 받음
-app.get("/live-status", (req, res) => {
-  return res.json({
-    statuses: cache.statuses,
-    lives: cache.lives,
-    checkedAt: cache.checkedAt,
-    sourcePagesChecked: cache.sourcePagesChecked,
-    refreshMs: cache.refreshMs,
-    cached: true
+async function doRefreshNotices() {
+  const debug = {
+    skipped: [],
+    failed: [],
+    success: []
+  };
+
+  const collected = [];
+
+  for (const target of NOTICE_TARGETS) {
+    if (!target.bbsNo || target.bbsNo === "여기입력") {
+      debug.skipped.push({
+        userId: target.userId,
+        reason: "missing bbsNo"
+      });
+      continue;
+    }
+
+    const { items, error } = await crawlBoardList(target);
+
+    if (error) {
+      debug.failed.push({
+        userId: target.userId,
+        reason: error
+      });
+    } else {
+      debug.success.push({
+        userId: target.userId,
+        count: items.length
+      });
+      collected.push(...items);
+    }
+
+    // 512MB 보호용
+    await sleep(800);
+  }
+
+  const dedupedMap = new Map();
+  for (const item of collected) {
+    if (!dedupedMap.has(item.link)) {
+      dedupedMap.set(item.link, item);
+    }
+  }
+
+  const deduped = Array.from(dedupedMap.values()).map(item => ({
+    ...item,
+    timestamp: toTimestamp(item.time)
+  }));
+
+  deduped.sort((a, b) => {
+    if (b.timestamp !== a.timestamp) return b.timestamp - a.timestamp;
+    return a.title.localeCompare(b.title);
   });
-});
 
-// ✅ 여기에 위치해야 함
-const qs = require("querystring");
+  const visibleItems = deduped.slice(0, 10).map(({ timestamp, ...rest }) => rest);
 
-app.get("/test-oembed", async (req, res) => {
-  try {
-    const vodUrl =
-      req.query.vod_url || "https://www.sooplive.com/station/2meonjin/board/119304089";
+  noticeCache = {
+    items: visibleItems,
+    checkedAt: new Date().toISOString(),
+    expiresAt: Date.now() + 5 * 60 * 1000,
+    debug
+  };
 
-    const response = await axios.get(
-      "https://openapi.sooplive.com/oembed/embedinfo",
-      {
-        params: {
-          vod_url: vodUrl,
-          width: 640,
-          height: 360
-        },
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "Accept": "*/*"
-        },
-        timeout: 10000
-      }
-    );
+  return noticeCache;
+}
 
-    return res.json(response.data);
-  } catch (e) {
-    return res.status(500).json({
-      error: true,
-      status: e.response?.status,
-      data: e.response?.data || null,
-      message: e.message
-    });
+async function refreshNoticesSafe() {
+  if (noticeRefreshing && noticeRefreshPromise) {
+    return noticeRefreshPromise;
   }
-});
 
-app.get("/get-token", async (req, res) => {
+  noticeRefreshing = true;
+  noticeRefreshPromise = doRefreshNotices().finally(() => {
+    noticeRefreshing = false;
+    noticeRefreshPromise = null;
+  });
+
+  return noticeRefreshPromise;
+}
+
+app.get("/notices", async (req, res) => {
   try {
-    const code = req.query.code;
+    if (Date.now() < noticeCache.expiresAt && noticeCache.checkedAt) {
+      return res.json({
+        items: noticeCache.items,
+        checkedAt: noticeCache.checkedAt,
+        cached: true,
+        visibleCount: noticeCache.items.length,
+        debug: noticeCache.debug
+      });
+    }
 
-    const response = await axios.post(
-      "https://openapi.sooplive.com/auth/token",
-      qs.stringify({
-        grant_type: "authorization_code",
-        client_id: process.env.SOOP_CLIENT_ID,
-        client_secret: process.env.SOOP_CLIENT_SECRET,
-        redirect_uri: process.env.SOOP_REDIRECT_URI,
-        code: code
-      }),
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          "Accept": "*/*"
-        },
-        timeout: 10000
-      }
-    );
+    const data = await refreshNoticesSafe();
 
-    return res.json(response.data);
-  } catch (e) {
     return res.json({
-      error: true,
-      status: e.response?.status,
-      data: e.response?.data || null,
-      message: e.message
+      items: data.items,
+      checkedAt: data.checkedAt,
+      cached: false,
+      visibleCount: data.items.length,
+      debug: data.debug
+    });
+  } catch (error) {
+    return res.status(500).json({
+      error: "Failed to fetch notices",
+      detail: error.message
     });
   }
 });
-// 헬스체크
+
 app.get("/", (req, res) => {
-  res.send("SOOP live status cache server is running.");
+  res.send("SOOP notice server is running.");
 });
 
-// 시작
 app.listen(PORT, "0.0.0.0", async () => {
   console.log(`Server running on port ${PORT}`);
 
   try {
-    await refreshStatuses();
+    await refreshNoticesSafe();
   } catch (e) {
-    console.error("Initial refresh failed:", e.message);
+    console.error("Initial notice refresh failed:", e.message);
   }
-
-  setInterval(() => {
-    refreshStatuses();
-  }, 12000);
 });

@@ -4,8 +4,7 @@
   "description": "SOOP live status + notice crawler server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "postinstall": "npx puppeteer browsers install chrome"
+    "start": "node server.js"
   },
   "dependencies": {
     "axios": "^1.7.2",

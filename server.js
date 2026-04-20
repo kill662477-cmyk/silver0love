@@ -203,16 +203,19 @@ app.get("/live-status", (req, res) => {
 // ✅ 여기에 위치해야 함
 const qs = require("querystring");
 
-app.get("/test-stationinfo", async (req, res) => {
+app.get("/test-oembed", async (req, res) => {
   try {
-    const accessToken = process.env.SOOP_ACCESS_TOKEN;
+    const vodUrl =
+      req.query.vod_url || "https://vod.sooplive.com/player/71021072";
 
-    const response = await axios.post(
-      "https://openapi.sooplive.com/user/stationinfo",
-      qs.stringify({
-        access_token: accessToken
-      }),
+    const response = await axios.get(
+      "https://openapi.sooplive.com/oembed/embedinfo",
       {
+        params: {
+          vod_url: vodUrl,
+          width: 640,
+          height: 360
+        },
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
           "Accept": "*/*"
@@ -221,9 +224,9 @@ app.get("/test-stationinfo", async (req, res) => {
       }
     );
 
-    res.json(response.data);
+    return res.json(response.data);
   } catch (e) {
-    res.json({
+    return res.status(500).json({
       error: true,
       status: e.response?.status,
       data: e.response?.data || null,

@@ -247,17 +247,20 @@ app.get("/get-token", async (req, res) => {
       }),
       {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "*/*"
+        },
+        timeout: 10000
       }
     );
 
-    res.json(response.data);
+    return res.json(response.data);
   } catch (e) {
-    res.json({
+    return res.json({
       error: true,
       status: e.response?.status,
-      data: e.response?.data
+      data: e.response?.data || null,
+      message: e.message
     });
   }
 });

@@ -2,45 +2,26 @@ const fs = require("fs");
 const puppeteer = require("puppeteer");
 
 const TARGETS = [
-{ name: "김윤환", userId: "brainzerg7", bbsNo: "54143154" },
-
-  { name: "이경민", userId: "rudals5467", bbsNo: "65249107" },
-
-  { name: "박준오", userId: "h78ert", bbsNo: "1489236" },
-
-  { name: "박수범", userId: "jihoon002", bbsNo: "106970519" },
-
-  { name: "사테", userId: "hoonykkk", bbsNo: "1371967" },
-
-  { name: "지동원", userId: "rondobba", bbsNo: "40202570" },
-
-  { name: "배성흠", userId: "goodzerg", bbsNo: "58482962" },
-
-  { name: "파도튜브", userId: "kthrs9207", bbsNo: "4130352" },
-
-  { name: "토마토", userId: "freshtomato", bbsNo: "79127541" },
-
-  { name: "지두두", userId: "wjswlgns09", bbsNo: "41739132" },
-
-  { name: "햇살", userId: "thelddl", bbsNo: "19332732" },
-
-  { name: "찌킹", userId: "alaelddl97", bbsNo: "122264133" },
-
-  { name: "치리", userId: "db001202", bbsNo: "102538363" },
-
-  { name: "주하랑", userId: "fpahsdltu1", bbsNo: "88012442" },
-
-  { name: "소주양", userId: "soju2022", bbsNo: "94261520" },
-
-  { name: "임조이", userId: "dlaguswl501", bbsNo: "101549531" },
-
-  { name: "비타밍", userId: "seemin88", bbsNo: "105540651" },
-
-  { name: "먼진", userId: "2meonjin", bbsNo: "119304089" },
-
-  { name: "아리송이", userId: "vldpfm2", bbsNo: "89090859" },
-
-  { name: "진땅콩", userId: "wlswn6565", bbsNo: "117225449" }
+  { name: "김윤환", userId: "brainzerg7", bbsNo: "54143154" },
+  { name: "이경민", userId: "rudals5467", bbsNo: "65249107" },
+  { name: "박준오", userId: "h78ert", bbsNo: "1489236" },
+  { name: "박수범", userId: "jihoon002", bbsNo: "106970519" },
+  { name: "사테", userId: "hoonykkk", bbsNo: "1371967" },
+  { name: "지동원", userId: "rondobba", bbsNo: "40202570" },
+  { name: "배성흠", userId: "goodzerg", bbsNo: "58482962" },
+  { name: "파도튜브", userId: "kthrs9207", bbsNo: "4130352" },
+  { name: "토마토", userId: "freshtomato", bbsNo: "79127541" },
+  { name: "지두두", userId: "wjswlgns09", bbsNo: "41739132" },
+  { name: "햇살", userId: "thelddl", bbsNo: "19332732" },
+  { name: "찌킹", userId: "alaelddl97", bbsNo: "122264133" },
+  { name: "치리", userId: "db001202", bbsNo: "102538363" },
+  { name: "주하랑", userId: "fpahsdltu1", bbsNo: "88012442" },
+  { name: "소주양", userId: "soju2022", bbsNo: "94261520" },
+  { name: "임조이", userId: "dlaguswl501", bbsNo: "101549531" },
+  { name: "비타밍", userId: "seemin88", bbsNo: "105540651" },
+  { name: "먼진", userId: "2meonjin", bbsNo: "119304089" },
+  { name: "아리송이", userId: "vldpfm2", bbsNo: "89090859" },
+  { name: "진땅콩", userId: "wlswn6565", bbsNo: "117225449" }
 ];
 
 function sleep(ms) {
@@ -51,7 +32,6 @@ function cleanText(text) {
   return String(text || "")
     .replace(/<br\s*\/?>/gi, " ")
     .replace(/\s+/g, " ")
-    .replace(/^Notice\s*/i, "")
     .trim();
 }
 
@@ -65,11 +45,21 @@ function normalizeTimeText(text) {
 
   if (!t) return "";
 
-  const relativeMatch = t.match(
-    /(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)$/i
-  );
-  if (relativeMatch) return relativeMatch[1].replace(/\s+/g, "");
+  // 한국어 상대시간
+  const krRelativeMatch = t.match(/(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)/i);
+  if (krRelativeMatch) {
+    return krRelativeMatch[1].replace(/\s+/g, "");
+  }
 
+  // 영어 상대시간
+  const enRelativeMatch = t.match(
+    /(\d+\s*(second|seconds|minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years)\s+ago)/i
+  );
+  if (enRelativeMatch) {
+    return enRelativeMatch[1].replace(/\s+/g, " ").trim();
+  }
+
+  // 절대 날짜/시간
   const absoluteMatch = t.match(
     /(\d{4}[.\-\/]\d{1,2}[.\-\/]\d{1,2}(?:\s+\d{1,2}:\d{2})?)/
   );
@@ -82,6 +72,51 @@ function normalizeTimeText(text) {
   }
 
   return "";
+}
+
+function cleanSummaryText(summary, item) {
+  let s = cleanText(summary);
+
+  if (!s) return "";
+
+  // station / writer 제거
+  const removableWords = [
+    item.stationName,
+    item.writer,
+    "공지사항",
+    "General Board",
+    "방송공지",
+    "방송일정공지",
+    "공지",
+    "Notice"
+  ].filter(Boolean);
+
+  for (const word of removableWords) {
+    const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    s = s.replace(new RegExp(escaped, "gi"), " ");
+  }
+
+  // 시간 제거
+  if (item.time) {
+    const escapedTime = item.time.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    s = s.replace(new RegExp(escapedTime, "gi"), " ");
+  }
+
+  // 메타 숫자 뭉치 제거 (좋아요/댓글/조회수 영역)
+  s = s.replace(/\b\d{1,3}(?:,\d{3})*\b/g, " ");
+
+  // 하트/이모지성 게시판 장식 제거
+  s = s.replace(/[❤❤️♥♡★☆•·]+/g, " ");
+
+  // title이 summary 안에 중복되면 제거
+  if (item.title) {
+    const escapedTitle = item.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    s = s.replace(new RegExp(escapedTitle, "i"), " ");
+  }
+
+  s = s.replace(/\s+/g, " ").trim();
+
+  return s;
 }
 
 async function crawlTarget(browser, target) {
@@ -101,12 +136,35 @@ async function crawlTarget(browser, target) {
     await sleep(2500);
 
     const items = await page.evaluate((targetInfo) => {
-      function textOf(el) {
-        return (el?.innerText || "").replace(/\s+/g, " ").trim();
+      function normalize(str) {
+        return String(str || "")
+          .replace(/\s+/g, " ")
+          .trim();
       }
 
-      function cleanInlineText(str) {
-        return String(str || "").replace(/\s+/g, " ").trim();
+      function pickTime(text) {
+        const t = normalize(text);
+
+        const krRelative = t.match(/(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)/i);
+        if (krRelative) return krRelative[1].replace(/\s+/g, "");
+
+        const enRelative = t.match(
+          /(\d+\s*(second|seconds|minute|minutes|hour|hours|day|days|week|weeks|month|months|year|years)\s+ago)/i
+        );
+        if (enRelative) return enRelative[1].replace(/\s+/g, " ").trim();
+
+        const absolute = t.match(
+          /(\d{4}[.\-\/]\d{1,2}[.\-\/]\d{1,2}(?:\s+\d{1,2}:\d{2})?)/
+        );
+        if (absolute) {
+          return absolute[1]
+            .replace(/\//g, "-")
+            .replace(/\./g, "-")
+            .replace(/\s+/g, " ")
+            .trim();
+        }
+
+        return "";
       }
 
       function findCardRoot(anchor) {
@@ -119,23 +177,10 @@ async function crawlTarget(browser, target) {
         );
       }
 
-      function pickTime(text) {
-        const relative = text.match(/(\d+\s*(초|분|시간|일|주|개월|달|년)\s*전)/);
-        if (relative) return relative[1].replace(/\s+/g, "");
+      const anchors = Array.from(
+        document.querySelectorAll(`a[href*="/station/${targetInfo.userId}/post/"]`)
+      );
 
-        const absolute = text.match(/(\d{4}[.\-\/]\d{1,2}[.\-\/]\d{1,2}(?:\s+\d{1,2}:\d{2})?)/);
-        if (absolute) {
-          return absolute[1]
-            .replace(/\//g, "-")
-            .replace(/\./g, "-")
-            .replace(/\s+/g, " ")
-            .trim();
-        }
-
-        return "";
-      }
-
-      const anchors = Array.from(document.querySelectorAll(`a[href*="/station/${targetInfo.userId}/post/"]`));
       const result = [];
       const seen = new Set();
 
@@ -146,67 +191,52 @@ async function crawlTarget(browser, target) {
         seen.add(href);
 
         const card = findCardRoot(a);
-        const cardText = cleanInlineText(textOf(card));
-        const ownText = cleanInlineText(textOf(a));
+        const cardText = normalize(card?.innerText || "");
+        const ownText = normalize(a.innerText || "");
+
+        if (!cardText && !ownText) continue;
+
+        const time = pickTime(cardText);
 
         let title = ownText;
         let summary = "";
-        let time = "";
 
-        const lines = cardText
-          .split(/\n+/)
-          .map(v => cleanInlineText(v))
+        const lines = (card?.innerText || "")
+          .split("\n")
+          .map(v => normalize(v))
           .filter(Boolean);
 
-        // 기본 시간 추출
-        time = pickTime(cardText);
-
-        // 제목 후보 추출
-        if (ownText) {
-          title = ownText;
-        } else {
+        // 제목이 링크 텍스트로 잡히면 우선 사용
+        if (!title) {
           const titleCandidate = lines.find(line =>
             line &&
             !line.includes("공지사항") &&
             !line.includes("게시판") &&
-            !line.match(/조회|댓글|좋아요/) &&
+            !line.match(/^\d+$/) &&
             !pickTime(line)
           );
           title = titleCandidate || "";
         }
 
-        // summary 후보: 카드 텍스트에서 제목 다음 내용 느낌의 줄
-        const filteredLines = lines.filter(line => {
-          if (!line) return false;
-          if (line === title) return false;
-          if (line.includes("공지사항")) return false;
-          if (line.includes("게시판")) return false;
-          if (line.match(/^\d+\s*$/)) return false;
-          return true;
-        });
-
-        const titleIndex = filteredLines.findIndex(v => v === title);
-        if (titleIndex >= 0 && filteredLines[titleIndex + 1]) {
-          summary = filteredLines[titleIndex + 1];
+        // summary는 title 다음 줄 우선
+        const lineIndex = lines.findIndex(v => v === title);
+        if (lineIndex >= 0 && lines[lineIndex + 1]) {
+          summary = lines[lineIndex + 1];
         }
 
+        // 없으면 카드 전체에서 title/time 뺀 값
         if (!summary) {
-          const withoutMeta = cardText
-            .replace(title, "")
-            .replace(time, "")
-            .replace(/\b(조회|댓글|좋아요)\b/g, "")
-            .trim();
-          summary = withoutMeta;
+          summary = cardText;
         }
 
-        title = cleanInlineText(title)
-          .replace(/^공지\s*/g, "")
-          .replace(/^Notice\s*/gi, "")
+        title = normalize(title)
+          .replace(/^공지\s*/i, "")
+          .replace(/^Notice\s*/i, "")
           .trim();
 
-        summary = cleanInlineText(summary)
-          .replace(/^공지\s*/g, "")
-          .replace(/^Notice\s*/gi, "")
+        summary = normalize(summary)
+          .replace(/^공지\s*/i, "")
+          .replace(/^Notice\s*/i, "")
           .trim();
 
         if (!title && !summary) continue;
@@ -228,13 +258,23 @@ async function crawlTarget(browser, target) {
     return {
       ok: true,
       userId: target.userId,
-      items: items.map(item => ({
-        ...item,
-        title: cleanText(item.title).slice(0, 120),
-        summary: cleanText(item.summary).slice(0, 220),
-        time: normalizeTimeText(item.time),
-        postNo: getPostNo(item.link)
-      }))
+      items: items.map(item => {
+        const normalized = {
+          ...item,
+          title: cleanText(item.title).slice(0, 120),
+          time: normalizeTimeText(item.time),
+          postNo: getPostNo(item.link)
+        };
+
+        normalized.summary = cleanSummaryText(item.summary, normalized).slice(0, 220);
+
+        // summary가 비면 title을 fallback
+        if (!normalized.summary) {
+          normalized.summary = normalized.title;
+        }
+
+        return normalized;
+      })
     };
   } catch (error) {
     return {
@@ -263,14 +303,6 @@ async function main() {
   const collected = [];
 
   for (const target of TARGETS) {
-    if (!target.bbsNo || target.bbsNo === "여기입력") {
-      debug.skipped.push({
-        userId: target.userId,
-        reason: "missing bbsNo"
-      });
-      continue;
-    }
-
     const result = await crawlTarget(browser, target);
 
     if (result.ok) {

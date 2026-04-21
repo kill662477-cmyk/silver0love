@@ -1,12 +1,20 @@
 {
-  "checkedAt": "2026-04-21T08:47:22.286Z",
+  "checkedAt": "2026-04-21T08:52:28.361Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지동원",
+      "writer": "지동원",
+      "userId": "rondobba",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/rondobba/post/193422441",
+      "summary": "오뱅공 6시 40분 테테도사 테테 해설 도전하러 옵니다"
+    },
     {
       "stationName": "이경민",
       "writer": "이경민",
       "userId": "rudals5467",
-      "time": "5 minutes ago",
+      "time": "10 minutes ago",
       "link": "https://www.sooplive.com/station/rudals5467/post/193421941",
       "summary": "Notice바르닭 라이브커머스! 04.22 오후6시에 경민x먼진 라이브커머스 방송있습니다 https://sooptore.sooplive.co.kr/api/pick?campaign_no=17871&bj_id=rudals5467&product_nos=133384709 < 판매링크 판매링크는 오늘 12시 지나고 4월22일부터 구매가능합니다..."
     },
@@ -14,7 +22,7 @@
       "stationName": "주하랑",
       "writer": "주하랑",
       "userId": "fpahsdltu1",
-      "time": "49 minutes ago",
+      "time": "54 minutes ago",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/193419001",
       "summary": "Notice오늘 6시에올게욤 !! 이따보쟈아아"
     },
@@ -73,14 +81,6 @@
       "time": "19 hours ago",
       "link": "https://www.sooplive.com/station/hoonykkk/post/193358003",
       "summary": "Noticeㅠ 내일올게염 연습도와준사람 경민,윤철,재욱,현제,경두,선재,정우,짭제,성대,일장,재호,영진,영웅 다 감사합니당 응원와준 지두두 비타밍 아리송이 전 거사대친구들 또뚜형 실버리데성님 감사합니다 오늘 좀 아쉽네영 ㅜㅜ"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "22 hours ago",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/193339571",
-      "summary": "공쥐 저 피부 많이 가라앉아서 늦게나마 사테쌤 응원 가려고합니당!! 가서 열심히 응원할게요"
     }
   ]
 }

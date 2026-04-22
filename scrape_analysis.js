@@ -157,7 +157,7 @@ async function main() {
         monthlyWinRate: eloData.monthlyWinRate,
         debugBlock: eloData.debugBlock
       };
-
+console.log("ELO DEBUG:", target.name, eloData.debugBlock);
       console.log("RESULT:", merged);
       results.push(merged);
     } catch (e) {

@@ -1,1 +1,21 @@
-
+{
+  "checkedAt": "2026-04-22T10:38:58.369Z",
+  "items": [
+    {
+      "name": "김윤환",
+      "userId": "brainzerg7",
+      "monthlyBroadcastTime": "168시간 1분",
+      "monthlyViewers": "1,986,598",
+      "monthlyPoong": "474,025",
+      "peakViewers": "19,576"
+    },
+    {
+      "name": "비타밍",
+      "userId": "seemin88",
+      "monthlyBroadcastTime": "77시간 49분",
+      "monthlyViewers": "132,819",
+      "monthlyPoong": "201,148",
+      "peakViewers": "996"
+    }
+  ]
+}

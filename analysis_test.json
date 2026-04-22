@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-04-22T10:50:29.168Z",
+  "checkedAt": "2026-04-22T11:00:10.246Z",
   "items": [
     {
       "name": "김윤환",
@@ -7,10 +7,11 @@
       "gender": "men",
       "monthlyBroadcastTime": "168시간 1분",
       "monthlyViewers": "1,986,598",
-      "monthlyPoong": "474,186",
+      "monthlyPoong": "474,430",
       "peakViewers": "19,576",
       "monthlyRecord": "전적없음",
-      "monthlyWinRate": "-"
+      "monthlyWinRate": "-",
+      "debugBlock": "name not found"
     },
     {
       "name": "비타밍",
@@ -21,7 +22,8 @@
       "monthlyPoong": "201,149",
       "peakViewers": "996",
       "monthlyRecord": "전적없음",
-      "monthlyWinRate": "-"
+      "monthlyWinRate": "-",
+      "debugBlock": "name not found"
     }
   ]
 }

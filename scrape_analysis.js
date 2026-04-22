@@ -21,8 +21,26 @@ const ELO_URLS = {
   women: "https://eloboard.com/women/bbs/board.php?bo_table=rank_list"
 };
 
+// 나중에 20명 확장할 때 별칭용으로 쓰면 됨
+const ELO_NAME_MAP = {
+  "김윤환": "김윤환",
+  "비타밍": "비타밍"
+};
+
 function cleanText(text) {
-  return String(text || "").replace(/\s+/g, " ").trim();
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizeName(text) {
+  return String(text || "")
+    .replace(/\s+/g, "")
+    .trim();
+}
+
+function getEloSearchName(playerName) {
+  return ELO_NAME_MAP[playerName] || playerName;
 }
 
 function extractMetric(body, label) {
@@ -61,44 +79,45 @@ async function scrapeEloRankPage(page, url) {
     timeout: 45000
   });
 
-  await new Promise(r => setTimeout(r, 2500));
+  await new Promise(r => setTimeout(r, 5000));
 
-  const body = await page.evaluate(() => document.body.innerText);
-  return body;
+  const rows = await page.evaluate(() => {
+    return Array.from(document.querySelectorAll("tr"))
+      .map((tr, idx) => ({
+        index: idx,
+        text: (tr.innerText || "").replace(/\s+/g, " ").trim()
+      }))
+      .filter(row => row.text);
+  });
+
+  return rows;
 }
 
-function findMonthlyRecordFromBody(body, playerName) {
-  const lines = String(body || "")
-    .split("\n")
-    .map(v => cleanText(v))
-    .filter(Boolean);
+function findMonthlyRecordFromRows(rows, playerName) {
+  const target = normalizeName(getEloSearchName(playerName));
 
-  const idx = lines.findIndex(line => line.includes(playerName));
-  if (idx === -1) {
+  const row = rows.find(r => {
+    const text = normalizeName(r.text);
+    return text.includes(target);
+  });
+
+  if (!row) {
     return {
       monthlyRecord: "전적없음",
       monthlyWinRate: "-",
-      debugBlock: "name not found"
+      debugRow: "name not found"
     };
   }
 
-  const debugLines = lines.slice(Math.max(0, idx - 3), idx + 12);
-  const debugBlock = debugLines.join(" | ");
+  const text = cleanText(row.text);
 
-  // 패턴 넓게 잡기
-  const joined = debugLines.join(" ");
-
-  const recordMatch =
-    joined.match(/(\d+\s*전\s*\d+\s*승\s*\d+\s*패)/) ||
-    joined.match(/(\d+\s*승\s*\d+\s*패)/);
-
-  const rateMatch =
-    joined.match(/(\d+(?:\.\d+)?\s*%)/);
+  const recordMatch = text.match(/(\d+\s*전\s*\d+\s*승\s*\d+\s*패)/);
+  const rateMatch = text.match(/(\d+(?:\.\d+)?%)/);
 
   return {
     monthlyRecord: recordMatch ? cleanText(recordMatch[1]) : "전적없음",
     monthlyWinRate: rateMatch ? cleanText(rateMatch[1]) : "-",
-    debugBlock
+    debugRow: text
   };
 }
 
@@ -108,30 +127,31 @@ async function main() {
     args: ["--no-sandbox", "--disable-setuid-sandbox"]
   });
 
-  const eloBodies = {
-    men: "",
-    women: ""
+  const eloRows = {
+    men: [],
+    women: []
   };
 
-  // 1. eloboard 남/여 페이지 먼저 읽기
+  // 1. 남/여 ELO 월간 랭킹 페이지 읽기
   for (const gender of ["men", "women"]) {
     const page = await browser.newPage();
+
     try {
       await page.setUserAgent(
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
       );
 
-      eloBodies[gender] = await scrapeEloRankPage(page, ELO_URLS[gender]);
-      console.log(`ELO ${gender} page loaded`);
+      eloRows[gender] = await scrapeEloRankPage(page, ELO_URLS[gender]);
+      console.log(`ELO ${gender} page loaded. rows=${eloRows[gender].length}`);
     } catch (e) {
       console.log(`ELO ${gender} ERROR:`, e.message);
-      eloBodies[gender] = "";
+      eloRows[gender] = [];
     } finally {
       await page.close();
     }
   }
 
-  // 2. 풍투데이 + 전적 합치기
+  // 2. 풍투데이 + eloboard 데이터 합치기
   const results = [];
 
   for (const target of TEST_TARGETS) {
@@ -143,7 +163,9 @@ async function main() {
       );
 
       const poongData = await scrapePoong(page, target);
-      const eloData = findMonthlyRecordFromBody(eloBodies[target.gender], target.name);
+      const eloData = findMonthlyRecordFromRows(eloRows[target.gender], target.name);
+
+      console.log("ELO DEBUG:", target.name, eloData.debugRow);
 
       const merged = {
         name: target.name,
@@ -155,9 +177,9 @@ async function main() {
         peakViewers: poongData.peakViewers || "",
         monthlyRecord: eloData.monthlyRecord,
         monthlyWinRate: eloData.monthlyWinRate,
-        debugBlock: eloData.debugBlock
+        debugRow: eloData.debugRow
       };
-console.log("ELO DEBUG:", target.name, eloData.debugBlock);
+
       console.log("RESULT:", merged);
       results.push(merged);
     } catch (e) {
@@ -172,6 +194,7 @@ console.log("ELO DEBUG:", target.name, eloData.debugBlock);
         peakViewers: "",
         monthlyRecord: "전적없음",
         monthlyWinRate: "-",
+        debugRow: e.message,
         error: e.message
       });
     } finally {

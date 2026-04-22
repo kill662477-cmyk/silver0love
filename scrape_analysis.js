@@ -253,8 +253,8 @@ async function main() {
     items: results
   };
 
-  fs.writeFileSync("analysis.json", JSON.stringify(output, null, 2), "utf-8");
-  console.log("analysis.json saved");
+  fs.writeFileSync("analysis_test.json", JSON.stringify(output, null, 2), "utf-8");
+  console.log("analysis_test.json saved");
 }
 
 main().catch(console.error);

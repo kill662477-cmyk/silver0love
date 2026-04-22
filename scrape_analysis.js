@@ -77,19 +77,28 @@ function findMonthlyRecordFromBody(body, playerName) {
   if (idx === -1) {
     return {
       monthlyRecord: "전적없음",
-      monthlyWinRate: "-"
+      monthlyWinRate: "-",
+      debugBlock: "name not found"
     };
   }
 
-  const slice = lines.slice(idx, idx + 12).join(" | ");
+  const debugLines = lines.slice(Math.max(0, idx - 3), idx + 12);
+  const debugBlock = debugLines.join(" | ");
 
-  // 예: 12전 8승 4패 / 66.7%
-  const recordMatch = slice.match(/(\d+\s*전\s*\d+\s*승\s*\d+\s*패)/);
-  const rateMatch = slice.match(/(\d+(?:\.\d+)?\s*%)/);
+  // 패턴 넓게 잡기
+  const joined = debugLines.join(" ");
+
+  const recordMatch =
+    joined.match(/(\d+\s*전\s*\d+\s*승\s*\d+\s*패)/) ||
+    joined.match(/(\d+\s*승\s*\d+\s*패)/);
+
+  const rateMatch =
+    joined.match(/(\d+(?:\.\d+)?\s*%)/);
 
   return {
     monthlyRecord: recordMatch ? cleanText(recordMatch[1]) : "전적없음",
-    monthlyWinRate: rateMatch ? cleanText(rateMatch[1]) : "-"
+    monthlyWinRate: rateMatch ? cleanText(rateMatch[1]) : "-",
+    debugBlock
   };
 }
 
@@ -146,6 +155,7 @@ async function main() {
         peakViewers: poongData.peakViewers || "",
         monthlyRecord: eloData.monthlyRecord,
         monthlyWinRate: eloData.monthlyWinRate
+        debugBlock: eloData.debugBlock
       };
 
       console.log("RESULT:", merged);

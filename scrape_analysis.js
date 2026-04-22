@@ -9,7 +9,7 @@ const TARGETS = [
   { name: "박준오", userId: "h78ert", gender: "men", poongUrl: "https://poong.today/broadcast/h78ert" },
   { name: "지동원", userId: "rondobba", gender: "men", poongUrl: "https://poong.today/broadcast/rondobba" },
   { name: "배성흠", userId: "goodzerg", gender: "men", poongUrl: "https://poong.today/broadcast/goodzerg" },
-  { name: "파도튜브", userId: "kthrs9207", gender: "men",eloSource:"pado", poongUrl: "https://poong.today/broadcast/kthrs9207" },
+  { name: "파도튜브", userId: "kthrs9207", gender: "men", eloSource: "pado", poongUrl: "https://poong.today/broadcast/kthrs9207" },
 
   { name: "토마토", userId: "freshtomato", gender: "women", poongUrl: "https://poong.today/broadcast/freshtomato" },
   { name: "지두두", userId: "wjswlgns09", gender: "women", poongUrl: "https://poong.today/broadcast/wjswlgns09" },
@@ -28,15 +28,15 @@ const TARGETS = [
 const ELO_URLS = {
   men: "https://eloboard.com/men/bbs/board.php?bo_table=rank_list",
   women: "https://eloboard.com/women/bbs/board.php?bo_table=rank_list",
-  pado : "https://eloboard.com/women/bbs/board.php?bo_table=mix_rank_list"
+  pado: "https://eloboard.com/women/bbs/board.php?bo_table=mix_rank_list"
 };
 
-// eloboard 표기명이 다를 수 있는 멤버만 여기서 조정
+// 실제 eloboard 표기명이 다르면 여기서 수정
 const ELO_NAME_MAP = {
   "김윤환": "김윤환",
   "이경민": "이경민",
   "박수범": "박수범",
-  "사테": "김태영",
+  "사테": "사테",
   "박준오": "박준오",
   "지동원": "지동원",
   "배성흠": "배성흠",
@@ -57,7 +57,9 @@ const ELO_NAME_MAP = {
 };
 
 function cleanText(text) {
-  return String(text || "").replace(/\s+/g, " ").trim();
+  return String(text || "")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function normalizeName(text) {
@@ -79,6 +81,7 @@ function extractMetric(body, label) {
 
   const idx = lines.findIndex(line => line === label);
   if (idx === -1) return "";
+
   return cleanText(lines[idx + 1] || "");
 }
 
@@ -100,7 +103,7 @@ async function scrapePoong(page, target) {
   };
 }
 
-async function scrapeEloRankPage(page, url) {
+async function scrapeEloRankPage(page, url, sourceName) {
   await page.goto(url, {
     waitUntil: "networkidle2",
     timeout: 45000
@@ -117,22 +120,31 @@ async function scrapeEloRankPage(page, url) {
       .filter(row => row.text);
   });
 
+  console.log(`ELO ${sourceName} loaded. rows=${rows.length}`);
   return rows;
 }
 
 function parseEloRow(rowText) {
   const text = cleanText(rowText);
+
+  // 예: 83. 비타밍T 3승 5패 4승 5패 0승 0패 17전 7승 10패 41.2% 1117.9
+  // 혹은 43. 김윤환 Z ... 처럼 이름과 종족 사이 공백이 있을 수도 있음
   const rankMatch = text.match(/^(\d+)\.\s*/);
   if (!rankMatch) return null;
 
   const afterRank = text.replace(/^(\d+)\.\s*/, "");
-  const firstToken = afterRank.split(" ")[0] || "";
 
-  let playerToken = firstToken;
+  // 첫 토큰이 이름, 그다음이 종족일 수도 있고 이름+종족일 수도 있음
+  const parts = afterRank.split(" ").filter(Boolean);
+  if (!parts.length) return null;
+
+  let playerToken = parts[0];
   let race = "";
 
-  if (/[ZPT]$/.test(playerToken)) {
-    race = playerToken.slice(-1);
+  if (parts[1] && /^[ZPT]$/i.test(parts[1])) {
+    race = parts[1].toUpperCase();
+  } else if (/[ZPT]$/i.test(playerToken)) {
+    race = playerToken.slice(-1).toUpperCase();
     playerToken = playerToken.slice(0, -1);
   }
 
@@ -183,23 +195,22 @@ async function main() {
     pado: []
   };
 
- for (const source of ["men", "women", "pado"]) {
-  const page = await browser.newPage();
+  for (const source of ["men", "women", "pado"]) {
+    const page = await browser.newPage();
 
-  try {
-    await page.setUserAgent(
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
-    );
+    try {
+      await page.setUserAgent(
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+      );
 
-    eloRows[source] = await scrapeEloRankPage(page, ELO_URLS[source]);
-    console.log(`ELO ${source} loaded. rows=${eloRows[source].length}`);
-  } catch (e) {
-    console.log(`ELO ${source} ERROR:`, e.message);
-    eloRows[source] = [];
-  } finally {
-    await page.close();
+      eloRows[source] = await scrapeEloRankPage(page, ELO_URLS[source], source);
+    } catch (e) {
+      console.log(`ELO ${source} ERROR:`, e.message);
+      eloRows[source] = [];
+    } finally {
+      await page.close();
+    }
   }
-}
 
   const results = [];
 
@@ -212,8 +223,8 @@ async function main() {
       );
 
       const poongData = await scrapePoong(page, target);
-    const eloKey = target.eloSource || target.gender;
-const eloData = findMonthlyRecordFromRows(eloRows[eloKey], target.name);
+      const eloKey = target.eloSource || target.gender;
+      const eloData = findMonthlyRecordFromRows(eloRows[eloKey], target.name);
 
       const merged = {
         name: target.name,
@@ -254,8 +265,11 @@ const eloData = findMonthlyRecordFromRows(eloRows[eloKey], target.name);
     items: results
   };
 
-  fs.writeFileSync("analysis_test.json", JSON.stringify(output, null, 2), "utf-8");
-  console.log("analysis_test.json saved");
+  fs.writeFileSync("analysis.json", JSON.stringify(output, null, 2), "utf-8");
+  console.log("analysis.json saved");
 }
 
-main().catch(console.error);
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});

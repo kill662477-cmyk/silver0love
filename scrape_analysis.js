@@ -9,7 +9,7 @@ const TARGETS = [
   { name: "박준오", userId: "h78ert", gender: "men", poongUrl: "https://poong.today/broadcast/h78ert" },
   { name: "지동원", userId: "rondobba", gender: "men", poongUrl: "https://poong.today/broadcast/rondobba" },
   { name: "배성흠", userId: "goodzerg", gender: "men", poongUrl: "https://poong.today/broadcast/goodzerg" },
-  { name: "파도튜브", userId: "kthrs9207", gender: "pado", poongUrl: "https://poong.today/broadcast/kthrs9207" },
+  { name: "파도튜브", userId: "kthrs9207", gender: "men",eloSource:"pado", poongUrl: "https://poong.today/broadcast/kthrs9207" },
 
   { name: "토마토", userId: "freshtomato", gender: "women", poongUrl: "https://poong.today/broadcast/freshtomato" },
   { name: "지두두", userId: "wjswlgns09", gender: "women", poongUrl: "https://poong.today/broadcast/wjswlgns09" },
@@ -179,26 +179,27 @@ async function main() {
 
   const eloRows = {
     men: [],
-    women: []
+    women: [],
+    pado: []
   };
 
-  for (const gender of ["men", "women"]) {
-    const page = await browser.newPage();
+ for (const source of ["men", "women", "pado"]) {
+  const page = await browser.newPage();
 
-    try {
-      await page.setUserAgent(
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
-      );
+  try {
+    await page.setUserAgent(
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+    );
 
-      eloRows[gender] = await scrapeEloRankPage(page, ELO_URLS[gender]);
-      console.log(`ELO ${gender} loaded. rows=${eloRows[gender].length}`);
-    } catch (e) {
-      console.log(`ELO ${gender} ERROR:`, e.message);
-      eloRows[gender] = [];
-    } finally {
-      await page.close();
-    }
+    eloRows[source] = await scrapeEloRankPage(page, ELO_URLS[source]);
+    console.log(`ELO ${source} loaded. rows=${eloRows[source].length}`);
+  } catch (e) {
+    console.log(`ELO ${source} ERROR:`, e.message);
+    eloRows[source] = [];
+  } finally {
+    await page.close();
   }
+}
 
   const results = [];
 

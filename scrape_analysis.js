@@ -21,7 +21,7 @@ const ELO_URLS = {
   women: "https://eloboard.com/women/bbs/board.php?bo_table=rank_list"
 };
 
-// 나중에 20명 확장할 때 별칭용으로 쓰면 됨
+// 실제 eloboard 표기명이 다르면 여기서 별칭 조정
 const ELO_NAME_MAP = {
   "김윤환": "김윤환",
   "비타밍": "비타밍"
@@ -36,6 +36,7 @@ function cleanText(text) {
 function normalizeName(text) {
   return String(text || "")
     .replace(/\s+/g, "")
+    .replace(/[🌈💜❤♥♡★☆!]/g, "")
     .trim();
 }
 
@@ -93,31 +94,61 @@ async function scrapeEloRankPage(page, url) {
   return rows;
 }
 
-function findMonthlyRecordFromRows(rows, playerName) {
-  const target = normalizeName(getEloSearchName(playerName));
+function parseEloRow(rowText) {
+  const text = cleanText(rowText);
 
-  const row = rows.find(r => {
-    const text = normalizeName(r.text);
-    return text.includes(target);
-  });
+  // 예:
+  // 83. 비타밍T 3승 5패 4승 5패 0승 0패 17전 7승 10패 41.2% 1117.9
+  const rankMatch = text.match(/^(\d+)\.\s*/);
+  if (!rankMatch) return null;
 
-  if (!row) {
-    return {
-      monthlyRecord: "전적없음",
-      monthlyWinRate: "-",
-      debugRow: "name not found"
-    };
+  const afterRank = text.replace(/^(\d+)\.\s*/, "");
+  const firstToken = afterRank.split(" ")[0] || "";
+
+  // 이름+종족 토큰에서 종족 한 글자 제거
+  let playerToken = firstToken;
+  let race = "";
+
+  if (/[ZPT]$/.test(playerToken)) {
+    race = playerToken.slice(-1);
+    playerToken = playerToken.slice(0, -1);
   }
 
-  const text = cleanText(row.text);
+  playerToken = normalizeName(playerToken);
 
   const recordMatch = text.match(/(\d+\s*전\s*\d+\s*승\s*\d+\s*패)/);
   const rateMatch = text.match(/(\d+(?:\.\d+)?%)/);
 
   return {
+    raw: text,
+    rank: rankMatch ? rankMatch[1] : "",
+    playerName: playerToken,
+    race,
     monthlyRecord: recordMatch ? cleanText(recordMatch[1]) : "전적없음",
-    monthlyWinRate: rateMatch ? cleanText(rateMatch[1]) : "-",
-    debugRow: text
+    monthlyWinRate: rateMatch ? cleanText(rateMatch[1]) : "-"
+  };
+}
+
+function findMonthlyRecordFromRows(rows, playerName) {
+  const target = normalizeName(getEloSearchName(playerName));
+  const parsedRows = rows
+    .map(r => parseEloRow(r.text))
+    .filter(Boolean);
+
+  // 정확히 이름 일치하는 행만 찾기
+  const exact = parsedRows.find(row => row.playerName === target);
+  if (exact) {
+    return {
+      monthlyRecord: exact.monthlyRecord,
+      monthlyWinRate: exact.monthlyWinRate,
+      debugRow: exact.raw
+    };
+  }
+
+  return {
+    monthlyRecord: "전적없음",
+    monthlyWinRate: "-",
+    debugRow: "name not found"
   };
 }
 
@@ -132,7 +163,6 @@ async function main() {
     women: []
   };
 
-  // 1. 남/여 ELO 월간 랭킹 페이지 읽기
   for (const gender of ["men", "women"]) {
     const page = await browser.newPage();
 
@@ -151,7 +181,6 @@ async function main() {
     }
   }
 
-  // 2. 풍투데이 + eloboard 데이터 합치기
   const results = [];
 
   for (const target of TEST_TARGETS) {

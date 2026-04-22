@@ -1,36 +1,63 @@
 const fs = require("fs");
 const puppeteer = require("puppeteer");
 
-const TEST_TARGETS = [
-  {
-    name: "김윤환",
-    userId: "brainzerg7",
-    gender: "men",
-    poongUrl: "https://poong.today/broadcast/brainzerg7"
-  },
-  {
-    name: "비타밍",
-    userId: "seemin88",
-    gender: "women",
-    poongUrl: "https://poong.today/broadcast/seemin88"
-  }
+const TARGETS = [
+  { name: "김윤환", userId: "brainzerg7", gender: "men", poongUrl: "https://poong.today/broadcast/brainzerg7" },
+  { name: "이경민", userId: "rudals5467", gender: "men", poongUrl: "https://poong.today/broadcast/rudals5467" },
+  { name: "박수범", userId: "jihoon002", gender: "men", poongUrl: "https://poong.today/broadcast/jihoon002" },
+  { name: "사테", userId: "hoonykkk", gender: "men", poongUrl: "https://poong.today/broadcast/hoonykkk" },
+  { name: "박준오", userId: "h78ert", gender: "men", poongUrl: "https://poong.today/broadcast/h78ert" },
+  { name: "지동원", userId: "rondobba", gender: "men", poongUrl: "https://poong.today/broadcast/rondobba" },
+  { name: "배성흠", userId: "goodzerg", gender: "men", poongUrl: "https://poong.today/broadcast/goodzerg" },
+  { name: "파도튜브", userId: "kthrs9207", gender: "pado", poongUrl: "https://poong.today/broadcast/kthrs9207" },
+
+  { name: "토마토", userId: "freshtomato", gender: "women", poongUrl: "https://poong.today/broadcast/freshtomato" },
+  { name: "지두두", userId: "wjswlgns09", gender: "women", poongUrl: "https://poong.today/broadcast/wjswlgns09" },
+  { name: "햇살", userId: "thelddl", gender: "women", poongUrl: "https://poong.today/broadcast/thelddl" },
+  { name: "찌킹", userId: "alaelddl97", gender: "women", poongUrl: "https://poong.today/broadcast/alaelddl97" },
+  { name: "치리", userId: "db001202", gender: "women", poongUrl: "https://poong.today/broadcast/db001202" },
+  { name: "주하랑", userId: "fpahsdltu1", gender: "women", poongUrl: "https://poong.today/broadcast/fpahsdltu1" },
+  { name: "소주양", userId: "soju2022", gender: "women", poongUrl: "https://poong.today/broadcast/soju2022" },
+  { name: "임조이", userId: "dlaguswl501", gender: "women", poongUrl: "https://poong.today/broadcast/dlaguswl501" },
+  { name: "비타밍", userId: "seemin88", gender: "women", poongUrl: "https://poong.today/broadcast/seemin88" },
+  { name: "먼진", userId: "2meonjin", gender: "women", poongUrl: "https://poong.today/broadcast/2meonjin" },
+  { name: "아리송이", userId: "vldpfm2", gender: "women", poongUrl: "https://poong.today/broadcast/vldpfm2" },
+  { name: "진땅콩", userId: "wlswn6565", gender: "women", poongUrl: "https://poong.today/broadcast/wlswn6565" }
 ];
 
 const ELO_URLS = {
   men: "https://eloboard.com/men/bbs/board.php?bo_table=rank_list",
   women: "https://eloboard.com/women/bbs/board.php?bo_table=rank_list"
+  pado : "https://eloboard.com/women/bbs/board.php?bo_table=mix_rank_list"
 };
 
-// 실제 eloboard 표기명이 다르면 여기서 별칭 조정
+// eloboard 표기명이 다를 수 있는 멤버만 여기서 조정
 const ELO_NAME_MAP = {
   "김윤환": "김윤환",
-  "비타밍": "비타밍"
+  "이경민": "이경민",
+  "박수범": "박수범",
+  "사테": "김태영",
+  "박준오": "박준오",
+  "지동원": "지동원",
+  "배성흠": "배성흠",
+  "파도튜브": "파도튜브",
+
+  "토마토": "토마토",
+  "지두두": "지두두",
+  "햇살": "햇살",
+  "찌킹": "찌킹",
+  "치리": "치리",
+  "주하랑": "주하랑",
+  "소주양": "소주양",
+  "임조이": "임조이",
+  "비타밍": "비타밍",
+  "먼진": "먼진",
+  "아리송이": "아리송이",
+  "진땅콩": "진땅콩"
 };
 
 function cleanText(text) {
-  return String(text || "")
-    .replace(/\s+/g, " ")
-    .trim();
+  return String(text || "").replace(/\s+/g, " ").trim();
 }
 
 function normalizeName(text) {
@@ -52,7 +79,6 @@ function extractMetric(body, label) {
 
   const idx = lines.findIndex(line => line === label);
   if (idx === -1) return "";
-
   return cleanText(lines[idx + 1] || "");
 }
 
@@ -96,16 +122,12 @@ async function scrapeEloRankPage(page, url) {
 
 function parseEloRow(rowText) {
   const text = cleanText(rowText);
-
-  // 예:
-  // 83. 비타밍T 3승 5패 4승 5패 0승 0패 17전 7승 10패 41.2% 1117.9
   const rankMatch = text.match(/^(\d+)\.\s*/);
   if (!rankMatch) return null;
 
   const afterRank = text.replace(/^(\d+)\.\s*/, "");
   const firstToken = afterRank.split(" ")[0] || "";
 
-  // 이름+종족 토큰에서 종족 한 글자 제거
   let playerToken = firstToken;
   let race = "";
 
@@ -131,11 +153,8 @@ function parseEloRow(rowText) {
 
 function findMonthlyRecordFromRows(rows, playerName) {
   const target = normalizeName(getEloSearchName(playerName));
-  const parsedRows = rows
-    .map(r => parseEloRow(r.text))
-    .filter(Boolean);
+  const parsedRows = rows.map(r => parseEloRow(r.text)).filter(Boolean);
 
-  // 정확히 이름 일치하는 행만 찾기
   const exact = parsedRows.find(row => row.playerName === target);
   if (exact) {
     return {
@@ -172,7 +191,7 @@ async function main() {
       );
 
       eloRows[gender] = await scrapeEloRankPage(page, ELO_URLS[gender]);
-      console.log(`ELO ${gender} page loaded. rows=${eloRows[gender].length}`);
+      console.log(`ELO ${gender} loaded. rows=${eloRows[gender].length}`);
     } catch (e) {
       console.log(`ELO ${gender} ERROR:`, e.message);
       eloRows[gender] = [];
@@ -183,7 +202,7 @@ async function main() {
 
   const results = [];
 
-  for (const target of TEST_TARGETS) {
+  for (const target of TARGETS) {
     const page = await browser.newPage();
 
     try {
@@ -194,8 +213,6 @@ async function main() {
       const poongData = await scrapePoong(page, target);
       const eloData = findMonthlyRecordFromRows(eloRows[target.gender], target.name);
 
-      console.log("ELO DEBUG:", target.name, eloData.debugRow);
-
       const merged = {
         name: target.name,
         userId: target.userId,
@@ -205,8 +222,7 @@ async function main() {
         monthlyPoong: poongData.monthlyPoong || "",
         peakViewers: poongData.peakViewers || "",
         monthlyRecord: eloData.monthlyRecord,
-        monthlyWinRate: eloData.monthlyWinRate,
-        debugRow: eloData.debugRow
+        monthlyWinRate: eloData.monthlyWinRate
       };
 
       console.log("RESULT:", merged);
@@ -222,9 +238,7 @@ async function main() {
         monthlyPoong: "",
         peakViewers: "",
         monthlyRecord: "전적없음",
-        monthlyWinRate: "-",
-        debugRow: e.message,
-        error: e.message
+        monthlyWinRate: "-"
       });
     } finally {
       await page.close();
@@ -238,8 +252,8 @@ async function main() {
     items: results
   };
 
-  fs.writeFileSync("analysis_test.json", JSON.stringify(output, null, 2), "utf-8");
-  console.log("analysis_test.json saved");
+  fs.writeFileSync("analysis.json", JSON.stringify(output, null, 2), "utf-8");
+  console.log("analysis.json saved");
 }
 
 main().catch(console.error);

@@ -1,7 +1,10 @@
 name: Scrape Analysis Test
 
 on:
-  workflow_dispatch:  # ← 수동 실행 전용
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   scrape:
@@ -24,3 +27,11 @@ jobs:
 
       - name: Run analysis test
         run: node scrape_analysis.js
+
+      - name: Commit analysis_test.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis_test.json
+          git commit -m "Update analysis_test.json" || echo "no changes"
+          git push

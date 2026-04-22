@@ -27,7 +27,7 @@ const TARGETS = [
 
 const ELO_URLS = {
   men: "https://eloboard.com/men/bbs/board.php?bo_table=rank_list",
-  women: "https://eloboard.com/women/bbs/board.php?bo_table=rank_list"
+  women: "https://eloboard.com/women/bbs/board.php?bo_table=rank_list",
   pado : "https://eloboard.com/women/bbs/board.php?bo_table=mix_rank_list"
 };
 

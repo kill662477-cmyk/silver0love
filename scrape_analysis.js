@@ -154,7 +154,7 @@ async function main() {
         monthlyPoong: poongData.monthlyPoong || "",
         peakViewers: poongData.peakViewers || "",
         monthlyRecord: eloData.monthlyRecord,
-        monthlyWinRate: eloData.monthlyWinRate
+        monthlyWinRate: eloData.monthlyWinRate,
         debugBlock: eloData.debugBlock
       };
 

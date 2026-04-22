@@ -212,7 +212,8 @@ async function main() {
       );
 
       const poongData = await scrapePoong(page, target);
-      const eloData = findMonthlyRecordFromRows(eloRows[target.gender], target.name);
+    const eloKey = target.eloSource || target.gender;
+const eloData = findMonthlyRecordFromRows(eloRows[eloKey], target.name);
 
       const merged = {
         name: target.name,

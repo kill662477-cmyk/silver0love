@@ -21,7 +21,8 @@ const TARGETS = [
   { name: "비타밍", userId: "seemin88", bbsNo: "105540651" },
   { name: "먼진", userId: "2meonjin", bbsNo: "119304089" },
   { name: "아리송이", userId: "vldpfm2", bbsNo: "89090859" },
-  { name: "진땅콩", userId: "wlswn6565", bbsNo: "117225449" }
+  { name: "진땅콩", userId: "wlswn6565", bbsNo: "117225449" },
+  { name: "낭니", userId: "sksmsskdsl10", bbsNo: "123246295" }
 ];
 
 function sleep(ms) {

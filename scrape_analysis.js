@@ -22,7 +22,8 @@ const TARGETS = [
   { name: "비타밍", userId: "seemin88", gender: "women", poongUrl: "https://poong.today/broadcast/seemin88" },
   { name: "먼진", userId: "2meonjin", gender: "women", poongUrl: "https://poong.today/broadcast/2meonjin" },
   { name: "아리송이", userId: "vldpfm2", gender: "women", poongUrl: "https://poong.today/broadcast/vldpfm2" },
-  { name: "진땅콩", userId: "wlswn6565", gender: "women", poongUrl: "https://poong.today/broadcast/wlswn6565" }
+  { name: "진땅콩", userId: "wlswn6565", gender: "women", poongUrl: "https://poong.today/broadcast/wlswn6565" },
+  { name: "낭니", userId: "sksmsskdsl10", gender: "women", poongUrl: "https://poong.today/broadcast/sksmsskdsl10" }
 ];
 
 const ELO_URLS = {
@@ -53,7 +54,8 @@ const ELO_NAME_MAP = {
   "비타밍": "비타밍",
   "먼진": "먼진",
   "아리송이": "아리송이",
-  "진땅콩": "진땅콩"
+  "진땅콩": "진땅콩",
+  "낭니": "낭니"
 };
 
 function cleanText(text) {

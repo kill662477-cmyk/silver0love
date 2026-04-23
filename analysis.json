@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-04-22T21:20:39.936Z",
+  "checkedAt": "2026-04-23T13:53:09.080Z",
   "items": [
     {
       "name": "김윤환",
       "userId": "brainzerg7",
       "gender": "men",
-      "monthlyBroadcastTime": "168시간 1분",
-      "monthlyViewers": "1,986,598",
+      "monthlyBroadcastTime": "179시간 43분",
+      "monthlyViewers": "2,115,007",
       "monthlyPoong": "511,253",
       "peakViewers": "19,576",
       "monthlyRecord": "43전 18승 25패",
@@ -29,7 +29,7 @@
       "gender": "men",
       "monthlyBroadcastTime": "106시간 9분",
       "monthlyViewers": "66,866",
-      "monthlyPoong": "82,633",
+      "monthlyPoong": "83,133",
       "peakViewers": "912",
       "monthlyRecord": "29전 15승 14패",
       "monthlyWinRate": "51.7%"
@@ -60,8 +60,8 @@
       "name": "지동원",
       "userId": "rondobba",
       "gender": "men",
-      "monthlyBroadcastTime": "138시간 21분",
-      "monthlyViewers": "139,541",
+      "monthlyBroadcastTime": "149시간 23분",
+      "monthlyViewers": "145,362",
       "monthlyPoong": "114,416",
       "peakViewers": "2,533",
       "monthlyRecord": "23전 7승 16패",
@@ -95,10 +95,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "148시간 59분",
       "monthlyViewers": "974,419",
-      "monthlyPoong": "586,836",
+      "monthlyPoong": "588,389",
       "peakViewers": "6,606",
-      "monthlyRecord": "25전 16승 9패",
-      "monthlyWinRate": "64.0%"
+      "monthlyRecord": "26전 16승 10패",
+      "monthlyWinRate": "61.5%"
     },
     {
       "name": "지두두",
@@ -126,8 +126,8 @@
       "name": "찌킹",
       "userId": "alaelddl97",
       "gender": "women",
-      "monthlyBroadcastTime": "140시간 49분",
-      "monthlyViewers": "138,583",
+      "monthlyBroadcastTime": "152시간 47분",
+      "monthlyViewers": "146,773",
       "monthlyPoong": "171,506",
       "peakViewers": "607",
       "monthlyRecord": "38전 18승 20패",
@@ -137,9 +137,9 @@
       "name": "치리",
       "userId": "db001202",
       "gender": "women",
-      "monthlyBroadcastTime": "77시간 39분",
-      "monthlyViewers": "199,396",
-      "monthlyPoong": "254,670",
+      "monthlyBroadcastTime": "84시간 12분",
+      "monthlyViewers": "216,954",
+      "monthlyPoong": "256,788",
       "peakViewers": "1,749",
       "monthlyRecord": "12전 9승 3패",
       "monthlyWinRate": "75.0%"
@@ -150,7 +150,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "145시간 3분",
       "monthlyViewers": "509,887",
-      "monthlyPoong": "439,398",
+      "monthlyPoong": "441,006",
       "peakViewers": "5,234",
       "monthlyRecord": "31전 12승 19패",
       "monthlyWinRate": "38.7%"
@@ -159,9 +159,9 @@
       "name": "소주양",
       "userId": "soju2022",
       "gender": "women",
-      "monthlyBroadcastTime": "119시간 48분",
-      "monthlyViewers": "156,840",
-      "monthlyPoong": "201,694",
+      "monthlyBroadcastTime": "120시간 33분",
+      "monthlyViewers": "159,582",
+      "monthlyPoong": "203,438",
       "peakViewers": "884",
       "monthlyRecord": "53전 28승 25패",
       "monthlyWinRate": "52.8%"
@@ -183,18 +183,18 @@
       "gender": "women",
       "monthlyBroadcastTime": "91시간 35분",
       "monthlyViewers": "153,413",
-      "monthlyPoong": "231,881",
+      "monthlyPoong": "249,021",
       "peakViewers": "996",
-      "monthlyRecord": "19전 7승 12패",
-      "monthlyWinRate": "36.8%"
+      "monthlyRecord": "23전 9승 14패",
+      "monthlyWinRate": "39.1%"
     },
     {
       "name": "먼진",
       "userId": "2meonjin",
       "gender": "women",
-      "monthlyBroadcastTime": "144시간 48분",
-      "monthlyViewers": "191,587",
-      "monthlyPoong": "299,808",
+      "monthlyBroadcastTime": "155시간 2분",
+      "monthlyViewers": "200,732",
+      "monthlyPoong": "299,809",
       "peakViewers": "1,222",
       "monthlyRecord": "39전 16승 23패",
       "monthlyWinRate": "41.0%"
@@ -220,6 +220,17 @@
       "peakViewers": "1,789",
       "monthlyRecord": "25전 15승 10패",
       "monthlyWinRate": "60.0%"
+    },
+    {
+      "name": "낭니",
+      "userId": "sksmsskdsl10",
+      "gender": "women",
+      "monthlyBroadcastTime": "77시간 37분",
+      "monthlyViewers": "169,499",
+      "monthlyPoong": "557,265",
+      "peakViewers": "1,888",
+      "monthlyRecord": "전적없음",
+      "monthlyWinRate": "-"
     }
   ]
 }

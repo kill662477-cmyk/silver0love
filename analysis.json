@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-04-23T21:19:08.100Z",
+  "checkedAt": "2026-04-24T15:03:09.165Z",
   "items": [
     {
       "name": "김윤환",
@@ -93,8 +93,8 @@
       "name": "토마토",
       "userId": "freshtomato",
       "gender": "women",
-      "monthlyBroadcastTime": "148시간 59분",
-      "monthlyViewers": "974,419",
+      "monthlyBroadcastTime": "161시간 29분",
+      "monthlyViewers": "1,077,360",
       "monthlyPoong": "602,254",
       "peakViewers": "6,606",
       "monthlyRecord": "27전 16승 11패",
@@ -106,7 +106,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "168시간 34분",
       "monthlyViewers": "543,187",
-      "monthlyPoong": "449,919",
+      "monthlyPoong": "457,704",
       "peakViewers": "3,456",
       "monthlyRecord": "37전 14승 23패",
       "monthlyWinRate": "37.8%"
@@ -181,12 +181,12 @@
       "name": "비타밍",
       "userId": "seemin88",
       "gender": "women",
-      "monthlyBroadcastTime": "97시간 30분",
-      "monthlyViewers": "164,088",
-      "monthlyPoong": "253,438",
-      "peakViewers": "996",
-      "monthlyRecord": "27전 10승 17패",
-      "monthlyWinRate": "37.0%"
+      "monthlyBroadcastTime": "102시간 21분",
+      "monthlyViewers": "181,938",
+      "monthlyPoong": "259,621",
+      "peakViewers": "1,625",
+      "monthlyRecord": "29전 12승 17패",
+      "monthlyWinRate": "41.4%"
     },
     {
       "name": "먼진",
@@ -227,7 +227,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "86시간 17분",
       "monthlyViewers": "187,259",
-      "monthlyPoong": "564,171",
+      "monthlyPoong": "578,382",
       "peakViewers": "1,888",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

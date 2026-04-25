@@ -223,7 +223,7 @@ async function main() {
   const output = {
     checkedAt: new Date().toISOString(),
     visibleCount: 10,
-    items: deduped.slice(0, 10).map(({ postNo, ...rest }) => rest)
+    items: deduped.slice(0, 20).map(({ postNo, ...rest }) => rest)
   };
 
   fs.writeFileSync("notices.json", JSON.stringify(output, null, 2), "utf-8");

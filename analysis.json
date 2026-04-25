@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-04-24T21:02:52.514Z",
+  "checkedAt": "2026-04-25T15:03:02.483Z",
   "items": [
     {
       "name": "김윤환",
@@ -18,8 +18,8 @@
       "gender": "men",
       "monthlyBroadcastTime": "111시간 48분",
       "monthlyViewers": "823,563",
-      "monthlyPoong": "386,193",
-      "peakViewers": "6,941",
+      "monthlyPoong": "387,307",
+      "peakViewers": "22,069",
       "monthlyRecord": "45전 22승 23패",
       "monthlyWinRate": "48.9%"
     },
@@ -130,8 +130,8 @@
       "monthlyViewers": "146,773",
       "monthlyPoong": "171,506",
       "peakViewers": "607",
-      "monthlyRecord": "38전 18승 20패",
-      "monthlyWinRate": "47.4%"
+      "monthlyRecord": "39전 19승 20패",
+      "monthlyWinRate": "48.7%"
     },
     {
       "name": "치리",
@@ -163,8 +163,8 @@
       "monthlyViewers": "159,582",
       "monthlyPoong": "203,438",
       "peakViewers": "884",
-      "monthlyRecord": "53전 28승 25패",
-      "monthlyWinRate": "52.8%"
+      "monthlyRecord": "54전 29승 25패",
+      "monthlyWinRate": "53.7%"
     },
     {
       "name": "임조이",
@@ -174,8 +174,8 @@
       "monthlyViewers": "46,343",
       "monthlyPoong": "58,158",
       "peakViewers": "4,303",
-      "monthlyRecord": "1전 1승 0패",
-      "monthlyWinRate": "100.0%"
+      "monthlyRecord": "2전 1승 1패",
+      "monthlyWinRate": "50.0%"
     },
     {
       "name": "비타밍",
@@ -196,8 +196,8 @@
       "monthlyViewers": "200,732",
       "monthlyPoong": "299,809",
       "peakViewers": "1,222",
-      "monthlyRecord": "39전 16승 23패",
-      "monthlyWinRate": "41.0%"
+      "monthlyRecord": "41전 17승 24패",
+      "monthlyWinRate": "41.5%"
     },
     {
       "name": "아리송이",
@@ -207,8 +207,8 @@
       "monthlyViewers": "154,288",
       "monthlyPoong": "233,888",
       "peakViewers": "1,311",
-      "monthlyRecord": "11전 9승 2패",
-      "monthlyWinRate": "81.8%"
+      "monthlyRecord": "13전 10승 3패",
+      "monthlyWinRate": "76.9%"
     },
     {
       "name": "진땅콩",
@@ -218,8 +218,8 @@
       "monthlyViewers": "194,987",
       "monthlyPoong": "423,946",
       "peakViewers": "1,789",
-      "monthlyRecord": "25전 15승 10패",
-      "monthlyWinRate": "60.0%"
+      "monthlyRecord": "27전 15승 12패",
+      "monthlyWinRate": "55.6%"
     },
     {
       "name": "낭니",
@@ -227,7 +227,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "90시간 15분",
       "monthlyViewers": "197,576",
-      "monthlyPoong": "585,395",
+      "monthlyPoong": "616,236",
       "peakViewers": "1,888",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

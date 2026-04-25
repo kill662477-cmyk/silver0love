@@ -1,12 +1,20 @@
 {
-  "checkedAt": "2026-04-25T10:02:43.758Z",
+  "checkedAt": "2026-04-25T10:07:32.060Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지동원",
+      "writer": "지동원",
+      "userId": "rondobba",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/rondobba/post/193811671",
+      "summary": "오늘 대학대전 vs 뉴캣슬 지금 경민이형 방송에서 봬요..!"
+    },
     {
       "stationName": "주하랑",
       "writer": "주하랑",
       "userId": "fpahsdltu1",
-      "time": "58 minutes ago",
+      "time": "1 hours ago",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/193806263",
       "summary": "Notice오늘 7시 경민오빠 방송입니다 !! 이따만나용"
     },
@@ -73,14 +81,6 @@
       "time": "2026-04-24",
       "link": "https://www.sooplive.com/station/freshtomato/post/193704067",
       "summary": "Notice오늘은 토도기 열씨미 하게뜹니댜 내일 츠캄 vs 뉴캣슬 대학대전으로만나요 :) ❤️"
-    },
-    {
-      "stationName": "주하랑",
-      "writer": "주하랑",
-      "userId": "fpahsdltu1",
-      "time": "2026-04-24",
-      "link": "https://www.sooplive.com/station/fpahsdltu1/post/193703919",
-      "summary": "Notice오늘 은 연도기 해주러 비방입니당 마법의날이라 쉽지않네요 내일 스튜디오에서 만나용 안뇽!!!!!"
     }
   ]
 }

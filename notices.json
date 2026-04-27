@@ -1,7 +1,15 @@
 {
-  "checkedAt": "2026-04-27T11:57:42.402Z",
+  "checkedAt": "2026-04-27T12:02:50.017Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/194024281",
+      "summary": "😢 응원 하고 밥먹으러 왔어요 아쉽네요..ㅠㅠ 조이언니랑 먼진이랑 밥먹구 이써요 먹고 집가면 열한시는 될듯해요 내일 오겠습니다!!"
+    },
     {
       "stationName": "파도튜브",
       "writer": "파도튜브",
@@ -153,14 +161,6 @@
       "time": "2026-04-26",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/193898335",
       "summary": "Notice오늘 4시 30분쯤 올게용 이따만나요 !"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-04-25",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/193873205",
-      "summary": "공지 오늘 1경기 말도 안되는 경기 보여드려서 정말 죄송합니다.. 더욱 열심히 노력해서 다음엔 더 좋은 경기력보여드릴수있도록 할게요 연습 새벽까지 도와준 치리한테 너무 고맙고 경민쌤한테도 너무 감사하고 죄송합니다.. 내일 방송으로 올게요!!"
     }
   ]
 }

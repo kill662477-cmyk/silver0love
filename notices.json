@@ -1,7 +1,15 @@
 {
-  "checkedAt": "2026-04-27T06:17:37.020Z",
+  "checkedAt": "2026-04-27T06:22:33.666Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/193996171",
+      "summary": "ASL 일장쌤 응원! 일짱곰쌤 응원갑니다 4시전후로 방송 킬게요 응원하고 올게요 덕몽 크루단체컨텐츠만 해봤지 새벽팟은 처음이었는데 조금 고수가 되어씁니다 아니다 어제 고수팟이라던데 하는 거보니 저도 이미 고수인 거 같아요 재밌게 했구 언능 올게요! 이따봬요"
+    },
     {
       "stationName": "토마토",
       "writer": "토마토",
@@ -153,14 +161,6 @@
       "time": "2026-04-25",
       "link": "https://www.sooplive.com/station/rondobba/post/193811671",
       "summary": "오늘 대학대전 vs 뉴캣슬 지금 경민이형 방송에서 봬요..!"
-    },
-    {
-      "stationName": "주하랑",
-      "writer": "주하랑",
-      "userId": "fpahsdltu1",
-      "time": "2026-04-25",
-      "link": "https://www.sooplive.com/station/fpahsdltu1/post/193806263",
-      "summary": "Notice오늘 7시 경민오빠 방송입니다 !! 이따만나용"
     }
   ]
 }

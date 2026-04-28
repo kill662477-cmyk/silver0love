@@ -1,12 +1,20 @@
 {
-  "checkedAt": "2026-04-28T09:32:46.895Z",
+  "checkedAt": "2026-04-28T09:37:40.035Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "파도튜브",
+      "writer": "파도튜브",
+      "userId": "kthrs9207",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/kthrs9207/post/194103829",
+      "summary": "Notice2026-04-28 방송공지 안녕하세요! 오늘 ASL도 정말 재밌겠네요 ㅎㅎ 프테전!! 샤워하구 19시 쯤 키도록 하겠습니다!"
+    },
     {
       "stationName": "토마토",
       "writer": "토마토",
       "userId": "freshtomato",
-      "time": "22 minutes ago",
+      "time": "26 minutes ago",
       "link": "https://www.sooplive.com/station/freshtomato/post/194101605",
       "summary": "Notice오늘~!~!~ 6시 40분쯤? 올게용가리"
     },
@@ -14,7 +22,7 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "26 minutes ago",
+      "time": "31 minutes ago",
       "link": "https://www.sooplive.com/station/rondobba/post/194101235",
       "summary": "오늘 윤환이형 방송에서 ASL해설 있습니다 7시 on이요"
     },
@@ -22,7 +30,7 @@
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "45 minutes ago",
+      "time": "50 minutes ago",
       "link": "https://www.sooplive.com/station/db001202/post/194099743",
       "summary": "뱅공뱅뱅공 오느른 여섯시반전에 올게요 어제 몇시간 안자고 에셀 보러 갔다가 스폰 조금 하려구 방송켜구 그래서 기절해써욤.. 금방 준비해서 올게요 이따봬요 !! 방셀 오늘 방송끝나고 엠티가기 전에 다 갈게요!"
     },
@@ -104,7 +112,7 @@
       "userId": "kthrs9207",
       "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/kthrs9207/post/194010717",
-      "summary": "Notice2026-04-27 방송공지 안녕하세요! 깁스 빨리 풀고 싶네영.. 불편해서 너무 괴롭네요 ㅠㅠ 오늘도 19시 쯤 키도록 하겠습니다!"
+      "summary": "2026-04-27 방송공지 안녕하세요! 깁스 빨리 풀고 싶네영.. 불편해서 너무 괴롭네요 ㅠㅠ 오늘도 19시 쯤 키도록 하겠습니다!"
     },
     {
       "stationName": "아리송이",
@@ -153,14 +161,6 @@
       "time": "2026-04-27",
       "link": "https://www.sooplive.com/station/freshtomato/post/193982505",
       "summary": "Notice와 나 덕몽 이방 저방으로 리딸하는데 내 입좀 틀어막고 싶다 .. 트롤인데 목소리만 커서 미안해요 ㅠㅠㅠㅠㅠㅠ근데 웃긴 장면 짱많음 윤환이오빠 변장술사 사건 클템 마토 윤환 시점으로 봤는데 ㄹㅇ ㅋㅋㅋㅋㅋㅁㅊ 클템오빠 시점으론 윤환>마토 변장 마토 시점으론 윤환>클템 변장 ..."
-    },
-    {
-      "stationName": "지두두",
-      "writer": "지두두",
-      "userId": "wjswlgns09",
-      "time": "30분전",
-      "link": "https://www.sooplive.com/station/wjswlgns09/post/193980175",
-      "summary": "오뱅공 으ㅚ아 덕몽어스 개꿀잼 이제 드뎌 오리로도 많이 썰어봤다 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ 오느른 5시30분 전에 오겠심더 이따 보자요!!!"
     }
   ]
 }

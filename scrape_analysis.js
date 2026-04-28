@@ -1,6 +1,9 @@
 const fs = require("fs");
 const puppeteer = require("puppeteer");
 
+const OUTPUT_FILE = "analysis.json";
+const FAILED_FILE = "elo_failed.json";
+
 const TARGETS = [
   { name: "김윤환", userId: "brainzerg7", gender: "men", poongUrl: "https://poong.today/broadcast/brainzerg7" },
   { name: "이경민", userId: "rudals5467", gender: "men", poongUrl: "https://poong.today/broadcast/rudals5467" },
@@ -32,7 +35,6 @@ const ELO_URLS = {
   pado: "https://eloboard.com/women/bbs/board.php?bo_table=mix_rank_list"
 };
 
-// 실제 eloboard 표기명이 다르면 여기서 수정
 const ELO_NAME_MAP = {
   "김윤환": "김윤환",
   "이경민": "이경민",
@@ -58,10 +60,12 @@ const ELO_NAME_MAP = {
   "낭니": "낭니"
 };
 
+function sleep(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
+
 function cleanText(text) {
-  return String(text || "")
-    .replace(/\s+/g, " ")
-    .trim();
+  return String(text || "").replace(/\s+/g, " ").trim();
 }
 
 function normalizeName(text) {
@@ -87,13 +91,42 @@ function extractMetric(body, label) {
   return cleanText(lines[idx + 1] || "");
 }
 
+function loadPrevData() {
+  try {
+    if (!fs.existsSync(OUTPUT_FILE)) return { items: [] };
+    return JSON.parse(fs.readFileSync(OUTPUT_FILE, "utf-8"));
+  } catch (e) {
+    console.log("기존 analysis.json 읽기 실패:", e.message);
+    return { items: [] };
+  }
+}
+
+function getPrevItem(prevData, name) {
+  return (prevData.items || []).find(v => v.name === name) || {};
+}
+
+async function preparePage(browser) {
+  const page = await browser.newPage();
+
+  await page.setUserAgent(
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
+  );
+
+  await page.setViewport({ width: 1365, height: 900 });
+
+  page.setDefaultNavigationTimeout(60000);
+  page.setDefaultTimeout(60000);
+
+  return page;
+}
+
 async function scrapePoong(page, target) {
   await page.goto(target.poongUrl, {
     waitUntil: "networkidle2",
-    timeout: 45000
+    timeout: 60000
   });
 
-  await new Promise(r => setTimeout(r, 2500));
+  await sleep(2500);
 
   const body = await page.evaluate(() => document.body.innerText);
 
@@ -105,13 +138,47 @@ async function scrapePoong(page, target) {
   };
 }
 
+async function scrapePoongWithRetry(browser, target, prev) {
+  for (let i = 0; i < 3; i++) {
+    const page = await preparePage(browser);
+
+    try {
+      console.log(`POONG TRY ${i + 1}: ${target.name}`);
+
+      const data = await scrapePoong(page, target);
+
+      await page.close();
+
+      return {
+        monthlyBroadcastTime: data.monthlyBroadcastTime || prev.monthlyBroadcastTime || "",
+        monthlyViewers: data.monthlyViewers || prev.monthlyViewers || "",
+        monthlyPoong: data.monthlyPoong || prev.monthlyPoong || "",
+        peakViewers: data.peakViewers || prev.peakViewers || ""
+      };
+    } catch (e) {
+      console.log(`POONG ERROR ${target.name} try=${i + 1}:`, e.message);
+      await page.close().catch(() => {});
+      await sleep(3000 + i * 2000);
+    }
+  }
+
+  console.log(`POONG FALLBACK 기존값 유지: ${target.name}`);
+
+  return {
+    monthlyBroadcastTime: prev.monthlyBroadcastTime || "",
+    monthlyViewers: prev.monthlyViewers || "",
+    monthlyPoong: prev.monthlyPoong || "",
+    peakViewers: prev.peakViewers || ""
+  };
+}
+
 async function scrapeEloRankPage(page, url, sourceName) {
   await page.goto(url, {
     waitUntil: "networkidle2",
-    timeout: 45000
+    timeout: 60000
   });
 
-  await new Promise(r => setTimeout(r, 5000));
+  await sleep(6000);
 
   const rows = await page.evaluate(() => {
     return Array.from(document.querySelectorAll("tr"))
@@ -123,20 +190,53 @@ async function scrapeEloRankPage(page, url, sourceName) {
   });
 
   console.log(`ELO ${sourceName} loaded. rows=${rows.length}`);
+
+  if (!rows || rows.length < 5) {
+    throw new Error(`ELO ${sourceName} rows too small: ${rows.length}`);
+  }
+
   return rows;
+}
+
+async function scrapeEloWithRetry(browser, source) {
+  const url = ELO_URLS[source];
+
+  for (let i = 0; i < 3; i++) {
+    const page = await preparePage(browser);
+
+    try {
+      console.log(`ELO TRY ${i + 1}: ${source}`);
+
+      const rows = await scrapeEloRankPage(page, url, source);
+
+      await page.close();
+
+      return {
+        ok: true,
+        rows,
+        error: ""
+      };
+    } catch (e) {
+      console.log(`ELO ERROR ${source} try=${i + 1}:`, e.message);
+      await page.close().catch(() => {});
+      await sleep(4000 + i * 3000);
+    }
+  }
+
+  return {
+    ok: false,
+    rows: [],
+    error: `ELO ${source} 최종 실패`
+  };
 }
 
 function parseEloRow(rowText) {
   const text = cleanText(rowText);
 
-  // 예: 83. 비타밍T 3승 5패 4승 5패 0승 0패 17전 7승 10패 41.2% 1117.9
-  // 혹은 43. 김윤환 Z ... 처럼 이름과 종족 사이 공백이 있을 수도 있음
   const rankMatch = text.match(/^(\d+)\.\s*/);
   if (!rankMatch) return null;
 
   const afterRank = text.replace(/^(\d+)\.\s*/, "");
-
-  // 첫 토큰이 이름, 그다음이 종족일 수도 있고 이름+종족일 수도 있음
   const parts = afterRank.split(" ").filter(Boolean);
   if (!parts.length) return null;
 
@@ -157,20 +257,25 @@ function parseEloRow(rowText) {
 
   return {
     raw: text,
-    rank: rankMatch ? rankMatch[1] : "",
+    rank: rankMatch[1],
     playerName: playerToken,
     race,
-    monthlyRecord: recordMatch ? cleanText(recordMatch[1]) : "전적없음",
-    monthlyWinRate: rateMatch ? cleanText(rateMatch[1]) : "-"
+    monthlyRecord: recordMatch ? cleanText(recordMatch[1]) : "",
+    monthlyWinRate: rateMatch ? cleanText(rateMatch[1]) : ""
   };
 }
 
 function findMonthlyRecordFromRows(rows, playerName) {
+  if (!rows || rows.length === 0) {
+    return null;
+  }
+
   const target = normalizeName(getEloSearchName(playerName));
   const parsedRows = rows.map(r => parseEloRow(r.text)).filter(Boolean);
 
   const exact = parsedRows.find(row => row.playerName === target);
-  if (exact) {
+
+  if (exact && exact.monthlyRecord && exact.monthlyWinRate) {
     return {
       monthlyRecord: exact.monthlyRecord,
       monthlyWinRate: exact.monthlyWinRate,
@@ -178,17 +283,20 @@ function findMonthlyRecordFromRows(rows, playerName) {
     };
   }
 
-  return {
-    monthlyRecord: "전적없음",
-    monthlyWinRate: "-",
-    debugRow: "name not found"
-  };
+  return null;
 }
 
 async function main() {
+  const prevData = loadPrevData();
+  const failed = [];
+
   const browser = await puppeteer.launch({
     headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    args: [
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage"
+    ]
   });
 
   const eloRows = {
@@ -197,67 +305,71 @@ async function main() {
     pado: []
   };
 
+  const eloStatus = {
+    men: false,
+    women: false,
+    pado: false
+  };
+
   for (const source of ["men", "women", "pado"]) {
-    const page = await browser.newPage();
+    const result = await scrapeEloWithRetry(browser, source);
 
-    try {
-      await page.setUserAgent(
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
-      );
+    eloRows[source] = result.rows;
+    eloStatus[source] = result.ok;
 
-      eloRows[source] = await scrapeEloRankPage(page, ELO_URLS[source], source);
-    } catch (e) {
-      console.log(`ELO ${source} ERROR:`, e.message);
-      eloRows[source] = [];
-    } finally {
-      await page.close();
+    if (!result.ok) {
+      failed.push({
+        type: "elo_source",
+        source,
+        reason: result.error
+      });
     }
   }
 
   const results = [];
 
   for (const target of TARGETS) {
-    const page = await browser.newPage();
+    const prev = getPrevItem(prevData, target.name);
 
-    try {
-      await page.setUserAgent(
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36"
-      );
+    const poongData = await scrapePoongWithRetry(browser, target, prev);
 
-      const poongData = await scrapePoong(page, target);
-      const eloKey = target.eloSource || target.gender;
-      const eloData = findMonthlyRecordFromRows(eloRows[eloKey], target.name);
+    const eloKey = target.eloSource || target.gender;
+    const eloData = findMonthlyRecordFromRows(eloRows[eloKey], target.name);
 
-      const merged = {
+    let monthlyRecord = "";
+    let monthlyWinRate = "";
+
+    if (eloData) {
+      monthlyRecord = eloData.monthlyRecord;
+      monthlyWinRate = eloData.monthlyWinRate;
+    } else {
+      monthlyRecord = prev.monthlyRecord || "전적없음";
+      monthlyWinRate = prev.monthlyWinRate || "-";
+
+      failed.push({
+        type: "elo_player",
         name: target.name,
-        userId: target.userId,
-        gender: target.gender,
-        monthlyBroadcastTime: poongData.monthlyBroadcastTime || "",
-        monthlyViewers: poongData.monthlyViewers || "",
-        monthlyPoong: poongData.monthlyPoong || "",
-        peakViewers: poongData.peakViewers || "",
-        monthlyRecord: eloData.monthlyRecord,
-        monthlyWinRate: eloData.monthlyWinRate
-      };
-
-      console.log("RESULT:", merged);
-      results.push(merged);
-    } catch (e) {
-      console.log("ERROR:", target.name, e.message);
-      results.push({
-        name: target.name,
-        userId: target.userId,
-        gender: target.gender,
-        monthlyBroadcastTime: "",
-        monthlyViewers: "",
-        monthlyPoong: "",
-        peakViewers: "",
-        monthlyRecord: "전적없음",
-        monthlyWinRate: "-"
+        eloKey,
+        reason: eloStatus[eloKey] ? "이름 매칭 실패 또는 파싱 실패 - 기존값 유지" : "ELO 소스 로딩 실패 - 기존값 유지",
+        fallbackRecord: monthlyRecord,
+        fallbackWinRate: monthlyWinRate
       });
-    } finally {
-      await page.close();
     }
+
+    const merged = {
+      name: target.name,
+      userId: target.userId,
+      gender: target.gender,
+      monthlyBroadcastTime: poongData.monthlyBroadcastTime || "",
+      monthlyViewers: poongData.monthlyViewers || "",
+      monthlyPoong: poongData.monthlyPoong || "",
+      peakViewers: poongData.peakViewers || "",
+      monthlyRecord,
+      monthlyWinRate
+    };
+
+    console.log("RESULT:", merged);
+    results.push(merged);
   }
 
   await browser.close();
@@ -267,8 +379,14 @@ async function main() {
     items: results
   };
 
-  fs.writeFileSync("analysis.json", JSON.stringify(output, null, 2), "utf-8");
-  console.log("analysis.json saved");
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2), "utf-8");
+  fs.writeFileSync(FAILED_FILE, JSON.stringify({
+    checkedAt: new Date().toISOString(),
+    failed
+  }, null, 2), "utf-8");
+
+  console.log(`${OUTPUT_FILE} saved`);
+  console.log(`${FAILED_FILE} saved`);
 }
 
 main().catch(err => {

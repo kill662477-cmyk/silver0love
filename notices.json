@@ -1,7 +1,15 @@
 {
-  "checkedAt": "2026-04-28T06:12:42.459Z",
+  "checkedAt": "2026-04-28T06:17:57.500Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "진땅콩",
+      "writer": "진땅콩",
+      "userId": "wlswn6565",
+      "time": "5 minutes ago",
+      "link": "https://www.sooplive.com/station/wlswn6565/post/194089145",
+      "summary": "휴방공지 오늘 밀린 숙제 하구 짐싸고 잠 푹자고 내일 엠티 잘 다녀올게요 !! 다들 내일 봐요 ㅎㅁㅎ + 어제수범쌤 피드백 짐싸면서 다시보게씁니당"
+    },
     {
       "stationName": "찌킹",
       "writer": "찌킹",
@@ -153,14 +161,6 @@
       "time": "2026-04-26",
       "link": "https://www.sooplive.com/station/wlswn6565/post/193902499",
       "summary": "오늘 5시30분까지 오겠습니다 앞으루 여러 빌드 다양하게 연습해볼게요"
-    },
-    {
-      "stationName": "치리",
-      "writer": "치리",
-      "userId": "db001202",
-      "time": "2026-04-26",
-      "link": "https://www.sooplive.com/station/db001202/post/193902245",
-      "summary": "일요일 오늘 다섯시반쯤 올게용!! 이제 낮에 자니까 덥네요 ㅜ 이따보쟈이~~"
     }
   ]
 }

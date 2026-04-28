@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-04-28T13:31:56.979Z",
+  "checkedAt": "2026-04-28T13:36:21.980Z",
   "items": [
     {
       "name": "김윤환",
@@ -86,8 +86,8 @@
       "monthlyViewers": "29,913",
       "monthlyPoong": "130,798",
       "peakViewers": "305",
-      "monthlyRecord": "전적없음",
-      "monthlyWinRate": "-"
+      "monthlyRecord": "3전 2승 1패",
+      "monthlyWinRate": "66.7%"
     },
     {
       "name": "토마토",
@@ -139,7 +139,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "100시간 40분",
       "monthlyViewers": "245,973",
-      "monthlyPoong": "284,516",
+      "monthlyPoong": "284,515",
       "peakViewers": "1,749",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"
@@ -161,7 +161,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "135시간 40분",
       "monthlyViewers": "173,110",
-      "monthlyPoong": "227,286",
+      "monthlyPoong": "227,176",
       "peakViewers": "884",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"
@@ -227,7 +227,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "103시간 59분",
       "monthlyViewers": "233,978",
-      "monthlyPoong": "673,232",
+      "monthlyPoong": "673,068",
       "peakViewers": "3,699",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

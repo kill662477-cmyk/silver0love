@@ -1,12 +1,20 @@
 {
-  "checkedAt": "2026-04-28T08:07:33.102Z",
+  "checkedAt": "2026-04-28T08:12:45.981Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "주하랑",
+      "writer": "주하랑",
+      "userId": "fpahsdltu1",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/fpahsdltu1/post/194096675",
+      "summary": "Notice오늘 6시쯤 올게용 !! 어제 에어컨 청소해주신분이 내슬리퍼 인형에 신겨주고 가셨음 ㅋㅋㅋㅋㅋㅋㅋ 겁나어이없넹 ㅠㅠ 지나가다 슬리퍼가 여기왜있지하고 봤더니 이따만나용 ~~!"
+    },
     {
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "39 minutes ago",
+      "time": "44 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/194093805",
       "summary": "오뱅 오늘 뚜처리쿤 응원갑니둥! 많이 응원해주세요!! 두두언니랑 같이 야방 할랬는데 오늘 as센터도 들리구 해야해서 가서 만나기루해따여>_< 💗 ㅇㄸㅂㅈ!"
     },
@@ -14,7 +22,7 @@
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "1 hours ago",
+      "time": "2 hours ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/194089145",
       "summary": "휴방공지 오늘 밀린 숙제 하구 짐싸고 잠 푹자고 내일 엠티 잘 다녀올게요 !! 다들 내일 봐요 ㅎㅁㅎ + 어제수범쌤 피드백 짐싸면서 다시보게씁니당"
     },
@@ -153,14 +161,6 @@
       "time": "2026-04-26",
       "link": "https://www.sooplive.com/station/freshtomato/post/193910895",
       "summary": "Notice오늘!! 6시반쯤 올게용가리"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-04-26",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/193910603",
-      "summary": "오뱅겅 병원댕겨오느라 좀 늦었다여 오늘7시에 올게요! 감기 걸려서 컨디션이 안좋아요 ㅠㅠ 오늘 텐션이 좀 안좋아도 이해부탁드려용"
     }
   ]
 }

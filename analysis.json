@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-02T13:59:07.025Z",
+  "checkedAt": "2026-05-02T15:02:47.222Z",
   "items": [
     {
       "name": "김윤환",
@@ -7,8 +7,8 @@
       "gender": "men",
       "monthlyBroadcastTime": "12시간 18분",
       "monthlyViewers": "115,174",
-      "monthlyPoong": "69,820",
-      "peakViewers": "8,085",
+      "monthlyPoong": "71,260",
+      "peakViewers": "8,499",
       "monthlyRecord": "4전 3승 1패",
       "monthlyWinRate": "75.0%"
     },
@@ -18,10 +18,10 @@
       "gender": "men",
       "monthlyBroadcastTime": "0시간 0분",
       "monthlyViewers": "0",
-      "monthlyPoong": "26,038",
+      "monthlyPoong": "27,900",
       "peakViewers": "3,272",
-      "monthlyRecord": "전적없음",
-      "monthlyWinRate": "-"
+      "monthlyRecord": "1전 0승 1패",
+      "monthlyWinRate": "0.0%"
     },
     {
       "name": "박수범",
@@ -63,7 +63,7 @@
       "monthlyBroadcastTime": "8시간 50분",
       "monthlyViewers": "4,496",
       "monthlyPoong": "13,551",
-      "peakViewers": "242",
+      "peakViewers": "369",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"
     },
@@ -95,7 +95,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "12시간 57분",
       "monthlyViewers": "71,185",
-      "monthlyPoong": "46,372",
+      "monthlyPoong": "46,382",
       "peakViewers": "4,007",
       "monthlyRecord": "3전 1승 2패",
       "monthlyWinRate": "33.3%"
@@ -108,8 +108,8 @@
       "monthlyViewers": "24,649",
       "monthlyPoong": "17,472",
       "peakViewers": "1,935",
-      "monthlyRecord": "7전 1승 6패",
-      "monthlyWinRate": "14.3%"
+      "monthlyRecord": "8전 2승 6패",
+      "monthlyWinRate": "25.0%"
     },
     {
       "name": "햇살",
@@ -183,7 +183,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "0시간 0분",
       "monthlyViewers": "0",
-      "monthlyPoong": "35,220",
+      "monthlyPoong": "35,223",
       "peakViewers": "692",
       "monthlyRecord": "1전 1승 0패",
       "monthlyWinRate": "100.0%"
@@ -227,7 +227,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "10시간 6분",
       "monthlyViewers": "60,361",
-      "monthlyPoong": "98,753",
+      "monthlyPoong": "103,448",
       "peakViewers": "1,702",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

@@ -1,12 +1,20 @@
 {
-  "checkedAt": "2026-05-02T08:42:39.633Z",
+  "checkedAt": "2026-05-02T08:47:36.292Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "토마토",
+      "writer": "토마토",
+      "userId": "freshtomato",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/freshtomato/post/194495679",
+      "summary": "Notice오늘~!~! 6시30~40분쯤 언넝 준비하고올게용 ㅠ3ㅠ~~ 지금까지 꿀잠자따!!"
+    },
     {
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "2 minutes ago",
+      "time": "7 minutes ago",
       "link": "https://www.sooplive.com/station/db001202/post/194495347",
       "summary": "뱅뱅공공 여섯시쯤입니다!! 언능 준비하고 올게요 푹 쉬고 왔습니댜 밀리데이 가즈아 주노쌤 괴롭히러 올게요 이따봬요"
     },
@@ -14,7 +22,7 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "1 minutes ago",
+      "time": "6 minutes ago",
       "link": "https://www.sooplive.com/station/rondobba/post/194495337",
       "summary": "오뱅공 6시 50분까지 오겠습니닷"
     },
@@ -81,14 +89,6 @@
       "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/rondobba/post/194389961",
       "summary": "오뱅공 6시 40분 까지 오겠습니닷"
-    },
-    {
-      "stationName": "토마토",
-      "writer": "토마토",
-      "userId": "freshtomato",
-      "time": "2026-05-01",
-      "link": "https://www.sooplive.com/station/freshtomato/post/194387629",
-      "summary": "Notice공지!! 오늘 5시 40분쯤 올게용가리~~코더"
     },
     {
       "stationName": "진땅콩",

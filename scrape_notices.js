@@ -1,15 +1,7 @@
 const fs = require("fs");
-const puppeteer = require("puppeteer");
-
-const fs = require("fs");
 const path = require("path");
 const puppeteer = require("puppeteer");
-
-const TARGETS = loadTargets()
-  .filter(t => t.enabled !== false)
-  .filter(t => t.noticeEnabled !== false)
-  .filter(t => t.name && t.userId && t.bbsNo);
-
+const TARGETS_FILE = path.join(__dirname, "targets.json");
 function loadTargets() {
   try {
     const raw = JSON.parse(fs.readFileSync(TARGETS_FILE, "utf-8"));
@@ -23,7 +15,10 @@ function loadTargets() {
     return [];
   }
 }
-
+const TARGETS = loadTargets()
+  .filter(t => t.enabled !== false)
+  .filter(t => t.noticeEnabled !== false)
+  .filter(t => t.name && t.userId && t.bbsNo);
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }

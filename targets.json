@@ -1,0 +1,237 @@
+{
+  "updatedAt": "",
+  "items": [
+    {
+      "name": "김윤환",
+      "userId": "brainzerg7",
+      "bbsNo": "54143154",
+      "gender": "men",
+      "poongUrl": "https://poong.today/broadcast/brainzerg7",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "이경민",
+      "userId": "rudals5467",
+      "bbsNo": "65249107",
+      "gender": "men",
+      "poongUrl": "https://poong.today/broadcast/rudals5467",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "박수범",
+      "userId": "jihoon002",
+      "bbsNo": "106970519",
+      "gender": "men",
+      "poongUrl": "https://poong.today/broadcast/jihoon002",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "사테",
+      "userId": "hoonykkk",
+      "bbsNo": "1371967",
+      "gender": "men",
+      "poongUrl": "https://poong.today/broadcast/hoonykkk",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "박준오",
+      "userId": "h78ert",
+      "bbsNo": "1489236",
+      "gender": "men",
+      "poongUrl": "https://poong.today/broadcast/h78ert",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "지동원",
+      "userId": "rondobba",
+      "bbsNo": "40202570",
+      "gender": "men",
+      "poongUrl": "https://poong.today/broadcast/rondobba",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "배성흠",
+      "userId": "goodzerg",
+      "bbsNo": "58482962",
+      "gender": "men",
+      "poongUrl": "https://poong.today/broadcast/goodzerg",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "파도튜브",
+      "userId": "kthrs9207",
+      "bbsNo": "4130352",
+      "gender": "men",
+      "eloSource": "pado",
+      "poongUrl": "https://poong.today/broadcast/kthrs9207",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "토마토",
+      "userId": "freshtomato",
+      "bbsNo": "79127541",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/freshtomato",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "지두두",
+      "userId": "wjswlgns09",
+      "bbsNo": "41739132",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/wjswlgns09",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "햇살",
+      "userId": "thelddl",
+      "bbsNo": "19332732",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/thelddl",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "찌킹",
+      "userId": "alaelddl97",
+      "bbsNo": "122264133",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/alaelddl97",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "치리",
+      "userId": "db001202",
+      "bbsNo": "102538363",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/db001202",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "주하랑",
+      "userId": "fpahsdltu1",
+      "bbsNo": "88012442",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/fpahsdltu1",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "소주양",
+      "userId": "soju2022",
+      "bbsNo": "94261520",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/soju2022",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "임조이",
+      "userId": "dlaguswl501",
+      "bbsNo": "101549531",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/dlaguswl501",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "비타밍",
+      "userId": "seemin88",
+      "bbsNo": "105540651",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/seemin88",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "먼진",
+      "userId": "2meonjin",
+      "bbsNo": "119304089",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/2meonjin",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "아리송이",
+      "userId": "vldpfm2",
+      "bbsNo": "89090859",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/vldpfm2",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "진땅콩",
+      "userId": "wlswn6565",
+      "bbsNo": "117225449",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/wlswn6565",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "낭니",
+      "userId": "sksmsskdsl10",
+      "bbsNo": "123246295",
+      "gender": "women",
+      "poongUrl": "https://poong.today/broadcast/sksmsskdsl10",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    }
+  ]
+}

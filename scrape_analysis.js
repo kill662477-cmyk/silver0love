@@ -4,9 +4,6 @@ const puppeteer = require("puppeteer");
 
 const OUTPUT_FILE = "analysis.json";
 const FAILED_FILE = "elo_failed.json";
-
-const path = require("path");
-
 const TARGETS_FILE = path.join(__dirname, "targets.json");
 
 function loadTargets() {

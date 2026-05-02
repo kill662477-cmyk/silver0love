@@ -1,24 +1,27 @@
 const fs = require("fs");
+const path = require("path");
 const puppeteer = require("puppeteer");
 
-const TARGETS_FILE = "targets.json";
+const TARGETS_FILE = path.join(__dirname, "targets.json");
 
 function loadTargets() {
   try {
     const raw = JSON.parse(fs.readFileSync(TARGETS_FILE, "utf-8"));
-    const list = Array.isArray(raw) ? raw : raw.items;
+    const list = Array.isArray(raw) ? raw : (raw.items || []);
 
-    return list
-      .filter(t => t.enabled !== false)
-      .filter(t => t.noticeEnabled !== false)
-      .filter(t => t.bbsNo);
+    console.log("TARGETS loaded:", list.length);
+
+    return list;
   } catch (e) {
     console.error("targets.json 읽기 실패:", e.message);
     return [];
   }
 }
 
-const TARGETS = loadTargets();
+const TARGETS = loadTargets()
+  .filter(t => t.enabled !== false)
+  .filter(t => t.noticeEnabled !== false)
+  .filter(t => t.name && t.userId && t.bbsNo);
 
 function sleep(ms) {
   return new Promise(r => setTimeout(r, ms));

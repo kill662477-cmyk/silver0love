@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-03T06:47:32.953Z",
+  "checkedAt": "2026-05-03T06:52:29.542Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "진땅콩",
+      "writer": "진땅콩",
+      "userId": "wlswn6565",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/wlswn6565/post/194586099",
+      "postNo": 194586099,
+      "summary": "오방공 쏘리쏘리 일찍오려했는데 오늘 좀이따 빌드 받습니다 ㅎ; 6시 30분 쯤 ? ㅎㅎ 킬듯 이따보쟝"
+    },
     {
       "stationName": "지동원",
       "writer": "지동원",
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/kthrs9207/post/194395711",
       "postNo": 194395711,
       "summary": "방송공지 안녕하세요! 5월 첫날이네요! 시간 참 빠르다.. 내일 오전에 드디어 깁스를 풀러갑니다.. 하지만 검사는 다시 받아야해서 완전히 풀지는 모르겠네용.. 너무 불편.. 오늘도 19시 쯤 키도록 하겠습니다!"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-01",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/194393103",
-      "postNo": 194393103,
-      "summary": "오뱅겅 세븐 어 클락 벌써 메이(may) 달이네용 이따보쟝!💗💗"
     }
   ]
 }

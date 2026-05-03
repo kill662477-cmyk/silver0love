@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-03T05:02:46.375Z",
+  "checkedAt": "2026-05-03T05:07:32.410Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지동원",
+      "writer": "지동원",
+      "userId": "rondobba",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/rondobba/post/194579299",
+      "postNo": 194579299,
+      "summary": "2시 30분에 타밍이 방송에서 봬용"
+    },
     {
       "stationName": "비타밍",
       "writer": "비타밍",
       "userId": "seemin88",
-      "time": "3 minutes ago",
+      "time": "8 minutes ago",
       "link": "https://www.sooplive.com/station/seemin88/post/194578973",
       "postNo": 194578973,
       "summary": "2:30 와서 세팅하구있는데 다하고 키면 2시30분일거같습니당!! 늦어서 죄송합니다 이따봬욤!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/vldpfm2/post/194393103",
       "postNo": 194393103,
       "summary": "오뱅겅 세븐 어 클락 벌써 메이(may) 달이네용 이따보쟝!💗💗"
-    },
-    {
-      "stationName": "지동원",
-      "writer": "지동원",
-      "userId": "rondobba",
-      "time": "2026-05-01",
-      "link": "https://www.sooplive.com/station/rondobba/post/194389961",
-      "postNo": 194389961,
-      "summary": "오뱅공 6시 40분 까지 오겠습니닷"
     }
   ]
 }

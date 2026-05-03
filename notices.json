@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-03T04:57:38.503Z",
+  "checkedAt": "2026-05-03T05:02:46.375Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "비타밍",
+      "writer": "비타밍",
+      "userId": "seemin88",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/seemin88/post/194578973",
+      "postNo": 194578973,
+      "summary": "2:30 와서 세팅하구있는데 다하고 키면 2시30분일거같습니당!! 늦어서 죄송합니다 이따봬욤!"
+    },
     {
       "stationName": "비타밍",
       "writer": "비타밍",
@@ -78,7 +87,7 @@
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "19 hours ago",
+      "time": "20 hours ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/194497227",
       "postNo": 194497227,
       "summary": "오방공 오늘 7시30분에 올게요 ㅠ.ㅠ 아침일찍 일정있어서 나갔다왔더니 짱졸려 ㅠ ㅇㄸㅂㅈ !!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/rondobba/post/194389961",
       "postNo": 194389961,
       "summary": "오뱅공 6시 40분 까지 오겠습니닷"
-    },
-    {
-      "stationName": "진땅콩",
-      "writer": "진땅콩",
-      "userId": "wlswn6565",
-      "time": "2026-05-01",
-      "link": "https://www.sooplive.com/station/wlswn6565/post/194383971",
-      "postNo": 194383971,
-      "summary": "오방공 오늘 넘넘 피곤해서 좀만 늦게 올게요 ㅎㅁㅎ.. 오늘 .. 늦게까지 있어야할수도 이쓰니까 .... ㅠㅠ 7시에 키겠습니당 !! 이따보쟈"
     }
   ]
 }

@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-04T05:07:32.432Z",
+  "checkedAt": "2026-05-04T05:12:42.077Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "주하랑",
+      "writer": "주하랑",
+      "userId": "fpahsdltu1",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/fpahsdltu1/post/194677049",
+      "postNo": 194677049,
+      "summary": "Notice오늘 주주치pl 합방은 취소되었습니다,, 제가 눈이 너무아파서 병원갔다가 asl끝날때쯤 올게요 ,,ㅠㅠ"
+    },
     {
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "57 minutes ago",
+      "time": "1 hours ago",
       "link": "https://www.sooplive.com/station/db001202/post/194674467",
       "postNo": 194674467,
       "summary": "오늘 pl 주주치 5티어 PL 취소됐습니닷,, 날 잡아서 조만간 다시 할듯해요 갠방은 5시쯤 켤게요 이따봬요 !"
@@ -96,7 +105,7 @@
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "20 hours ago",
+      "time": "21 hours ago",
       "link": "https://www.sooplive.com/station/db001202/post/194592331",
       "postNo": 194592331,
       "summary": "일여일 어제 덕몽으로 야무지게 캐리해씀니다 ㅅㅅ 찐찐찡막 끝나니까 다섯시..ㅘㅜ 방셀찍고 세팅할 게 있어서 세팅하다보니 아홉시ㅣ더라구요 지금 일어나써요ㅠㅠ 두시 알람 못들어버리기 눈이 반쯤 감겨있는데 정신챙기고 올게요 여섯시쯤 오ㄱㅔㅆ습니다 오늘 밀리데이!..."
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/194502995",
       "postNo": 194502995,
       "summary": "오능 8시에 올게용 지금 눈떳당 ,,, 요리한거 다치우고 오께 이따보쟛"
-    },
-    {
-      "stationName": "파도튜브",
-      "writer": "파도튜브",
-      "userId": "kthrs9207",
-      "time": "2026-05-02",
-      "link": "https://www.sooplive.com/station/kthrs9207/post/194500035",
-      "postNo": 194500035,
-      "summary": "방송공지 안녕하세요! 드디어 깁스를 풀었습니다 ㅠㅠㅠ 하.. 길고 길었던 2주!! 손목 엑스레이 찍을 때 각도 때문에 사진이 이쁘게 보이진 않아서뼈가 완전히 붙었다고는 확정지을 수는 없는데, 기존에 손목 윗부분 눌렀을 때 아팠던 통증이 사라진 거 보면 괜찮을거라고 얘기해주셨네요! 통깁스 때문에 손목이 계속 고정..."
     }
   ]
 }

@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-04T09:22:45.540Z",
+  "checkedAt": "2026-05-04T09:27:32.477Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "파도튜브",
+      "writer": "파도튜브",
+      "userId": "kthrs9207",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/kthrs9207/post/194693679",
+      "postNo": 194693679,
+      "summary": "Notice2026-05-04 방송공지 안녕하세요! 동생이 10시에 신발 오픈런 구매 좀 제발 해달라고 부탁해서 버티고 해줬는데.. 실패 ㅠㅠ 게다가 수면 패턴 바껴버렸네요.. 오늘도 19시 쯤 키도록 하겠습니다!"
+    },
     {
       "stationName": "토마토",
       "writer": "토마토",
@@ -15,7 +24,7 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "16 minutes ago",
+      "time": "21 minutes ago",
       "link": "https://www.sooplive.com/station/rondobba/post/194691941",
       "postNo": 194691941,
       "summary": "6시 30분까지 오겠습니다"
@@ -24,7 +33,7 @@
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "47 minutes ago",
+      "time": "51 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/194689715",
       "postNo": 194689715,
       "summary": "오뱅겅 6시반쯤 올게여!!"
@@ -33,7 +42,7 @@
       "stationName": "이경민",
       "writer": "이경민",
       "userId": "rudals5467",
-      "time": "55 minutes ago",
+      "time": "59 minutes ago",
       "link": "https://www.sooplive.com/station/rudals5467/post/194689049",
       "postNo": 194689049,
       "summary": "Notice공지 8시쯤 방송키겠습니다! 이따 뵙겠습니다 ( _ _ )"
@@ -99,13 +108,13 @@
       "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/kthrs9207/post/194599553",
       "postNo": 194599553,
-      "summary": "Notice2026-05-03 방송공지 안녕하세요! 어제 깁스 풀고 계속 스트레칭을 하는데도 뻐근해 죽겠네용 ㅎㅎ 오늘도 19시 쯤 키도록 하겠습니다!"
+      "summary": "2026-05-03 방송공지 안녕하세요! 어제 깁스 풀고 계속 스트레칭을 하는데도 뻐근해 죽겠네용 ㅎㅎ 오늘도 19시 쯤 키도록 하겠습니다!"
     },
     {
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "23 hours ago",
+      "time": "2026-05-03",
       "link": "https://www.sooplive.com/station/vldpfm2/post/194598299",
       "postNo": 194598299,
       "summary": "오뱅휴 오늘 방송키구 내일 휴방할랬는데 오늘 쉬고 내일 켜는게 더 좋을 것 같아용!-! 저는 숙제좀 하구 내일 올게용!!"
@@ -114,7 +123,7 @@
       "stationName": "김윤환",
       "writer": "김윤환",
       "userId": "brainzerg7",
-      "time": "23 hours ago",
+      "time": "2026-05-03",
       "link": "https://www.sooplive.com/station/brainzerg7/post/194598085",
       "postNo": 194598085,
       "summary": "금 일휴방입니다 내일올게요 좋은하루되십쇼!"
@@ -123,7 +132,7 @@
       "stationName": "주하랑",
       "writer": "주하랑",
       "userId": "fpahsdltu1",
-      "time": "23 hours ago",
+      "time": "2026-05-03",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/194598043",
       "postNo": 194598043,
       "summary": "지굼 사테쌤 호출로 비방게임 조금만 도와주고 방송킬게요! 7시에는 키겠습니다 ! !"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/wlswn6565/post/194586099",
       "postNo": 194586099,
       "summary": "오방공 쏘리쏘리 일찍오려했는데 오늘 좀이따 빌드 받습니다 ㅎ; 6시 30분 쯤 ? ㅎㅎ 킬듯 이따보쟝"
-    },
-    {
-      "stationName": "지동원",
-      "writer": "지동원",
-      "userId": "rondobba",
-      "time": "2026-05-03",
-      "link": "https://www.sooplive.com/station/rondobba/post/194579299",
-      "postNo": 194579299,
-      "summary": "2시 30분에 타밍이 방송에서 봬용"
     }
   ]
 }

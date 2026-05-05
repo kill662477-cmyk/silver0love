@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-05T08:12:30.768Z",
+  "checkedAt": "2026-05-05T08:17:32.258Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "주하랑",
+      "writer": "주하랑",
+      "userId": "fpahsdltu1",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/fpahsdltu1/post/194787249",
+      "postNo": 194787249,
+      "summary": "Notice오늘 6시에 올게욤 !!! 이따보쟛 asl 같이보쟈아아앙"
+    },
     {
       "stationName": "지두두",
       "writer": "지두두",
@@ -126,7 +135,7 @@
       "time": "2026-05-04",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/194677049",
       "postNo": 194677049,
-      "summary": "Notice오늘 주주치pl 합방은 취소되었습니다,, 제가 눈이 너무아파서 병원갔다가 asl끝날때쯤 올게요 ,,ㅠㅠ"
+      "summary": "오늘 주주치pl 합방은 취소되었습니다,, 제가 눈이 너무아파서 병원갔다가 asl끝날때쯤 올게요 ,,ㅠㅠ"
     },
     {
       "stationName": "치리",
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/vldpfm2/post/194598299",
       "postNo": 194598299,
       "summary": "오뱅휴 오늘 방송키구 내일 휴방할랬는데 오늘 쉬고 내일 켜는게 더 좋을 것 같아용!-! 저는 숙제좀 하구 내일 올게용!!"
-    },
-    {
-      "stationName": "김윤환",
-      "writer": "김윤환",
-      "userId": "brainzerg7",
-      "time": "2026-05-03",
-      "link": "https://www.sooplive.com/station/brainzerg7/post/194598085",
-      "postNo": 194598085,
-      "summary": "금 일휴방입니다 내일올게요 좋은하루되십쇼!"
     }
   ]
 }

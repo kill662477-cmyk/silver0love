@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-06T07:47:51.404Z",
+  "checkedAt": "2026-05-06T07:52:37.407Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "진땅콩",
+      "writer": "진땅콩",
+      "userId": "wlswn6565",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/wlswn6565/post/194889799",
+      "postNo": 194889799,
+      "summary": "오방공 6시30분에 올게용 오늘 먼땅이 간다 2회차 ! 하기로 먼진이랑 약속함 ㅇㄸㅂㅈ"
+    },
     {
       "stationName": "비타밍",
       "writer": "비타밍",
@@ -60,7 +69,7 @@
       "stationName": "파도튜브",
       "writer": "파도튜브",
       "userId": "kthrs9207",
-      "time": "21 hours ago",
+      "time": "22 hours ago",
       "link": "https://www.sooplive.com/station/kthrs9207/post/194795699",
       "postNo": 194795699,
       "summary": "Notice2026-05-05 방송공지 안녕하세요! 막 일어나가지고 잠시 일처리 좀 했는데 시간이 벌써 이렇게 되었네요.. 얼른 샤워하고 키도록 하겠습니다! 19시 10분쯤 켜야할 것 같아요!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/vldpfm2/post/194689715",
       "postNo": 194689715,
       "summary": "오뱅겅 6시반쯤 올게여!!"
-    },
-    {
-      "stationName": "진땅콩",
-      "writer": "진땅콩",
-      "userId": "wlswn6565",
-      "time": "2026-05-04",
-      "link": "https://www.sooplive.com/station/wlswn6565/post/194687607",
-      "postNo": 194687607,
-      "summary": "오방공 오늘 6시30분까지 올게욤 ㅇㄸㅂㅈ"
     }
   ]
 }

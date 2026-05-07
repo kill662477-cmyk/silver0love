@@ -1,24 +1,24 @@
 {
-  "checkedAt": "2026-05-06T21:02:53.701Z",
+  "checkedAt": "2026-05-07T15:02:49.433Z",
   "items": [
     {
       "name": "김윤환",
       "userId": "brainzerg7",
       "gender": "men",
-      "monthlyBroadcastTime": "46시간 2분",
-      "monthlyViewers": "606,442",
-      "monthlyPoong": "132,670",
+      "monthlyBroadcastTime": "56시간 57분",
+      "monthlyViewers": "729,475",
+      "monthlyPoong": "137,587",
       "peakViewers": "27,872",
-      "monthlyRecord": "6전 4승 2패",
-      "monthlyWinRate": "66.7%"
+      "monthlyRecord": "7전 4승 3패",
+      "monthlyWinRate": "57.1%"
     },
     {
       "name": "박수범",
       "userId": "jihoon002",
       "gender": "men",
-      "monthlyBroadcastTime": "30시간 33분",
-      "monthlyViewers": "22,109",
-      "monthlyPoong": "6,430",
+      "monthlyBroadcastTime": "50시간 27분",
+      "monthlyViewers": "33,778",
+      "monthlyPoong": "6,637",
       "peakViewers": "399",
       "monthlyRecord": "6전 1승 5패",
       "monthlyWinRate": "16.7%"
@@ -29,10 +29,10 @@
       "gender": "men",
       "monthlyBroadcastTime": "49시간 2분",
       "monthlyViewers": "21,608",
-      "monthlyPoong": "64,359",
+      "monthlyPoong": "65,860",
       "peakViewers": "1,571",
-      "monthlyRecord": "11전 10승 1패",
-      "monthlyWinRate": "90.9%"
+      "monthlyRecord": "12전 10승 2패",
+      "monthlyWinRate": "83.3%"
     },
     {
       "name": "박준오",
@@ -40,10 +40,10 @@
       "gender": "men",
       "monthlyBroadcastTime": "46시간 48분",
       "monthlyViewers": "58,738",
-      "monthlyPoong": "19,451",
+      "monthlyPoong": "20,561",
       "peakViewers": "979",
-      "monthlyRecord": "7전 4승 3패",
-      "monthlyWinRate": "57.1%"
+      "monthlyRecord": "8전 4승 4패",
+      "monthlyWinRate": "50.0%"
     },
     {
       "name": "지동원",
@@ -51,7 +51,7 @@
       "gender": "men",
       "monthlyBroadcastTime": "43시간 20분",
       "monthlyViewers": "27,169",
-      "monthlyPoong": "51,286",
+      "monthlyPoong": "51,430",
       "peakViewers": "369",
       "monthlyRecord": "2전 1승 1패",
       "monthlyWinRate": "50.0%"
@@ -62,10 +62,10 @@
       "gender": "men",
       "monthlyBroadcastTime": "60시간 11분",
       "monthlyViewers": "30,636",
-      "monthlyPoong": "27,186",
+      "monthlyPoong": "73,573",
       "peakViewers": "555",
-      "monthlyRecord": "전적없음",
-      "monthlyWinRate": "-"
+      "monthlyRecord": "1전 0승 1패",
+      "monthlyWinRate": "0.0%"
     },
     {
       "name": "파도튜브",
@@ -73,8 +73,8 @@
       "gender": "men",
       "monthlyBroadcastTime": "48시간 15분",
       "monthlyViewers": "8,094",
-      "monthlyPoong": "6,526",
-      "peakViewers": "60",
+      "monthlyPoong": "6,551",
+      "peakViewers": "62",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"
     },
@@ -82,20 +82,20 @@
       "name": "토마토",
       "userId": "freshtomato",
       "gender": "women",
-      "monthlyBroadcastTime": "44시간 41분",
-      "monthlyViewers": "314,874",
-      "monthlyPoong": "145,141",
+      "monthlyBroadcastTime": "57시간 34분",
+      "monthlyViewers": "389,503",
+      "monthlyPoong": "151,621",
       "peakViewers": "6,697",
-      "monthlyRecord": "4전 1승 3패",
-      "monthlyWinRate": "25.0%"
+      "monthlyRecord": "6전 2승 4패",
+      "monthlyWinRate": "33.3%"
     },
     {
       "name": "지두두",
       "userId": "wjswlgns09",
       "gender": "women",
-      "monthlyBroadcastTime": "50시간 46분",
-      "monthlyViewers": "140,440",
-      "monthlyPoong": "120,556",
+      "monthlyBroadcastTime": "63시간 29분",
+      "monthlyViewers": "164,413",
+      "monthlyPoong": "121,985",
       "peakViewers": "1,935",
       "monthlyRecord": "16전 8승 8패",
       "monthlyWinRate": "50.0%"
@@ -115,9 +115,9 @@
       "name": "찌킹",
       "userId": "alaelddl97",
       "gender": "women",
-      "monthlyBroadcastTime": "57시간 55분",
-      "monthlyViewers": "38,206",
-      "monthlyPoong": "52,262",
+      "monthlyBroadcastTime": "70시간 28분",
+      "monthlyViewers": "47,427",
+      "monthlyPoong": "52,462",
       "peakViewers": "185",
       "monthlyRecord": "15전 8승 7패",
       "monthlyWinRate": "53.3%"
@@ -139,7 +139,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "48시간 45분",
       "monthlyViewers": "118,212",
-      "monthlyPoong": "103,548",
+      "monthlyPoong": "103,933",
       "peakViewers": "1,536",
       "monthlyRecord": "11전 4승 7패",
       "monthlyWinRate": "36.4%"
@@ -150,10 +150,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "48시간 47분",
       "monthlyViewers": "66,394",
-      "monthlyPoong": "90,907",
+      "monthlyPoong": "95,889",
       "peakViewers": "1,229",
-      "monthlyRecord": "9전 5승 4패",
-      "monthlyWinRate": "55.6%"
+      "monthlyRecord": "11전 6승 5패",
+      "monthlyWinRate": "54.5%"
     },
     {
       "name": "임조이",
@@ -161,10 +161,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "44시간 46분",
       "monthlyViewers": "75,882",
-      "monthlyPoong": "29,194",
+      "monthlyPoong": "77,961",
       "peakViewers": "1,085",
-      "monthlyRecord": "18전 13승 5패",
-      "monthlyWinRate": "72.2%"
+      "monthlyRecord": "19전 14승 5패",
+      "monthlyWinRate": "73.7%"
     },
     {
       "name": "비타밍",
@@ -172,10 +172,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "69시간 41분",
       "monthlyViewers": "146,079",
-      "monthlyPoong": "131,451",
+      "monthlyPoong": "132,652",
       "peakViewers": "3,190",
-      "monthlyRecord": "14전 6승 8패",
-      "monthlyWinRate": "42.9%"
+      "monthlyRecord": "16전 7승 9패",
+      "monthlyWinRate": "43.8%"
     },
     {
       "name": "먼진",
@@ -192,9 +192,9 @@
       "name": "아리송이",
       "userId": "vldpfm2",
       "gender": "women",
-      "monthlyBroadcastTime": "40시간 20분",
-      "monthlyViewers": "28,310",
-      "monthlyPoong": "50,573",
+      "monthlyBroadcastTime": "51시간 36분",
+      "monthlyViewers": "35,995",
+      "monthlyPoong": "50,773",
       "peakViewers": "241",
       "monthlyRecord": "4전 4승 0패",
       "monthlyWinRate": "100.0%"
@@ -203,8 +203,8 @@
       "name": "진땅콩",
       "userId": "wlswn6565",
       "gender": "women",
-      "monthlyBroadcastTime": "35시간 46분",
-      "monthlyViewers": "71,131",
+      "monthlyBroadcastTime": "47시간 59분",
+      "monthlyViewers": "83,973",
       "monthlyPoong": "109,418",
       "peakViewers": "2,088",
       "monthlyRecord": "11전 6승 5패",
@@ -214,9 +214,9 @@
       "name": "낭니",
       "userId": "sksmsskdsl10",
       "gender": "women",
-      "monthlyBroadcastTime": "49시간 37분",
-      "monthlyViewers": "293,146",
-      "monthlyPoong": "234,614",
+      "monthlyBroadcastTime": "53시간 5분",
+      "monthlyViewers": "315,436",
+      "monthlyPoong": "237,645",
       "peakViewers": "1,702",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

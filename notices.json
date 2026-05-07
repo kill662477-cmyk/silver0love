@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-07T08:17:37.932Z",
+  "checkedAt": "2026-05-07T08:22:24.995Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "파도튜브",
+      "writer": "파도튜브",
+      "userId": "kthrs9207",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/kthrs9207/post/194987069",
+      "postNo": 194987069,
+      "summary": "Notice2026-05-07 방송공지 안녕하세요! 오늘은 도파민ck가 있습니당! 손을 좀 풀어야해서 평소보다 일찍 켜야할 것 같네용! 오늘은 18시 쯤 키도록 하겠습니다!"
+    },
     {
       "stationName": "진땅콩",
       "writer": "진땅콩",
@@ -45,13 +54,13 @@
       "time": "22 hours ago",
       "link": "https://www.sooplive.com/station/kthrs9207/post/194898353",
       "postNo": 194898353,
-      "summary": "Notice2026-05-06 방송공지 안녕하세요! 오늘은 처리할 일이 좀 있어서 15분 정도만 늦게 키겠습니다! 19시 15분 쯤 켜도록 할게요!"
+      "summary": "2026-05-06 방송공지 안녕하세요! 오늘은 처리할 일이 좀 있어서 15분 정도만 늦게 키겠습니다! 19시 15분 쯤 켜도록 할게요!"
     },
     {
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "22 hours ago",
+      "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/db001202/post/194896427",
       "postNo": 194896427,
       "summary": "공지공지휴뱅 수목 휴방입니닷 엄마 올라오셔서 같이 시간 보내구 올게요 금요일에 오겠습니당 좋은 하루 되세요 !!"
@@ -78,7 +87,7 @@
       "stationName": "토마토",
       "writer": "토마토",
       "userId": "freshtomato",
-      "time": "23 hours ago",
+      "time": "2026-05-06",
       "link": "https://www.sooplive.com/station/freshtomato/post/194891765",
       "postNo": 194891765,
       "summary": "Notice오늘 6시쯤 올게용가리 ~!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/db001202/post/194791487",
       "postNo": 194791487,
       "summary": "화요일 준비해서 30분뒤에 켤게요 어제 14시간 방송하고 씻고 누웠는데 알람맞추다가 기절했어요.. 일어나니까 여섯시네요 언능 준비하고 올게요"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-05",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/194790893",
-      "postNo": 194790893,
-      "summary": "오뱅겅 7시전에 올게유!"
     }
   ]
 }

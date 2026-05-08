@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-08T07:47:33.205Z",
+  "checkedAt": "2026-05-08T07:52:39.935Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지동원",
+      "writer": "지동원",
+      "userId": "rondobba",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/rondobba/post/195077797",
+      "postNo": 195077797,
+      "summary": "오뱅공 해설 합방 공지..! 오늘은 이스코어 대회 게스트로 해설 있습니당 7시에 이스코어 방송에서 봬용..!"
+    },
     {
       "stationName": "찌킹",
       "writer": "찌킹",
       "userId": "alaelddl97",
-      "time": "34 minutes ago",
+      "time": "39 minutes ago",
       "link": "https://www.sooplive.com/station/alaelddl97/post/195075221",
       "postNo": 195075221,
       "summary": "오뱅 다섯시쯔음 올게요옹"
@@ -24,7 +33,7 @@
       "stationName": "지두두",
       "writer": "지두두",
       "userId": "wjswlgns09",
-      "time": "8 hours ago",
+      "time": "9 hours ago",
       "link": "https://www.sooplive.com/station/wjswlgns09/post/195054929",
       "postNo": 195054929,
       "summary": "오뱅휴 오늘은 미룬 은행과 병원을 갑니닷.... 며칠동안 일찍 일어나야하는 일들이 있었어가지구 넘 정신이 없었네용 흑흑 토요일에 24시간 방송이 있어서 준비도 해야하구 숙제도 좀 쌓여가지고 다 마무리하고 오께요!!!!!!! 다들 제 방송 재밌게 봐주시구 펀딩 걸어주셔서 너무..."
@@ -42,7 +51,7 @@
       "stationName": "주하랑",
       "writer": "주하랑",
       "userId": "fpahsdltu1",
-      "time": "19 hours ago",
+      "time": "20 hours ago",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/195005253",
       "postNo": 195005253,
       "summary": "Notice오늘 열시에 올게용 이따보쟈!!"
@@ -51,7 +60,7 @@
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "20 hours ago",
+      "time": "21 hours ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/194999161",
       "postNo": 194999161,
       "summary": "오뱅 으악 오전에 밤새구 할일하다가 낮잠 1시간 자고 온다는게 넘나리 늦게 인나따여 ㅠㅠ 전 내일 오겠습니당!!"
@@ -60,7 +69,7 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "20 hours ago",
+      "time": "21 hours ago",
       "link": "https://www.sooplive.com/station/rondobba/post/194999115",
       "postNo": 194999115,
       "summary": "ㅇ"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/db001202/post/194896427",
       "postNo": 194896427,
       "summary": "공지공지휴뱅 수목 휴방입니닷 엄마 올라오셔서 같이 시간 보내구 올게요 금요일에 오겠습니당 좋은 하루 되세요 !!"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-06",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/194895015",
-      "postNo": 194895015,
-      "summary": "오뱅겅 으앙 미뤄둔 할일들 하고 있는데 좀 더 걸릴것 같아여 오늘은 7시뱐전에 올듯!!"
     }
   ]
 }

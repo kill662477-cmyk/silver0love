@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-08T08:22:33.154Z",
+  "checkedAt": "2026-05-08T08:27:25.628Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "토마토",
+      "writer": "토마토",
+      "userId": "freshtomato",
+      "time": "4 minutes ago",
+      "link": "https://www.sooplive.com/station/freshtomato/post/195080251",
+      "postNo": 195080251,
+      "summary": "Notice공ㅈ1 오늘 하루 쉬고 내일 오게뜹니댜!! 목이 완죤 나가따 ㅠ3ㅠ 하루 충전하고 내일 텐션 좋게 올게옹!! 내일 pl 섭외즁.... 2명만 더 규하면 됨! 오늘 어버이날이라 쉬면서 엄빠랑 밥묵기로해서 엄빠 기다리는즁"
+    },
     {
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "33 minutes ago",
+      "time": "38 minutes ago",
       "link": "https://www.sooplive.com/station/rondobba/post/195077797",
       "postNo": 195077797,
       "summary": "오뱅공 해설 합방 공지..! 오늘은 이스코어 대회 게스트로 해설 있습니당 7시에 이스코어 방송에서 봬용..!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/db001202/post/194896427",
       "postNo": 194896427,
       "summary": "공지공지휴뱅 수목 휴방입니닷 엄마 올라오셔서 같이 시간 보내구 올게요 금요일에 오겠습니당 좋은 하루 되세요 !!"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-06",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/194895015",
-      "postNo": 194895015,
-      "summary": "오뱅겅 으앙 미뤄둔 할일들 하고 있는데 좀 더 걸릴것 같아여 오늘은 7시뱐전에 올듯!!"
     }
   ]
 }

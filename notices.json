@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-09T10:12:35.386Z",
+  "checkedAt": "2026-05-09T10:17:27.852Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/195191835",
+      "postNo": 195191835,
+      "summary": "사진"
+    },
     {
       "stationName": "주하랑",
       "writer": "주하랑",
       "userId": "fpahsdltu1",
-      "time": "19 minutes ago",
+      "time": "23 minutes ago",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/195189801",
       "postNo": 195189801,
       "summary": "Notice오늘 8시 30뷴에 오겠습니당 !!! 오늘 애기때 사진 보내달라해서 보내줬는데 자느라구 맞추는장면 못봄 ,,, 씻구 방셀올리구 방송킬게요!"
@@ -15,7 +24,7 @@
       "stationName": "토마토",
       "writer": "토마토",
       "userId": "freshtomato",
-      "time": "57 minutes ago",
+      "time": "1 hours ago",
       "link": "https://www.sooplive.com/station/freshtomato/post/195186513",
       "postNo": 195186513,
       "summary": "Notice방울토마토"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/rondobba/post/195077797",
       "postNo": 195077797,
       "summary": "오뱅공 해설 합방 공지..! 오늘은 이스코어 대회 게스트로 해설 있습니당 7시에 이스코어 방송에서 봬용..!"
-    },
-    {
-      "stationName": "찌킹",
-      "writer": "찌킹",
-      "userId": "alaelddl97",
-      "time": "2026-05-08",
-      "link": "https://www.sooplive.com/station/alaelddl97/post/195075221",
-      "postNo": 195075221,
-      "summary": "오뱅 다섯시쯔음 올게요옹"
     }
   ]
 }

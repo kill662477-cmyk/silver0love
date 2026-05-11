@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-11T05:32:33.631Z",
+  "checkedAt": "2026-05-11T05:37:30.065Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지두두",
+      "writer": "지두두",
+      "userId": "wjswlgns09",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/wjswlgns09/post/195371587",
+      "postNo": 195371587,
+      "summary": "오뱅공 비가 주륵주륵 내리는 날이네요 저는 어제 무려 15시간을 잤읍니다 정말 놀라워요 ㄷㄷㄷㄷ 저능 5시에 오겠슴둥!!!!"
+    },
     {
       "stationName": "비타밍",
       "writer": "비타밍",
@@ -87,7 +96,7 @@
       "stationName": "배성흠",
       "writer": "배성흠",
       "userId": "goodzerg",
-      "time": "23 hours ago",
+      "time": "2026-05-10",
       "link": "https://www.sooplive.com/station/goodzerg/post/195271455",
       "postNo": 195271455,
       "summary": "Notice24시간 컨텐츠가끝났네요 열심히 한다고 하긴했는데 항상 느끼는거지만 방송이 참 쉽지가않네요 점점 발전해서 잘해보겠습니다 24시간동안 다들 고생많으셨습니다!!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/wjswlgns09/post/195164165",
       "postNo": 195164165,
       "summary": "오뱅공 날씨가 너무 조타!!!! 숙제 다 끝내서 기분이가 좋아용 ㅎㅁㅎ 오느른 스튜디오 24시간노방종 있습니당 지금 가고있어용 후후후 다들 2시에 센세 방송으로 와주세용! 이따보쟈~~~🩵"
-    },
-    {
-      "stationName": "비타밍",
-      "writer": "비타밍",
-      "userId": "seemin88",
-      "time": "2026-05-09",
-      "link": "https://www.sooplive.com/station/seemin88/post/195163227",
-      "postNo": 195163227,
-      "summary": "공지 주말에 날씨 너무 좋아서 다들 놀러가시나봐여 터미널이 인산인해.. 여러분들은 오늘부터 내일까지 24시간 함께 해여 2시에 센세 방송입니다 다들 많은 시청 부탁드려요! 날이많이덥네용 물많이드시와용"
     }
   ]
 }

@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-12T09:37:38.043Z",
+  "checkedAt": "2026-05-12T09:42:38.932Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "파도튜브",
+      "writer": "파도튜브",
+      "userId": "kthrs9207",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/kthrs9207/post/195482859",
+      "postNo": 195482859,
+      "summary": "Notice2026-05-12 방송공지 안녕하세요! 밤낮이 또 바껴버렸네요 ㅠㅠㅠ 완전 피곤.. 얼른 샤워하고 잠 깨고 19시 쯤 켜보도록 하겠습니당!"
+    },
     {
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "43 minutes ago",
+      "time": "48 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/195479195",
       "postNo": 195479195,
       "summary": "오뱅겅 7시전에 올게여>_< 💗 ㅇㄸㅂㅈ"
@@ -15,7 +24,7 @@
       "stationName": "토마토",
       "writer": "토마토",
       "userId": "freshtomato",
-      "time": "46 minutes ago",
+      "time": "51 minutes ago",
       "link": "https://www.sooplive.com/station/freshtomato/post/195478887",
       "postNo": 195478887,
       "summary": "Notice우앙 기상해뜹니댜!! 7시전에 올게용가리코더"
@@ -87,7 +96,7 @@
       "stationName": "파도튜브",
       "writer": "파도튜브",
       "userId": "kthrs9207",
-      "time": "23 hours ago",
+      "time": "2026-05-11",
       "link": "https://www.sooplive.com/station/kthrs9207/post/195387935",
       "postNo": 195387935,
       "summary": "Notice2026-05-11 방송공지 안녕하세요! 많이 피곤하고 몸이 많이 쑤시네요 ㅠㅠ 오늘은 ASL 끝날 때 쯤 키도록 하겠습니다! 좀 더 누워있다가 괜찮아지면 켜볼게용!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/seemin88/post/195317759",
       "postNo": 195317759,
       "summary": "공지 오 랜만에 기절해서 잤듭니당 자고 일어났는데.. 주양언니가 하이디라오 가고 싶다그래서 같이 방송하기로 했어용 도착해서 방송 키겠습니다 아마 40분즘? 언니랑 놀다가 운동도하고 집에가서 스타도 하고 할 것 같아요 좀따 봬용!"
-    },
-    {
-      "stationName": "치리",
-      "writer": "치리",
-      "userId": "db001202",
-      "time": "2026-05-10",
-      "link": "https://www.sooplive.com/station/db001202/post/195286883",
-      "postNo": 195286883,
-      "summary": "일요일 삼십분뒤에 올게용 !! 어제보다 빨라져따리 사실 일찍 일어났는데 4시간동안 방셀 쓰고 있었어용 어제 회의 3시간이나 해서 해뜨는 거 보고 방셀찍고 밥먹고 씻고 잤음용 ㅋㅌㅋ 회의 결과 대만족!!! 6시간 넘게 노답회의 하던 우리는 없댜 음하..."
     }
   ]
 }

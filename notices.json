@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-12T09:47:32.754Z",
+  "checkedAt": "2026-05-12T09:53:08.355Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지동원",
+      "writer": "지동원",
+      "userId": "rondobba",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/rondobba/post/195483799",
+      "postNo": 195483799,
+      "summary": "오뱅공 오늘은 좀 늦습니다 ㅜㅜ 8시 좀 넘어서까지 오겠습니다"
+    },
     {
       "stationName": "파도튜브",
       "writer": "파도튜브",
       "userId": "kthrs9207",
-      "time": "7 minutes ago",
+      "time": "12 minutes ago",
       "link": "https://www.sooplive.com/station/kthrs9207/post/195482859",
       "postNo": 195482859,
       "summary": "Notice2026-05-12 방송공지 안녕하세요! 밤낮이 또 바껴버렸네요 ㅠㅠㅠ 완전 피곤.. 얼른 샤워하고 잠 깨고 19시 쯤 켜보도록 하겠습니당!"
@@ -15,7 +24,7 @@
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "53 minutes ago",
+      "time": "59 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/195479195",
       "postNo": 195479195,
       "summary": "오뱅겅 7시전에 올게여>_< 💗 ㅇㄸㅂㅈ"
@@ -24,7 +33,7 @@
       "stationName": "토마토",
       "writer": "토마토",
       "userId": "freshtomato",
-      "time": "56 minutes ago",
+      "time": "1 hours ago",
       "link": "https://www.sooplive.com/station/freshtomato/post/195478887",
       "postNo": 195478887,
       "summary": "Notice우앙 기상해뜹니댜!! 7시전에 올게용가리코더"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/seemin88/post/195347255",
       "postNo": 195347255,
       "summary": "^^ 끝~인가요"
-    },
-    {
-      "stationName": "비타밍",
-      "writer": "비타밍",
-      "userId": "seemin88",
-      "time": "2026-05-10",
-      "link": "https://www.sooplive.com/station/seemin88/post/195317759",
-      "postNo": 195317759,
-      "summary": "공지 오 랜만에 기절해서 잤듭니당 자고 일어났는데.. 주양언니가 하이디라오 가고 싶다그래서 같이 방송하기로 했어용 도착해서 방송 키겠습니다 아마 40분즘? 언니랑 놀다가 운동도하고 집에가서 스타도 하고 할 것 같아요 좀따 봬용!"
     }
   ]
 }

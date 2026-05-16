@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-16T07:42:34.145Z",
+  "checkedAt": "2026-05-16T07:47:32.797Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "진땅콩",
+      "writer": "진땅콩",
+      "userId": "wlswn6565",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/wlswn6565/post/195860611",
+      "postNo": 195860611,
+      "summary": "오방공 6시30분까지올게욤 어제 에어컨 18도로하고 잠들었더니 ... 머리아푸다 후회중 ㅠ ㅇㄸㅂㅈ"
+    },
     {
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "4 minutes ago",
+      "time": "9 minutes ago",
       "link": "https://www.sooplive.com/station/rondobba/post/195859929",
       "postNo": 195859929,
       "summary": "캄몬스타즈 배경화면 업데이트 바꾸자"
@@ -15,7 +24,7 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "52 minutes ago",
+      "time": "57 minutes ago",
       "link": "https://www.sooplive.com/station/rondobba/post/195856117",
       "postNo": 195856117,
       "summary": "오늘은 휴방입니다..! 내일 봬용"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/vldpfm2/post/195706637",
       "postNo": 195706637,
       "summary": "공쥐 오늘 끝나구 멤버들 다 같이2차 와써용 >_"
-    },
-    {
-      "stationName": "비타밍",
-      "writer": "비타밍",
-      "userId": "seemin88",
-      "time": "2026-05-14",
-      "link": "https://www.sooplive.com/station/seemin88/post/195704361",
-      "postNo": 195704361,
-      "summary": "공지 스승의날 기념방송!! 다들 재밌게 보셨나영?! 타밍이게임 올정답이여서 갬동,,, 지금 고기다먹구 다같이 2차가자구해서 막도착했어요 ㅎㅎ 처음에 2차장소 주양언니가알아봤는데 프라이빗룸술집이라더니 이상한곳으로 알아봐가지구ㅡㅡ 다시알아봐서 도우미..."
     }
   ]
 }

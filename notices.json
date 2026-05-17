@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-17T07:47:33.151Z",
+  "checkedAt": "2026-05-17T07:52:31.964Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "김윤환",
+      "writer": "김윤환",
+      "userId": "brainzerg7",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/brainzerg7/post/195966495",
+      "postNo": 195966495,
+      "summary": "오방공시 5시 갱이다 방송용"
+    },
     {
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "39 minutes ago",
+      "time": "44 minutes ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/195962687",
       "postNo": 195962687,
       "summary": "오방공 오늘 6시에키겠습니당 ㅇㄸㅂㅈ !"
@@ -78,7 +87,7 @@
       "stationName": "김윤환",
       "writer": "김윤환",
       "userId": "brainzerg7",
-      "time": "22 hours ago",
+      "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/brainzerg7/post/195866347",
       "postNo": 195866347,
       "summary": "금 일휴뱅 내일 5시 갱이다방송 7 8티어컵대회해설때 뵐게요 좋은하루보내십쇼"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/vldpfm2/post/195764097",
       "postNo": 195764097,
       "summary": "오뱅겅 잠깐 은행업무보고 할일 좀 하고 있는딩 쬐까 늦을거 같아유 ㅠㅠ 늦어도 7시반 전에는 올게요!"
-    },
-    {
-      "stationName": "파도튜브",
-      "writer": "파도튜브",
-      "userId": "kthrs9207",
-      "time": "2026-05-15",
-      "link": "https://www.sooplive.com/station/kthrs9207/post/195761359",
-      "postNo": 195761359,
-      "summary": "방송공지 안녕하세요! 어제 컨텐츠랑 카네이션 및 선물 준비해준 우리 학생들에게 너무 감사합니다 정말 찡했습니다.. ㅠㅠㅠㅠㅠ 감동.... 그리고 오늘은 흑카데미 스승의날 ck 팔레트님 상대로 섭외되서 게임을 합니다! 지금 밥 먹고 있는데 다 먹고 킬게용! 17시 30분 쯤이 될 것 같네요!"
     }
   ]
 }

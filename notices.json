@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-17T12:47:30.280Z",
+  "checkedAt": "2026-05-17T12:52:36.678Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "사테",
+      "writer": "사테",
+      "userId": "hoonykkk",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/hoonykkk/post/195995655",
+      "postNo": 195995655,
+      "summary": "Notice래더빙고 합니당 사테x땅콩x송이x먼진 래더빙고합니당 버스기사 입장료 2000개입니당 ㅠ"
+    },
     {
       "stationName": "토마토",
       "writer": "토마토",
@@ -60,7 +69,7 @@
       "stationName": "김윤환",
       "writer": "김윤환",
       "userId": "brainzerg7",
-      "time": "4 hours ago",
+      "time": "5 hours ago",
       "link": "https://www.sooplive.com/station/brainzerg7/post/195966495",
       "postNo": 195966495,
       "summary": "오방공시 5시 갱이다 방송용"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/rondobba/post/195859929",
       "postNo": 195859929,
       "summary": "캄몬스타즈 배경화면 업데이트 바꾸자"
-    },
-    {
-      "stationName": "지동원",
-      "writer": "지동원",
-      "userId": "rondobba",
-      "time": "2026-05-16",
-      "link": "https://www.sooplive.com/station/rondobba/post/195856117",
-      "postNo": 195856117,
-      "summary": "오늘은 휴방입니다..! 내일 봬용"
     }
   ]
 }

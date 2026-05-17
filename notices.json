@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-17T08:37:34.255Z",
+  "checkedAt": "2026-05-17T08:42:38.227Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/195970909",
+      "postNo": 195970909,
+      "summary": "뱅공 일요일 여섯시반쯤 올게요 눈ㄸㅡ자마자 먼진이 경기 보려구 대기중 어우 어제 33시간 깨엤어서 기졸했어요 저도 잠깨고 씻고 즁비해서 올게요 이따봬요 오늘 테란전 연습돔하고 새벽에 주노쌤이랑 연습하러 갈거예요 ㅂ"
+    },
     {
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "6 minutes ago",
+      "time": "11 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/195970259",
       "postNo": 195970259,
       "summary": "오뱅공 7시전에 오께융"
@@ -15,7 +24,7 @@
       "stationName": "찌킹",
       "writer": "찌킹",
       "userId": "alaelddl97",
-      "time": "15 minutes ago",
+      "time": "20 minutes ago",
       "link": "https://www.sooplive.com/station/alaelddl97/post/195969345",
       "postNo": 195969345,
       "summary": "준비즁~~ 생각보다 방셀이 오래걸려서 오늘 방송하고 휴방하면서 언넝 숙제해야겠어요!!ㅠㅠ 그래소 아마 월요일에 짧방도 없을듯 흑 마침 그날도 겹쳐서.. 어쩐지 요새 잘 긁히드라^ㅠㅠ^ 언능 준비해서 여섯시전에 올게욤 밥 메뉴 추천 받아요-!"
@@ -24,7 +33,7 @@
       "stationName": "김윤환",
       "writer": "김윤환",
       "userId": "brainzerg7",
-      "time": "45 minutes ago",
+      "time": "50 minutes ago",
       "link": "https://www.sooplive.com/station/brainzerg7/post/195966495",
       "postNo": 195966495,
       "summary": "오방공시 5시 갱이다 방송용"
@@ -42,7 +51,7 @@
       "stationName": "비타밍",
       "writer": "비타밍",
       "userId": "seemin88",
-      "time": "1 hours ago",
+      "time": "2 hours ago",
       "link": "https://www.sooplive.com/station/seemin88/post/195960629",
       "postNo": 195960629,
       "summary": "공지 오늘 일어났는데 잠을잘못잔건지 목이 아파서 근처 주말에도 하는 한의원에 다녀올게요 병원가서 진료받구 저녁에 오겠습니당!! 죄송해요ㅠㅡㅠ 오늘 날이많이덥네욤 이따 같이 일요일 같이보내용 늦어도 8시 전까진 오겠슴니다! (더일찍올수도있움!!)"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/wjswlgns09/post/195848365",
       "postNo": 195848365,
       "summary": "오뱅공 아침에 방종하구 밤 새고 강화 왔어용 조금 자고 방금 인나뜸 ^_ㅠ 화장하고 바루 킬게요!!!!!!!!!!!!!!!!!!!!"
-    },
-    {
-      "stationName": "찌킹",
-      "writer": "찌킹",
-      "userId": "alaelddl97",
-      "time": "2026-05-15",
-      "link": "https://www.sooplive.com/station/alaelddl97/post/195777497",
-      "postNo": 195777497,
-      "summary": "부종리그 !! 5:5 부종리그 합니다 찌로토스 출격 ㄷㄷㄷㄷㄷㄷ 선입 입장료 채워주실 오빵이 구합니다>"
     }
   ]
 }

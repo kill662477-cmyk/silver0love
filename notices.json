@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-19T09:52:33.746Z",
+  "checkedAt": "2026-05-19T09:57:40.032Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "찌킹",
+      "writer": "찌킹",
+      "userId": "alaelddl97",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/alaelddl97/post/196164121",
+      "postNo": 196164121,
+      "summary": "내일 대학대전~~ 캄몬으로 이름 바뀌고 첫 대전인데 꼭 이겼음 좋겠다요✨ 내일7시 센세방송입니당 저는 오늘도 찌도기 달리러 ~~ 슝🦦 다들 맛있는 저녁식사 하십쇼!!"
+    },
     {
       "stationName": "토마토",
       "writer": "토마토",
@@ -24,7 +33,7 @@
       "stationName": "주하랑",
       "writer": "주하랑",
       "userId": "fpahsdltu1",
-      "time": "20 hours ago",
+      "time": "21 hours ago",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/196090981",
       "postNo": 196090981,
       "summary": "하랑님 로션 정보좀.. 진짜 살려구요 다시버기 보긴 귀찮음"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/kthrs9207/post/195869837",
       "postNo": 195869837,
       "summary": "방송공지 안녕하세요! 막 일어났습니다! 샤워하러가려구요! 최근에 힘든 일이 하나있는데 대학대전 끝나고 해결 좀 해봐야겠네용..! 오늘은 19시 쯤 키도록 하겠습니다!"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-16",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/195868713",
-      "postNo": 195868713,
-      "summary": "오뱅휴 오늘 쉬고 내일 올게요! 숙제시갼"
     }
   ]
 }

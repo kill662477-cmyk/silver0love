@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-18T21:03:57.812Z",
+  "checkedAt": "2026-05-19T15:03:02.716Z",
   "items": [
     {
       "name": "김윤환",
@@ -84,10 +84,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "90시간 49분",
       "monthlyViewers": "584,745",
-      "monthlyPoong": "450,285",
+      "monthlyPoong": "462,974",
       "peakViewers": "6,697",
-      "monthlyRecord": "12전 5승 7패",
-      "monthlyWinRate": "41.7%"
+      "monthlyRecord": "15전 5승 10패",
+      "monthlyWinRate": "33.3%"
     },
     {
       "name": "지두두",
@@ -172,7 +172,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "103시간 22분",
       "monthlyViewers": "197,603",
-      "monthlyPoong": "384,972",
+      "monthlyPoong": "392,214",
       "peakViewers": "3,190",
       "monthlyRecord": "36전 16승 20패",
       "monthlyWinRate": "44.4%"
@@ -216,7 +216,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "75시간 9분",
       "monthlyViewers": "439,753",
-      "monthlyPoong": "533,873",
+      "monthlyPoong": "546,564",
       "peakViewers": "2,170",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

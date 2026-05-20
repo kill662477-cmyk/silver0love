@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-20T08:22:37.503Z",
+  "checkedAt": "2026-05-20T08:27:35.930Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "4 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/196248389",
+      "postNo": 196248389,
+      "summary": "엠비대전 오늘 엠비대전 7시 센세방송입니닷 8시에 시작하구 저는 와서 손푸는 중이에요 잘 해보겠습니다 파이팅..!!"
+    },
     {
       "stationName": "진땅콩",
       "writer": "진땅콩",
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/wlswn6565/post/195962687",
       "postNo": 195962687,
       "summary": "오방공 오늘 6시에키겠습니당 ㅇㄸㅂㅈ !"
-    },
-    {
-      "stationName": "비타밍",
-      "writer": "비타밍",
-      "userId": "seemin88",
-      "time": "2026-05-17",
-      "link": "https://www.sooplive.com/station/seemin88/post/195960629",
-      "postNo": 195960629,
-      "summary": "공지 오늘 일어났는데 잠을잘못잔건지 목이 아파서 근처 주말에도 하는 한의원에 다녀올게요 병원가서 진료받구 저녁에 오겠습니당!! 죄송해요ㅠㅡㅠ 오늘 날이많이덥네욤 이따 같이 일요일 같이보내용 늦어도 8시 전까진 오겠슴니다! (더일찍올수도있움!!)"
     }
   ]
 }

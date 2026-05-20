@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-20T08:27:35.930Z",
+  "checkedAt": "2026-05-20T08:32:45.344Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지두두",
+      "writer": "지두두",
+      "userId": "wjswlgns09",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/wjswlgns09/post/196248777",
+      "postNo": 196248777,
+      "summary": "오뱅공 엠비대랑 대학대전 있는 날입니당 비가 마니 오네요 =ㅅ= 이따 7시에 센세방송으로 와주세요!"
+    },
     {
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "4 minutes ago",
+      "time": "9 minutes ago",
       "link": "https://www.sooplive.com/station/db001202/post/196248389",
       "postNo": 196248389,
       "summary": "엠비대전 오늘 엠비대전 7시 센세방송입니닷 8시에 시작하구 저는 와서 손푸는 중이에요 잘 해보겠습니다 파이팅..!!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/brainzerg7/post/195966495",
       "postNo": 195966495,
       "summary": "오방공시 5시 갱이다 방송용"
-    },
-    {
-      "stationName": "진땅콩",
-      "writer": "진땅콩",
-      "userId": "wlswn6565",
-      "time": "2026-05-17",
-      "link": "https://www.sooplive.com/station/wlswn6565/post/195962687",
-      "postNo": 195962687,
-      "summary": "오방공 오늘 6시에키겠습니당 ㅇㄸㅂㅈ !"
     }
   ]
 }

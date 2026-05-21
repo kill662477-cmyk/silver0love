@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-21T08:37:24.579Z",
+  "checkedAt": "2026-05-21T08:42:35.900Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "토마토",
+      "writer": "토마토",
+      "userId": "freshtomato",
+      "time": "4 minutes ago",
+      "link": "https://www.sooplive.com/station/freshtomato/post/196343363",
+      "postNo": 196343363,
+      "summary": "Notice오늘 6시10분쯤올게용가리~!"
+    },
     {
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "7 minutes ago",
+      "time": "13 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/196342735",
       "postNo": 196342735,
       "summary": "오뱅공 어제 연습한다고 커피를 마셨더니 잠을 너무 늦게자서 지금 일어났네용 ㅠㅠ 이따 7시전에 올게요!"
@@ -123,7 +132,7 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "22 hours ago",
+      "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/rondobba/post/196254351",
       "postNo": 196254351,
       "summary": "오늘 캄 몬스타즈 대학대전 첫 데뷔전 7시 윤환이형 방송에서 봬요"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/wlswn6565/post/196243391",
       "postNo": 196243391,
       "summary": "공지 오늘 대학대전이 있습니당 !! 열시미 준비한 그 이상으로 하고 오께요 !!! 다들 이따 센세 방송 7시에 봐여!"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-20",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/196239073",
-      "postNo": 196239073,
-      "summary": "공쥐 오늘 대학대전 7시에 센세방송으로 뵙겠습니당! ㅇㄸㅂㅈ!!"
     }
   ]
 }

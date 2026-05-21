@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-21T04:42:30.258Z",
+  "checkedAt": "2026-05-21T04:47:32.217Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "박수범",
+      "writer": "박수범",
+      "userId": "jihoon002",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/jihoon002/post/196329285",
+      "postNo": 196329285,
+      "summary": "Notice방송 30분까정 올게유"
+    },
     {
       "stationName": "지동원",
       "writer": "지동원",
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/vldpfm2/post/196130421",
       "postNo": 196130421,
       "summary": "공쥐 오늘도 좋은 하루보내세용!! 빤니 보고싶다밍..💗 전 대학대전 끝나구 올게요홍"
-    },
-    {
-      "stationName": "주하랑",
-      "writer": "주하랑",
-      "userId": "fpahsdltu1",
-      "time": "2026-05-18",
-      "link": "https://www.sooplive.com/station/fpahsdltu1/post/196090981",
-      "postNo": 196090981,
-      "summary": "하랑님 로션 정보좀.. 진짜 살려구요 다시버기 보긴 귀찮음"
     }
   ]
 }

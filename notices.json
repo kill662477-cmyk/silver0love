@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-23T06:12:35.421Z",
+  "checkedAt": "2026-05-23T06:17:35.538Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지동원",
+      "writer": "지동원",
+      "userId": "rondobba",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/rondobba/post/196527423",
+      "postNo": 196527423,
+      "summary": "오뱅공 오늘은 휴방입니다ㅜㅜ 급하게 처리해야 할 일이 있어서 본가 가는 중 이에요 요즘 갠방 뜨문뜨문 해서 죄송합니다. 내일부터 다음 주 일정들까지 좋은 텐션으로 방송 하겠습니다. 내일 봬용"
+    },
     {
       "stationName": "주하랑",
       "writer": "주하랑",
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/rondobba/post/196319021",
       "postNo": 196319021,
       "summary": "죄송합니다 빌드도 예측도 너무 형편없이 한 거 같아서 주양이에게도 크루원들에게도 팬분들에게도 죄송해요 면목이 없네요 너무 속상합니다 ㅜㅜ 이번 패배는 제가 느낀게 너무 많아서 꼭 더 발전 할 수 있게 노력해보겠습니다. 죄송합니다"
-    },
-    {
-      "stationName": "치리",
-      "writer": "치리",
-      "userId": "db001202",
-      "time": "2026-05-20",
-      "link": "https://www.sooplive.com/station/db001202/post/196317265",
-      "postNo": 196317265,
-      "summary": "죄송합니다 오늘 안좋은 경기력 보여드려서 죄송합니다 준비한 빌드도 보여드리고 싶었는데 못보여드렸네요,, 같이 종일 붙어서 봐준 준오쌤, 팀원들, 센세랑 응원해준 팬분들께도 죄송합니다.. 흉가갔다가 밥 간단하게 같이 먹고 소금뿌리고 집가는 중입니다 내일올게요 ㅜ"
     }
   ]
 }

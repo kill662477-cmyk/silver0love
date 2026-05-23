@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-22T21:02:49.543Z",
+  "checkedAt": "2026-05-23T15:02:57.463Z",
   "items": [
     {
       "name": "김윤환",
@@ -18,7 +18,7 @@
       "gender": "men",
       "monthlyBroadcastTime": "75시간 16분",
       "monthlyViewers": "54,437",
-      "monthlyPoong": "138,951",
+      "monthlyPoong": "138,957",
       "peakViewers": "741",
       "monthlyRecord": "12전 5승 7패",
       "monthlyWinRate": "41.7%"
@@ -29,7 +29,7 @@
       "gender": "men",
       "monthlyBroadcastTime": "65시간 12분",
       "monthlyViewers": "26,904",
-      "monthlyPoong": "211,545",
+      "monthlyPoong": "213,456",
       "peakViewers": "1,571",
       "monthlyRecord": "28전 16승 12패",
       "monthlyWinRate": "57.1%"
@@ -62,7 +62,7 @@
       "gender": "men",
       "monthlyBroadcastTime": "74시간 46분",
       "monthlyViewers": "38,046",
-      "monthlyPoong": "213,698",
+      "monthlyPoong": "214,965",
       "peakViewers": "555",
       "monthlyRecord": "3전 0승 3패",
       "monthlyWinRate": "0.0%"
@@ -73,7 +73,7 @@
       "gender": "men",
       "monthlyBroadcastTime": "59시간 57분",
       "monthlyViewers": "10,829",
-      "monthlyPoong": "142,477",
+      "monthlyPoong": "144,688",
       "peakViewers": "197",
       "monthlyRecord": "1전 0승 1패",
       "monthlyWinRate": "0.0%"
@@ -84,9 +84,9 @@
       "gender": "women",
       "monthlyBroadcastTime": "90시간 49분",
       "monthlyViewers": "584,745",
-      "monthlyPoong": "484,711",
+      "monthlyPoong": "489,505",
       "peakViewers": "6,697",
-      "monthlyRecord": "15전 5승 10패",
+      "monthlyRecord": "21전 7승 14패",
       "monthlyWinRate": "33.3%"
     },
     {
@@ -117,10 +117,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "79시간 10분",
       "monthlyViewers": "54,002",
-      "monthlyPoong": "481,740",
-      "peakViewers": "350",
-      "monthlyRecord": "66전 35승 31패",
-      "monthlyWinRate": "53.0%"
+      "monthlyPoong": "487,015",
+      "peakViewers": "381",
+      "monthlyRecord": "70전 36승 34패",
+      "monthlyWinRate": "51.4%"
     },
     {
       "name": "치리",
@@ -128,10 +128,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "70시간 33분",
       "monthlyViewers": "164,471",
-      "monthlyPoong": "270,081",
+      "monthlyPoong": "277,572",
       "peakViewers": "2,321",
-      "monthlyRecord": "31전 16승 15패",
-      "monthlyWinRate": "51.6%"
+      "monthlyRecord": "35전 17승 18패",
+      "monthlyWinRate": "48.6%"
     },
     {
       "name": "주하랑",
@@ -150,10 +150,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "58시간 14분",
       "monthlyViewers": "80,347",
-      "monthlyPoong": "279,733",
+      "monthlyPoong": "284,589",
       "peakViewers": "1,229",
-      "monthlyRecord": "23전 14승 9패",
-      "monthlyWinRate": "60.9%"
+      "monthlyRecord": "27전 16승 11패",
+      "monthlyWinRate": "59.3%"
     },
     {
       "name": "임조이",
@@ -172,10 +172,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "103시간 22분",
       "monthlyViewers": "197,603",
-      "monthlyPoong": "435,396",
+      "monthlyPoong": "437,164",
       "peakViewers": "3,190",
-      "monthlyRecord": "44전 20승 24패",
-      "monthlyWinRate": "45.5%"
+      "monthlyRecord": "45전 20승 25패",
+      "monthlyWinRate": "44.4%"
     },
     {
       "name": "먼진",
@@ -183,10 +183,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "96시간 32분",
       "monthlyViewers": "112,204",
-      "monthlyPoong": "385,062",
+      "monthlyPoong": "400,123",
       "peakViewers": "1,749",
-      "monthlyRecord": "33전 14승 19패",
-      "monthlyWinRate": "42.4%"
+      "monthlyRecord": "37전 18승 19패",
+      "monthlyWinRate": "48.6%"
     },
     {
       "name": "아리송이",
@@ -194,10 +194,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "59시간 6분",
       "monthlyViewers": "46,661",
-      "monthlyPoong": "277,018",
+      "monthlyPoong": "277,731",
       "peakViewers": "823",
-      "monthlyRecord": "14전 9승 5패",
-      "monthlyWinRate": "64.3%"
+      "monthlyRecord": "15전 10승 5패",
+      "monthlyWinRate": "66.7%"
     },
     {
       "name": "진땅콩",
@@ -216,7 +216,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "75시간 9분",
       "monthlyViewers": "439,753",
-      "monthlyPoong": "579,720",
+      "monthlyPoong": "590,536",
       "peakViewers": "2,170",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-24T15:02:54.511Z",
+  "checkedAt": "2026-05-24T21:02:47.703Z",
   "items": [
     {
       "name": "김윤환",
@@ -29,7 +29,7 @@
       "gender": "men",
       "monthlyBroadcastTime": "65시간 12분",
       "monthlyViewers": "26,904",
-      "monthlyPoong": "219,083",
+      "monthlyPoong": "219,917",
       "peakViewers": "1,571",
       "monthlyRecord": "28전 16승 12패",
       "monthlyWinRate": "57.1%"
@@ -84,10 +84,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "90시간 49분",
       "monthlyViewers": "584,745",
-      "monthlyPoong": "508,738",
+      "monthlyPoong": "513,795",
       "peakViewers": "6,697",
-      "monthlyRecord": "21전 7승 14패",
-      "monthlyWinRate": "33.3%"
+      "monthlyRecord": "22전 7승 15패",
+      "monthlyWinRate": "31.8%"
     },
     {
       "name": "지두두",
@@ -95,7 +95,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "75시간 59분",
       "monthlyViewers": "195,348",
-      "monthlyPoong": "401,411",
+      "monthlyPoong": "405,020",
       "peakViewers": "2,498",
       "monthlyRecord": "25전 14승 11패",
       "monthlyWinRate": "56.0%"
@@ -172,10 +172,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "103시간 22분",
       "monthlyViewers": "197,603",
-      "monthlyPoong": "461,413",
+      "monthlyPoong": "461,605",
       "peakViewers": "3,190",
-      "monthlyRecord": "55전 24승 31패",
-      "monthlyWinRate": "43.6%"
+      "monthlyRecord": "57전 26승 31패",
+      "monthlyWinRate": "45.6%"
     },
     {
       "name": "먼진",
@@ -216,7 +216,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "75시간 9분",
       "monthlyViewers": "439,753",
-      "monthlyPoong": "615,342",
+      "monthlyPoong": "615,577",
       "peakViewers": "2,170",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

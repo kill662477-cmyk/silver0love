@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-25T09:37:32.684Z",
+  "checkedAt": "2026-05-25T09:42:31.814Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "파도튜브",
+      "writer": "파도튜브",
+      "userId": "kthrs9207",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/kthrs9207/post/196735541",
+      "postNo": 196735541,
+      "summary": "Notice2026-05-25 방송공지 안녕하세요! 저번에 윤환이형이랑 면담 때 월,화,수 3일 집 문제 때문에 쉰다고 했는데 오늘 대체휴일이라서 화,수,목 다녀오도록 하겠습니다! 빨리 해결이되어야 좀 편할 것 같네요 ㅠㅠ.. 오늘도 19시 쯤 키도록 하겠습니다!"
+    },
     {
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "48 minutes ago",
+      "time": "53 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/196731381",
       "postNo": 196731381,
       "summary": "공지 병원 잘 다녀왔습니당 이번주 휴방은 오늘로 하겠슴당 오늘 쉬고 낼부터 다시 달릴게요!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/vldpfm2/post/196537873",
       "postNo": 196537873,
       "summary": "오뱅공 오늘 7시전에 올게요 일찍 올려했는데 세팅 알아보고 병원 알아보고 하느라 늦어버렸네요 내일은 일찍 방송 킬거라 오늘 길게는 방송 못할 것 같아용 이따 새 빌드도 배우고 밀리데이 좀 할게유!! ㅇㄸㅂㅈ"
-    },
-    {
-      "stationName": "치리",
-      "writer": "치리",
-      "userId": "db001202",
-      "time": "2026-05-23",
-      "link": "https://www.sooplive.com/station/db001202/post/196532621",
-      "postNo": 196532621,
-      "summary": "오늘 24시간이씁니다 씻고 준비하거 30분뒤에 올게요 ~~"
     }
   ]
 }

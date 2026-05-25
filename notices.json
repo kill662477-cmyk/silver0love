@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-25T09:42:31.814Z",
+  "checkedAt": "2026-05-25T09:47:30.467Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "김윤환",
+      "writer": "김윤환",
+      "userId": "brainzerg7",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/brainzerg7/post/196736017",
+      "postNo": 196736017,
+      "summary": "오방공 7시반 중국과의 국대전잇습니다 마지막 국대은퇴전 될것같네요 많관부"
+    },
     {
       "stationName": "파도튜브",
       "writer": "파도튜브",
       "userId": "kthrs9207",
-      "time": "3 minutes ago",
+      "time": "8 minutes ago",
       "link": "https://www.sooplive.com/station/kthrs9207/post/196735541",
       "postNo": 196735541,
       "summary": "Notice2026-05-25 방송공지 안녕하세요! 저번에 윤환이형이랑 면담 때 월,화,수 3일 집 문제 때문에 쉰다고 했는데 오늘 대체휴일이라서 화,수,목 다녀오도록 하겠습니다! 빨리 해결이되어야 좀 편할 것 같네요 ㅠㅠ.. 오늘도 19시 쯤 키도록 하겠습니다!"
@@ -15,7 +24,7 @@
       "stationName": "아리송이",
       "writer": "아리송이",
       "userId": "vldpfm2",
-      "time": "53 minutes ago",
+      "time": "58 minutes ago",
       "link": "https://www.sooplive.com/station/vldpfm2/post/196731381",
       "postNo": 196731381,
       "summary": "공지 병원 잘 다녀왔습니당 이번주 휴방은 오늘로 하겠슴당 오늘 쉬고 낼부터 다시 달릴게요!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/alaelddl97/post/196540849",
       "postNo": 196540849,
       "summary": "공지용 아닛 눈뜨니 왜 지금이지 ... 쉴까하다가 짧방이라도 ... 스폰할사람 있어야대 제바르르를~!!! 7시쭘 올게요 ㅇㄸㅂㅈ~~"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-23",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/196537873",
-      "postNo": 196537873,
-      "summary": "오뱅공 오늘 7시전에 올게요 일찍 올려했는데 세팅 알아보고 병원 알아보고 하느라 늦어버렸네요 내일은 일찍 방송 킬거라 오늘 길게는 방송 못할 것 같아용 이따 새 빌드도 배우고 밀리데이 좀 할게유!! ㅇㄸㅂㅈ"
     }
   ]
 }

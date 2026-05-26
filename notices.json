@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-26T06:37:30.523Z",
+  "checkedAt": "2026-05-26T06:42:32.930Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/196815073",
+      "postNo": 196815073,
+      "summary": "화요일 네시반에 올게요! 이따 뵙겠습니닷"
+    },
     {
       "stationName": "지두두",
       "writer": "지두두",
@@ -42,7 +51,7 @@
       "stationName": "파도튜브",
       "writer": "파도튜브",
       "userId": "kthrs9207",
-      "time": "20 hours ago",
+      "time": "21 hours ago",
       "link": "https://www.sooplive.com/station/kthrs9207/post/196735541",
       "postNo": 196735541,
       "summary": "Notice2026-05-25 방송공지 안녕하세요! 저번에 윤환이형이랑 면담 때 월,화,수 3일 집 문제 때문에 쉰다고 했는데 오늘 대체휴일이라서 화,수,목 다녀오도록 하겠습니다! 빨리 해결이되어야 좀 편할 것 같네요 ㅠㅠ.. 오늘도 19시 쯤 키도록 하겠습니다!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/kthrs9207/post/196541953",
       "postNo": 196541953,
       "summary": "방송공지 안녕하세요! 이비인후과를 못다녀왔네요 ㄲ..... 일어나니까 오후 5시네요 ㅠ 눈꺼풀 움직이는거 마그네슘 부족이라고 들어서, 이따가 방송키면 마그네슘 많이 들어간 음식을 좀 먹어야겠어요! 오늘도 19시 쯤 키도록 하겠습니다!"
-    },
-    {
-      "stationName": "찌킹",
-      "writer": "찌킹",
-      "userId": "alaelddl97",
-      "time": "2026-05-23",
-      "link": "https://www.sooplive.com/station/alaelddl97/post/196540849",
-      "postNo": 196540849,
-      "summary": "공지용 아닛 눈뜨니 왜 지금이지 ... 쉴까하다가 짧방이라도 ... 스폰할사람 있어야대 제바르르를~!!! 7시쭘 올게요 ㅇㄸㅂㅈ~~"
     }
   ]
 }

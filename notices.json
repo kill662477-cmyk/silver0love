@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-26T07:32:38.400Z",
+  "checkedAt": "2026-05-26T07:37:34.786Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "찌킹",
+      "writer": "찌킹",
+      "userId": "alaelddl97",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/alaelddl97/post/196818335",
+      "postNo": 196818335,
+      "summary": "희희 오늘 뱅송 어제 생각보다 늦게잤는데 눈이 일찍 떠져서 김밥 맹드렀어요 존맛임ㄹㅇ 눈뜨자마자 배고픈거 뭐임...? 선풍기 쌓인 먼지때문에 하나도 안시원해서 얘만 청소하고 올게요!! 여섯시전후로 오겠습니다리"
+    },
     {
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "52 minutes ago",
+      "time": "57 minutes ago",
       "link": "https://www.sooplive.com/station/db001202/post/196815073",
       "postNo": 196815073,
       "summary": "화요일 네시반에 올게요! 이따 뵙겠습니닷"
@@ -69,7 +78,7 @@
       "stationName": "비타밍",
       "writer": "비타밍",
       "userId": "seemin88",
-      "time": "22 hours ago",
+      "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/seemin88/post/196730189",
       "postNo": 196730189,
       "summary": "공지!! 가벼운 마음으로 갔었는데 후... 엄청 긴장했네여 저 잘한거 맞죠...? 오늘은 테란반 교육 있습니다! 한중전 끝나고 시작할거 같아요 집에가자마자 바로 키겠습니다 아마 7시즘? 이따 뵙겠습니다 PS. 시그시켜주신 저랜오빠 감사합니다 덕분에 긴장풀렸었어요"
@@ -78,7 +87,7 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "22 hours ago",
+      "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/rondobba/post/196730165",
       "postNo": 196730165,
       "summary": "오뱅공 한중전 오프 7시 30분쯤 윤환이형 방송에서 봬요"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/hoonykkk/post/196548837",
       "postNo": 196548837,
       "summary": "Notice8시반안으로올게염 ㅇㄸㅂㅈ"
-    },
-    {
-      "stationName": "파도튜브",
-      "writer": "파도튜브",
-      "userId": "kthrs9207",
-      "time": "2026-05-23",
-      "link": "https://www.sooplive.com/station/kthrs9207/post/196541953",
-      "postNo": 196541953,
-      "summary": "방송공지 안녕하세요! 이비인후과를 못다녀왔네요 ㄲ..... 일어나니까 오후 5시네요 ㅠ 눈꺼풀 움직이는거 마그네슘 부족이라고 들어서, 이따가 방송키면 마그네슘 많이 들어간 음식을 좀 먹어야겠어요! 오늘도 19시 쯤 키도록 하겠습니다!"
     }
   ]
 }

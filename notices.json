@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-27T08:52:34.359Z",
+  "checkedAt": "2026-05-27T08:57:33.676Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "4 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/196918611",
+      "postNo": 196918611,
+      "summary": "수요일 20분안에 올게요 집 가는 중이에요 산책하고 종량제 찾으려고 마트고 편의점이고 다 둘러봤는데 편의점엔 다 없고 마트는 한 장씩 파네용 ㅜㅠ 대체 어디서 구할 수 있는거임 😢 언능 올게요 2따봬요"
+    },
     {
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "8 minutes ago",
+      "time": "13 minutes ago",
       "link": "https://www.sooplive.com/station/rondobba/post/196917995",
       "postNo": 196917995,
       "summary": "오뱅공 6시 20분까지 오겠습니다리"
@@ -15,7 +24,7 @@
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "56 minutes ago",
+      "time": "1 hours ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/196914649",
       "postNo": 196914649,
       "summary": "오방공 오늘은 테스트 .. 통과하도록 열시미 해보께요 흑흑 6시쯤 올게여 ㅇㄸㅂㅈ"
@@ -69,7 +78,7 @@
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "17 hours ago",
+      "time": "18 hours ago",
       "link": "https://www.sooplive.com/station/db001202/post/196862783",
       "postNo": 196862783,
       "summary": "4드론팀 추천 한 번씩 부탁드립니당!! https://www.sooplive.com/station/dlrnf/post/196290551#comment_noti114562301 4드론팀 (4저그조) 멤버는 치리, 임조이, 면추가, 냥냥코기 입니당 추천 한 번씩만 부탁드려요!!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/brainzerg7/post/196736017",
       "postNo": 196736017,
       "summary": "오방공 7시반 중국과의 국대전잇습니다 마지막 국대은퇴전 될것같네요 많관부"
-    },
-    {
-      "stationName": "파도튜브",
-      "writer": "파도튜브",
-      "userId": "kthrs9207",
-      "time": "2026-05-25",
-      "link": "https://www.sooplive.com/station/kthrs9207/post/196735541",
-      "postNo": 196735541,
-      "summary": "방송공지 안녕하세요! 저번에 윤환이형이랑 면담 때 월,화,수 3일 집 문제 때문에 쉰다고 했는데 오늘 대체휴일이라서 화,수,목 다녀오도록 하겠습니다! 빨리 해결이되어야 좀 편할 것 같네요 ㅠㅠ.. 오늘도 19시 쯤 키도록 하겠습니다!"
     }
   ]
 }

@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-27T08:42:35.318Z",
+  "checkedAt": "2026-05-27T08:47:38.983Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "지동원",
+      "writer": "지동원",
+      "userId": "rondobba",
+      "time": "3 minutes ago",
+      "link": "https://www.sooplive.com/station/rondobba/post/196917995",
+      "postNo": 196917995,
+      "summary": "오뱅공 6시 20분까지 오겠습니다리"
+    },
     {
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "46 minutes ago",
+      "time": "51 minutes ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/196914649",
       "postNo": 196914649,
       "summary": "오방공 오늘은 테스트 .. 통과하도록 열시미 해보께요 흑흑 6시쯤 올게여 ㅇㄸㅂㅈ"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/kthrs9207/post/196735541",
       "postNo": 196735541,
       "summary": "방송공지 안녕하세요! 저번에 윤환이형이랑 면담 때 월,화,수 3일 집 문제 때문에 쉰다고 했는데 오늘 대체휴일이라서 화,수,목 다녀오도록 하겠습니다! 빨리 해결이되어야 좀 편할 것 같네요 ㅠㅠ.. 오늘도 19시 쯤 키도록 하겠습니다!"
-    },
-    {
-      "stationName": "아리송이",
-      "writer": "아리송이",
-      "userId": "vldpfm2",
-      "time": "2026-05-25",
-      "link": "https://www.sooplive.com/station/vldpfm2/post/196731381",
-      "postNo": 196731381,
-      "summary": "공지 병원 잘 다녀왔습니당 이번주 휴방은 오늘로 하겠슴당 오늘 쉬고 낼부터 다시 달릴게요!"
     }
   ]
 }

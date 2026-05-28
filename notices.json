@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-28T08:22:36.867Z",
+  "checkedAt": "2026-05-28T08:27:31.510Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "치리",
+      "writer": "치리",
+      "userId": "db001202",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/db001202/post/197008851",
+      "postNo": 197008851,
+      "summary": "목요일 언능 준비해서 6시쯤 올게요 이따봬요 !!"
+    },
     {
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "31 minutes ago",
+      "time": "36 minutes ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/197006701",
       "postNo": 197006701,
       "summary": "오방공 6시30분쯤 올게여 ,, ㅇㄸㅂㅈ"
@@ -15,7 +24,7 @@
       "stationName": "찌킹",
       "writer": "찌킹",
       "userId": "alaelddl97",
-      "time": "41 minutes ago",
+      "time": "46 minutes ago",
       "link": "https://www.sooplive.com/station/alaelddl97/post/197006087",
       "postNo": 197006087,
       "summary": "오늘 찌x먼 더블끝장전 합방이고 센세방송입니다리~~ 7시 예상입니닷 !! 가즈아"
@@ -69,7 +78,7 @@
       "stationName": "주하랑",
       "writer": "주하랑",
       "userId": "fpahsdltu1",
-      "time": "22 hours ago",
+      "time": "23 hours ago",
       "link": "https://www.sooplive.com/station/fpahsdltu1/post/196921315",
       "postNo": 196921315,
       "summary": "오늘 최면치료 받고왔습니당 일단은 실패했구요ㅠ 3시간동안이나 했는데 아무런 느낌도 없었구 넘 아쉬워요 ,,, 최면말구 다른상담은 다음주에 예약해서 상담받고 공지쓰러올게요 ! 저는 휴방하고서 집을 다뒤집어서 대청소하구 가구배치도바꾸고 나름 청소하면서 힐링중이랍니다 \"-\"@ ..."
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/rondobba/post/196844901",
       "postNo": 196844901,
       "summary": "9시 30분까지 올게요 저번부터 마이크 문제때문에 애먹는 중인데 일단 원격 세팅으로 만져놨고 새 마이크 구매하긴해서 최대한 잘 세팅하고 오겠습니다 ㅈㅅㅈㅅ;;"
-    },
-    {
-      "stationName": "지동원",
-      "writer": "지동원",
-      "userId": "rondobba",
-      "time": "2026-05-26",
-      "link": "https://www.sooplive.com/station/rondobba/post/196832085",
-      "postNo": 196832085,
-      "summary": "오뱅공 오늘 늦게 9시에 오거나 못 올거 같습니다 세팅이 아에 맛이가서 지금 원격으로 도움 받고 있습니다 공지 한번더 남길게용"
     }
   ]
 }

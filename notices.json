@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-05-28T08:37:32.798Z",
+  "checkedAt": "2026-05-28T08:42:37.579Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "토마토",
+      "writer": "토마토",
+      "userId": "freshtomato",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/freshtomato/post/197009935",
+      "postNo": 197009935,
+      "summary": "Notice오늘!! 6시 10-20분 사이에 올게용가리 ㅇㄸㅂㅈ"
+    },
     {
       "stationName": "치리",
       "writer": "치리",
       "userId": "db001202",
-      "time": "12 minutes ago",
+      "time": "17 minutes ago",
       "link": "https://www.sooplive.com/station/db001202/post/197008851",
       "postNo": 197008851,
       "summary": "목요일 언능 준비해서 6시쯤 올게요 이따봬요 !!"
@@ -15,7 +24,7 @@
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "46 minutes ago",
+      "time": "51 minutes ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/197006701",
       "postNo": 197006701,
       "summary": "오방공 6시30분쯤 올게여 ,, ㅇㄸㅂㅈ"
@@ -24,7 +33,7 @@
       "stationName": "찌킹",
       "writer": "찌킹",
       "userId": "alaelddl97",
-      "time": "56 minutes ago",
+      "time": "1 hours ago",
       "link": "https://www.sooplive.com/station/alaelddl97/post/197006087",
       "postNo": 197006087,
       "summary": "오늘 찌x먼 더블끝장전 합방이고 센세방송입니다리~~ 7시 예상입니닷 !! 가즈아"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/db001202/post/196862783",
       "postNo": 196862783,
       "summary": "4드론팀 추천 한 번씩 부탁드립니당!! https://www.sooplive.com/station/dlrnf/post/196290551#comment_noti114562301 4드론팀 (4저그조) 멤버는 치리, 임조이, 면추가, 냥냥코기 입니당 추천 한 번씩만 부탁드려요!!"
-    },
-    {
-      "stationName": "지동원",
-      "writer": "지동원",
-      "userId": "rondobba",
-      "time": "2026-05-26",
-      "link": "https://www.sooplive.com/station/rondobba/post/196844901",
-      "postNo": 196844901,
-      "summary": "9시 30분까지 올게요 저번부터 마이크 문제때문에 애먹는 중인데 일단 원격 세팅으로 만져놨고 새 마이크 구매하긴해서 최대한 잘 세팅하고 오겠습니다 ㅈㅅㅈㅅ;;"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-29T15:03:05.175Z",
+  "checkedAt": "2026-05-29T21:02:51.399Z",
   "items": [
     {
       "name": "김윤환",
@@ -117,10 +117,10 @@
       "gender": "women",
       "monthlyBroadcastTime": "79시간 10분",
       "monthlyViewers": "54,002",
-      "monthlyPoong": "516,781",
+      "monthlyPoong": "516,954",
       "peakViewers": "381",
-      "monthlyRecord": "120전 63승 57패",
-      "monthlyWinRate": "52.5%"
+      "monthlyRecord": "121전 63승 58패",
+      "monthlyWinRate": "52.1%"
     },
     {
       "name": "치리",
@@ -128,7 +128,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "70시간 33분",
       "monthlyViewers": "164,471",
-      "monthlyPoong": "310,416",
+      "monthlyPoong": "313,749",
       "peakViewers": "2,321",
       "monthlyRecord": "62전 32승 30패",
       "monthlyWinRate": "51.6%"
@@ -172,7 +172,7 @@
       "gender": "women",
       "monthlyBroadcastTime": "103시간 22분",
       "monthlyViewers": "197,603",
-      "monthlyPoong": "510,061",
+      "monthlyPoong": "513,570",
       "peakViewers": "3,190",
       "monthlyRecord": "85전 38승 47패",
       "monthlyWinRate": "44.7%"

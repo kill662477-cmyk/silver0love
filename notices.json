@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-29T16:58:14.055Z",
+  "checkedAt": "2026-05-29T17:02:49.714Z",
   "visibleCount": 10,
   "items": [
     {
@@ -15,7 +15,7 @@
       "stationName": "사테",
       "writer": "사테",
       "userId": "hoonykkk",
-      "time": "7 hours ago",
+      "time": "8 hours ago",
       "link": "https://www.sooplive.com/station/hoonykkk/post/197110519",
       "postNo": 197110519,
       "summary": "Notice오늘 방송 8~9시 온하고 11~12시에 갈듯염! 타밍이 ㅎㅇㅌ"
@@ -69,7 +69,7 @@
       "stationName": "진땅콩",
       "writer": "진땅콩",
       "userId": "wlswn6565",
-      "time": "9 hours ago",
+      "time": "10 hours ago",
       "link": "https://www.sooplive.com/station/wlswn6565/post/197102485",
       "postNo": 197102485,
       "summary": "오방공 5시30분즘 킬게요 !! 저녁에 연습하러 가기루 해서 밀리 몇 판 하다가 갈 예정입니댜 이따보쟈"
@@ -78,10 +78,19 @@
       "stationName": "지동원",
       "writer": "지동원",
       "userId": "rondobba",
-      "time": "9 hours ago",
+      "time": "10 hours ago",
       "link": "https://www.sooplive.com/station/rondobba/post/197102363",
       "postNo": 197102363,
       "summary": "오늘 끝장전 합방 5시에 윤환이형 방송에서 봬요"
+    },
+    {
+      "stationName": "비타밍",
+      "writer": "비타밍",
+      "userId": "seemin88",
+      "time": "10 hours ago",
+      "link": "https://www.sooplive.com/station/seemin88/post/197102179",
+      "postNo": 197102179,
+      "summary": "공지 짐싸들고 청라로 왔습니당 숙소에 체크인하고 스튜디오오면 손풀시간이 없을것 같아서 스튜디오로 바로왔어용 오늘은 스튜디오에서 오프 끝장전 있습니다 5시까지 센세방으로 와주세요 끝장전이후에 숙소에 도착해서 소통방송 키겠습니당 연습도 끝장전도 대회도 열심히 해보겠습니당!<b..."
     },
     {
       "stationName": "지두두",
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/wjswlgns09/post/196987209",
       "postNo": 196987209,
       "summary": "오뱅공 아닛 벌써 여덟시반이네.... 저능 방금 숙제 끝냈구 호다닥 자겠씁니당 5시30분까지 와보겠씀!! 어제 스폰 피드백두 받구 또 다시 달려보쟈 이따 봅시다 여러붕~~~~"
-    },
-    {
-      "stationName": "사테",
-      "writer": "사테",
-      "userId": "hoonykkk",
-      "time": "2026-05-27",
-      "link": "https://www.sooplive.com/station/hoonykkk/post/196964279",
-      "postNo": 196964279,
-      "summary": "Notice테란반 대회전 마지막2부 사테x동원x타밍x주양 4인 레포데2 갑니당 실패시 wasd한대용 조금만 도와주세용"
     }
   ]
 }

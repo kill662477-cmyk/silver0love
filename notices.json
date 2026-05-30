@@ -1,7 +1,16 @@
 {
-  "checkedAt": "2026-05-30T12:52:34.994Z",
+  "checkedAt": "2026-05-30T12:56:12.468Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "진땅콩",
+      "writer": "진땅콩",
+      "userId": "wlswn6565",
+      "time": "2 minutes ago",
+      "link": "https://www.sooplive.com/station/wlswn6565/post/197227939",
+      "postNo": 197227939,
+      "summary": "공지 오늘내일 비방연습입니다 ! 방금 닭볶음탕 먹고왔는데 사진을 까머것네요 ㅎㅎ ,,, 해물파전에 볶음밥까지 야무지게 먹고 와씁니다 다들 월요일에 봐요!"
+    },
     {
       "stationName": "치리",
       "writer": "치리",
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/freshtomato/post/197009935",
       "postNo": 197009935,
       "summary": "Notice오늘!! 6시 10-20분 사이에 올게용가리 ㅇㄸㅂㅈ"
-    },
-    {
-      "stationName": "치리",
-      "writer": "치리",
-      "userId": "db001202",
-      "time": "2026-05-28",
-      "link": "https://www.sooplive.com/station/db001202/post/197008851",
-      "postNo": 197008851,
-      "summary": "목요일 언능 준비해서 6시쯤 올게요 이따봬요 !!"
     }
   ]
 }

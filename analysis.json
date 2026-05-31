@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-05-31T15:04:26.263Z",
+  "checkedAt": "2026-05-31T21:04:35.593Z",
   "items": [
     {
       "name": "김윤환",
@@ -49,10 +49,10 @@
       "name": "지동원",
       "userId": "rondobba",
       "gender": "men",
-      "monthlyBroadcastTime": "0시간 0분",
-      "monthlyViewers": "0",
-      "monthlyPoong": "0",
-      "peakViewers": "0",
+      "monthlyBroadcastTime": "50시간 10분",
+      "monthlyViewers": "32,408",
+      "monthlyPoong": "183,780",
+      "peakViewers": "456",
       "monthlyRecord": "10전 1승 9패",
       "monthlyWinRate": "10.0%"
     },

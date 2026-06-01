@@ -170,35 +170,37 @@ async function crawlTarget(browser, target) {
         return m ? Number(m[1]) : 0;
       }
 
-      function countPostLinks(element) {
-        if (!element) return 0;
-        return element.querySelectorAll(
-          `a[href*="/station/${targetInfo.userId}/post/"]`
-        ).length;
+      function getPostHrefs(element) {
+        if (!element) return [];
+
+        return Array.from(
+          element.querySelectorAll(`a[href*="/station/${targetInfo.userId}/post/"]`)
+        )
+          .map(link => link.href || link.getAttribute("href") || "")
+          .filter(Boolean);
       }
 
-      function findCardRoot(anchor) {
+      function countUniquePostLinks(element) {
+        return new Set(getPostHrefs(element)).size;
+      }
+
+      function findCardRoot(anchor, href) {
         let node = anchor;
         let best = anchor.parentElement || anchor;
 
-        for (let depth = 0; node && depth < 8; depth += 1, node = node.parentElement) {
+        // SOOP 목록 카드에는 제목 링크와 썸네일 링크처럼 같은 글을 가리키는
+        // 링크가 둘 이상 있을 수 있다. 링크 태그 개수가 아니라 고유 게시글 URL
+        // 개수를 기준으로 카드 전체 영역까지 올라간다.
+        for (let depth = 0; node && depth < 14; depth += 1, node = node.parentElement) {
           if (!(node instanceof HTMLElement)) continue;
 
-          const linkCount = countPostLinks(node);
-          if (linkCount !== 1) continue;
+          const hrefs = getPostHrefs(node);
+          const uniqueCount = new Set(hrefs).size;
+
+          if (uniqueCount > 1) break;
+          if (uniqueCount !== 1 || !hrefs.includes(href)) continue;
 
           best = node;
-
-          const tag = node.tagName.toLowerCase();
-          const className = String(node.className || "").toLowerCase();
-          const looksLikeCard =
-            tag === "li" ||
-            tag === "article" ||
-            /(post|board|notice|feed|item|list|card)/i.test(className);
-
-          if (looksLikeCard && normalize(node.innerText).length > normalize(anchor.innerText).length) {
-            return node;
-          }
         }
 
         return best;
@@ -262,50 +264,107 @@ async function crawlTarget(browser, target) {
           /profile\.img\.sooplive\.co\.kr/i.test(url);
       }
 
+      function extractUrlFromText(text) {
+        const value = String(text || "").trim();
+        if (!value) return "";
+
+        const cssMatch = value.match(/url\(["']?(.*?)["']?\)/i);
+        return cssMatch ? cssMatch[1] : value;
+      }
+
+      function scoreThumbnailCandidate(url, element) {
+        const rect = element.getBoundingClientRect();
+        const naturalWidth = Number(element.naturalWidth || 0);
+        const naturalHeight = Number(element.naturalHeight || 0);
+        const width = Math.max(rect.width, naturalWidth);
+        const height = Math.max(rect.height, naturalHeight);
+        const text = [
+          url,
+          element.getAttribute("class"),
+          element.getAttribute("alt"),
+          element.getAttribute("title")
+        ].join(" ").toLowerCase();
+
+        let score = Math.max(width * height, 1);
+        if (/(thumb|thumbnail|preview|attach|image|photo|bbs|normal_bbs|stimg)/i.test(text)) score += 100000;
+        if (rect.width >= 45 && rect.height >= 45) score += 10000;
+        return score;
+      }
+
+      function pushThumbnailCandidate(candidates, rawUrl, element) {
+        const url = toAbsoluteUrl(extractUrlFromText(rawUrl));
+        if (!url || isProbablyProfileOrIcon(url, element)) return;
+
+        const rect = element.getBoundingClientRect();
+        const naturalWidth = Number(element.naturalWidth || 0);
+        const naturalHeight = Number(element.naturalHeight || 0);
+        const width = Math.max(rect.width, naturalWidth);
+        const height = Math.max(rect.height, naturalHeight);
+
+        // 지연 로딩 이미지는 아직 크기가 0일 수 있으므로 URL이 있으면 후보로 둔다.
+        // 단, 실제 크기가 확인되는 작은 아이콘은 제외한다.
+        if (width > 0 && height > 0 && (width < 30 || height < 30)) return;
+
+        candidates.push({
+          url,
+          score: scoreThumbnailCandidate(url, element)
+        });
+      }
+
+      function pickProfileImage(card) {
+        if (!card) return "";
+
+        for (const img of Array.from(card.querySelectorAll("img"))) {
+          const url = toAbsoluteUrl(readImageUrl(img));
+          if (!url) continue;
+
+          const text = [
+            url,
+            img.getAttribute("class"),
+            img.getAttribute("alt"),
+            img.getAttribute("title")
+          ].join(" ").toLowerCase();
+
+          if (/(profile|avatar|user[_-]?img|user[_-]?image)/i.test(text) || /profile\.img\.sooplive\.co\.kr/i.test(url)) {
+            return url;
+          }
+        }
+
+        return "";
+      }
+
       function pickThumbnail(card) {
         if (!card) return "";
 
         const candidates = [];
 
         for (const img of Array.from(card.querySelectorAll("img"))) {
-          if (!isVisible(img)) continue;
-
-          const url = toAbsoluteUrl(readImageUrl(img));
-          if (!url || isProbablyProfileOrIcon(url, img)) continue;
-
-          const rect = img.getBoundingClientRect();
-          const width = Math.max(rect.width, Number(img.naturalWidth || 0));
-          const height = Math.max(rect.height, Number(img.naturalHeight || 0));
-
-          if (width < 45 || height < 45) continue;
-
-          candidates.push({
-            url,
-            score: width * height
-          });
+          pushThumbnailCandidate(candidates, readImageUrl(img), img);
         }
 
         for (const element of Array.from(card.querySelectorAll("*"))) {
-          if (!isVisible(element)) continue;
+          const attributeValues = [
+            element.getAttribute("data-src"),
+            element.getAttribute("data-lazy-src"),
+            element.getAttribute("data-original"),
+            element.getAttribute("data-image"),
+            element.getAttribute("data-url"),
+            element.getAttribute("data-thumb"),
+            element.getAttribute("data-thumbnail"),
+            element.getAttribute("style"),
+            window.getComputedStyle(element).backgroundImage
+          ];
 
-          const bg = window.getComputedStyle(element).backgroundImage || "";
-          const m = bg.match(/url\(["']?(.*?)["']?\)/i);
-          if (!m) continue;
-
-          const url = toAbsoluteUrl(m[1]);
-          if (!url || /(profile|avatar|icon|badge|logo|ico)/i.test(url)) continue;
-
-          const rect = element.getBoundingClientRect();
-          if (rect.width < 45 || rect.height < 45) continue;
-
-          candidates.push({
-            url,
-            score: rect.width * rect.height
-          });
+          for (const rawValue of attributeValues) {
+            pushThumbnailCandidate(candidates, rawValue, element);
+          }
         }
 
-        candidates.sort((a, b) => b.score - a.score);
-        return candidates[0]?.url || "";
+        const deduped = Array.from(
+          new Map(candidates.map(candidate => [candidate.url, candidate])).values()
+        );
+        deduped.sort((a, b) => b.score - a.score);
+        return deduped[0]?.url || "";
       }
 
       function findTextBySelectors(card, selectors) {
@@ -332,7 +391,7 @@ async function crawlTarget(browser, target) {
         return false;
       }
 
-      function pickTitleAndContent(anchor, card, time) {
+      function pickTitleAndContent(anchor, card, time, stationName) {
         const titleSelectors = [
           "[class*='subject']",
           "[class*='title']",
@@ -348,35 +407,51 @@ async function crawlTarget(browser, target) {
           "[class*='desc']",
           "[class*='body']",
           "[class*='cont']",
-          "[class*='text']"
+          "[class*='preview']"
         ];
 
+        const samePostTextAnchors = Array.from(card?.querySelectorAll(`a[href="${anchor.href}"]`) || [])
+          .map(link => uniqueTexts(splitLines(link.innerText)))
+          .filter(lines => lines.length > 0)
+          .sort((a, b) => a.join(" ").length - b.join(" ").length);
         const ownLines = uniqueTexts(splitLines(anchor.innerText));
         const cardLines = uniqueTexts(splitLines(card?.innerText || ""));
 
         let title = findTextBySelectors(card, titleSelectors);
         let content = findTextBySelectors(card, contentSelectors);
 
+        // 제목 링크 자체에 텍스트가 있으면 그것을 가장 우선한다.
+        if (!title && samePostTextAnchors.length >= 1) {
+          title = samePostTextAnchors[0][0];
+        }
         if (!title && ownLines.length >= 1) {
           title = ownLines[0];
         }
 
+        // 일부 목록은 제목 링크 안에 본문 미리보기도 같이 넣는다.
+        if (!content && samePostTextAnchors.length >= 1 && samePostTextAnchors[0].length >= 2) {
+          content = samePostTextAnchors[0].slice(1).join(" ");
+        }
         if (!content && ownLines.length >= 2) {
           content = ownLines.slice(1).join(" ");
         }
 
         if (!title || !content) {
-          const filtered = cardLines.filter(line => !isNoiseLine(line, time));
+          const filtered = cardLines.filter(line => {
+            const text = normalize(line);
+            if (isNoiseLine(text, time)) return false;
+            if (text === normalize(stationName)) return false;
+            if (text === normalize(title)) return false;
+            return true;
+          });
 
           if (!title && filtered.length >= 1) {
             title = filtered[0];
           }
 
-          if (!content && filtered.length >= 2) {
-            const titleIndex = filtered.findIndex(line => normalize(line) === normalize(title));
-            content = filtered
-              .filter((_, index) => index !== titleIndex)
-              .join(" ");
+          if (!content && filtered.length >= 1) {
+            // 목록에 보이는 본문 미리보기만 저장한다. 상세 페이지는 열지 않는다.
+            content = filtered.join(" ");
           }
         }
 
@@ -392,12 +467,11 @@ async function crawlTarget(browser, target) {
           content = normalize(content.replace(time, " "));
         }
 
-        const summary = normalize([title, content].filter(Boolean).join(" "));
-
         return {
           title,
           content,
-          summary: summary || normalize(anchor.innerText || card?.innerText || "")
+          // summary는 기존 인덱스 호환용 본문 요약이다. 제목을 섞지 않는다.
+          summary: content
         };
       }
 
@@ -413,14 +487,14 @@ async function crawlTarget(browser, target) {
         if (!href || seen.has(href)) continue;
         seen.add(href);
 
-        const card = findCardRoot(a);
+        const card = findCardRoot(a, href);
         const cardText = normalize(card?.innerText || "");
         const ownText = normalize(a.innerText || "");
 
         if (!cardText && !ownText) continue;
 
         const time = pickTime(cardText);
-        const text = pickTitleAndContent(a, card, time);
+        const text = pickTitleAndContent(a, card, time, targetInfo.name);
 
         result.push({
           stationName: targetInfo.name,
@@ -430,6 +504,7 @@ async function crawlTarget(browser, target) {
           content: text.content,
           summary: text.summary,
           thumbnailUrl: pickThumbnail(card),
+          profileUrl: pickProfileImage(card),
           time,
           link: href,
           postNo: getPostNoFromHref(href)
@@ -462,14 +537,15 @@ async function crawlTarget(browser, target) {
           normalized.title
         ).slice(0, 500);
 
-        // 기존 인덱스 호환용: 지금까지 사용하던 summary 필드는 유지한다.
-        // 추후 인덱스 수정 시 title과 content를 각각 사용하면 된다.
+        // 기존 인덱스 호환용: summary는 목록에 보이는 본문 요약만 담는다.
+        // 본문이 보이지 않는 공지는 빈 문자열로 유지한다.
         normalized.summary = cleanSummaryText(
-          [normalized.title, normalized.content].filter(Boolean).join(" ") || item.summary,
+          normalized.content || item.summary || "",
           normalized
         ).slice(0, 220);
 
         normalized.thumbnailUrl = String(item.thumbnailUrl || "").trim();
+        normalized.profileUrl = String(item.profileUrl || "").trim();
 
         return normalized;
       })

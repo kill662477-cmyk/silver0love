@@ -1,12 +1,21 @@
 {
-  "checkedAt": "2026-06-01T05:12:35.718Z",
+  "checkedAt": "2026-06-01T05:17:34.987Z",
   "visibleCount": 10,
   "items": [
+    {
+      "stationName": "진땅콩",
+      "writer": "진땅콩",
+      "userId": "wlswn6565",
+      "time": "1 minutes ago",
+      "link": "https://www.sooplive.com/station/wlswn6565/post/197394189",
+      "postNo": 197394189,
+      "summary": "공지 오늘 대회가 있습니당 ! 이틀동안 열시미 도와주신 코치님들과 응원해쥬신 팬분들 생각해서 최선을 다 해서 이기고 오겟습니다! 오늘 센세방송에서 4시에 봐요!"
+    },
     {
       "stationName": "지두두",
       "writer": "지두두",
       "userId": "wjswlgns09",
-      "time": "8 minutes ago",
+      "time": "13 minutes ago",
       "link": "https://www.sooplive.com/station/wjswlgns09/post/197393473",
       "postNo": 197393473,
       "summary": "오뱅공 오느른 별들의전쟁 스타워즈 대회가 있듭니다 4시에 센세 방송으로 와주세오! 날씨가 정말 많이 따땃해졌군요 오늘의 캄몬도 따땃하길........🍀🍀"
@@ -15,7 +24,7 @@
       "stationName": "토마토",
       "writer": "토마토",
       "userId": "freshtomato",
-      "time": "50 minutes ago",
+      "time": "55 minutes ago",
       "link": "https://www.sooplive.com/station/freshtomato/post/197391375",
       "postNo": 197391375,
       "summary": "Noticeㅠ3ㅠ 내 오른쪽 쌍커풀이 사라졌다.. 속쌍 됐다 ㅋㅋㅋㅋ미칭... 오늘 캠에서 눈이 짝짝이 일 수 있습니당 집에 쌍액이 업네연@.@ 오늘 별들의 전쟁 있는데 잘 해보도록 하게뜹니다 ^ㅅ^7 4시에 윤환이오빠 방송에서 만나용 ㅇㄸㅂㅈ!!"
@@ -172,15 +181,6 @@
       "link": "https://www.sooplive.com/station/wlswn6565/post/197102485",
       "postNo": 197102485,
       "summary": "오방공 5시30분즘 킬게요 !! 저녁에 연습하러 가기루 해서 밀리 몇 판 하다가 갈 예정입니댜 이따보쟈"
-    },
-    {
-      "stationName": "지동원",
-      "writer": "지동원",
-      "userId": "rondobba",
-      "time": "2026-05-29",
-      "link": "https://www.sooplive.com/station/rondobba/post/197102363",
-      "postNo": 197102363,
-      "summary": "오늘 끝장전 합방 5시에 윤환이형 방송에서 봬요"
     }
   ]
 }

@@ -216,8 +216,8 @@ async function main() {
 
   const output = {
     checkedAt: new Date().toISOString(),
-    visibleCount: 10,
-    items: deduped.slice(0, 20)
+    visibleCount: 20,
+    items: deduped.slice(0, 40)
   };
 
   fs.writeFileSync("notices.json", JSON.stringify(output, null, 2), "utf-8");

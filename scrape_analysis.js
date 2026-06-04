@@ -4,7 +4,48 @@ const puppeteer = require("puppeteer");
 
 const OUTPUT_FILE = "analysis.json";
 const FAILED_FILE = "elo_failed.json";
-const TARGETS_FILE = path.join(__dirname, "targets.json");
+const POONGGO_BASE_URL = "https://poonggo.com";
+
+function resolveTargetsFile() {
+  const scriptBase = path.basename(__filename);
+  const copyMatch = scriptBase.match(/\s\((\d+)\)\.js$/);
+  const candidates = copyMatch
+    ? [`targets (${copyMatch[1]}).json`, "targets.json"]
+    : ["targets.json", "targets (1).json"];
+
+  for (const fileName of candidates) {
+    const filePath = path.join(__dirname, fileName);
+    if (fs.existsSync(filePath)) return filePath;
+  }
+
+  return path.join(__dirname, candidates[0]);
+}
+
+const TARGETS_FILE = resolveTargetsFile();
+
+function buildPoongGoUrl(userId) {
+  return `${POONGGO_BASE_URL}/station/${encodeURIComponent(userId)}?c=monthly&s=b`;
+}
+
+function normalizePoongUrl(target) {
+  const rawUrl = String(target.poongUrl || "").trim();
+  if (!rawUrl || rawUrl.includes("poong.today/broadcast/")) {
+    return buildPoongGoUrl(target.userId);
+  }
+
+  try {
+    const url = new URL(rawUrl);
+    if (url.hostname === "poonggo.com" && url.pathname.startsWith("/station/")) {
+      url.searchParams.set("c", "monthly");
+      url.searchParams.set("s", "b");
+      return url.toString();
+    }
+  } catch (e) {
+    return buildPoongGoUrl(target.userId);
+  }
+
+  return rawUrl;
+}
 
 function loadTargets() {
   try {
@@ -19,10 +60,10 @@ function loadTargets() {
       .filter(t => t.name && t.userId && t.gender)
       .map(t => ({
         ...t,
-        poongUrl: t.poongUrl || `https://poong.today/broadcast/${t.userId}`
+        poongUrl: normalizePoongUrl(t)
       }));
   } catch (e) {
-    console.error("targets.json 읽기 실패:", e.message);
+    console.error(`${path.basename(TARGETS_FILE)} 읽기 실패:`, e.message);
     return [];
   }
 }
@@ -78,6 +119,10 @@ function getEloSearchName(playerName) {
   return ELO_NAME_MAP[playerName] || playerName;
 }
 
+function stripMetricValue(text) {
+  return cleanText(text).replace(/^[^\d-]+/, "").trim();
+}
+
 function extractMetric(body, label) {
   const lines = String(body || "")
     .split("\n")
@@ -87,7 +132,16 @@ function extractMetric(body, label) {
   const idx = lines.findIndex(line => line === label);
   if (idx === -1) return "";
 
-  return cleanText(lines[idx + 1] || "");
+  return stripMetricValue(lines[idx + 1] || "");
+}
+
+function extractMetricAny(body, labels) {
+  for (const label of labels) {
+    const value = extractMetric(body, label);
+    if (value) return value;
+  }
+
+  return "";
 }
 
 function loadPrevData() {
@@ -127,13 +181,27 @@ async function scrapePoong(page, target) {
 
   await sleep(2500);
 
+  const stats = await page.evaluate(() => {
+    const clean = (text) => String(text || "").replace(/\s+/g, " ").trim();
+    const strip = (text) => clean(text).replace(/^[^\d-]+/, "").trim();
+    const result = {};
+
+    document.querySelectorAll(".i-w .info .b").forEach((box) => {
+      const label = clean(box.querySelector("span")?.textContent);
+      const value = strip(box.querySelector("h3")?.textContent);
+      if (label && value) result[label] = value;
+    });
+
+    return result;
+  });
+
   const body = await page.evaluate(() => document.body.innerText);
 
   return {
-    monthlyBroadcastTime: extractMetric(body, "방송 시간"),
-    monthlyViewers: extractMetric(body, "누적 시청자"),
-    monthlyPoong: extractMetric(body, "누적 별풍선"),
-    peakViewers: extractMetric(body, "최고 시청자")
+    monthlyBroadcastTime: stats["방송시간"] || extractMetricAny(body, ["방송시간", "방송 시간"]),
+    monthlyViewers: stats["누적 시청자"] || extractMetricAny(body, ["누적 시청자"]),
+    monthlyPoong: stats["별풍선 합계"] || extractMetricAny(body, ["별풍선 합계", "누적 별풍선"]),
+    peakViewers: stats["최고 시청자"] || extractMetricAny(body, ["최고 시청자"])
   };
 }
 

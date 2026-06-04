@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-06-03T21:02:59.565Z",
+  "checkedAt": "2026-06-04T10:45:44.542Z",
   "items": [
     {
       "name": "김윤환",
@@ -11,6 +11,17 @@
       "peakViewers": "21,541",
       "monthlyRecord": "20전 8승 12패",
       "monthlyWinRate": "40.0%"
+    },
+    {
+      "name": "김윤중",
+      "userId": "jk890202",
+      "gender": "men",
+      "monthlyBroadcastTime": "0시간 0분",
+      "monthlyViewers": "0",
+      "monthlyPoong": "1,735",
+      "peakViewers": "4,073",
+      "monthlyRecord": "2전 0승 2패",
+      "monthlyWinRate": "0.0%"
     },
     {
       "name": "박수범",
@@ -86,8 +97,8 @@
       "monthlyViewers": "0",
       "monthlyPoong": "18,766",
       "peakViewers": "684",
-      "monthlyRecord": "4전 2승 2패",
-      "monthlyWinRate": "50.0%"
+      "monthlyRecord": "1전 0승 1패",
+      "monthlyWinRate": "0.0%"
     },
     {
       "name": "지두두",
@@ -152,8 +163,8 @@
       "monthlyViewers": "0",
       "monthlyPoong": "0",
       "peakViewers": "0",
-      "monthlyRecord": "1전 1승 0패",
-      "monthlyWinRate": "100.0%"
+      "monthlyRecord": "3전 2승 1패",
+      "monthlyWinRate": "66.7%"
     },
     {
       "name": "임조이",
@@ -163,8 +174,8 @@
       "monthlyViewers": "0",
       "monthlyPoong": "796",
       "peakViewers": "2,765",
-      "monthlyRecord": "6전 2승 4패",
-      "monthlyWinRate": "33.3%"
+      "monthlyRecord": "11전 5승 6패",
+      "monthlyWinRate": "45.5%"
     },
     {
       "name": "비타밍",
@@ -174,8 +185,8 @@
       "monthlyViewers": "0",
       "monthlyPoong": "21,887",
       "peakViewers": "3,900",
-      "monthlyRecord": "7전 2승 5패",
-      "monthlyWinRate": "28.6%"
+      "monthlyRecord": "9전 2승 7패",
+      "monthlyWinRate": "22.2%"
     },
     {
       "name": "먼진",

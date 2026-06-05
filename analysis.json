@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-06-04T21:05:40.925Z",
+  "checkedAt": "2026-06-05T15:04:04.318Z",
   "items": [
     {
       "name": "김윤환",
       "userId": "brainzerg7",
       "gender": "men",
-      "monthlyBroadcastTime": "40시간 40분",
-      "monthlyViewers": "1,026,093",
-      "monthlyPoong": "40,186",
+      "monthlyBroadcastTime": "58시간 39분",
+      "monthlyViewers": "1,228,334",
+      "monthlyPoong": "59,346",
       "peakViewers": "21,547",
       "monthlyRecord": "20전 8승 12패",
       "monthlyWinRate": "40.0%"
@@ -16,12 +16,12 @@
       "name": "김윤중",
       "userId": "jk890202",
       "gender": "men",
-      "monthlyBroadcastTime": "22시간 23분",
-      "monthlyViewers": "118,240",
-      "monthlyPoong": "39,023",
+      "monthlyBroadcastTime": "26시간 17분",
+      "monthlyViewers": "133,803",
+      "monthlyPoong": "43,512",
       "peakViewers": "4,076",
-      "monthlyRecord": "6전 0승 6패",
-      "monthlyWinRate": "0.0%"
+      "monthlyRecord": "8전 2승 6패",
+      "monthlyWinRate": "25.0%"
     },
     {
       "name": "박수범",
@@ -82,10 +82,10 @@
       "name": "파도튜브",
       "userId": "kthrs9207",
       "gender": "men",
-      "monthlyBroadcastTime": "00시간 00분",
-      "monthlyViewers": "0",
-      "monthlyPoong": "0",
-      "peakViewers": "0",
+      "monthlyBroadcastTime": "02시간 59분",
+      "monthlyViewers": "357",
+      "monthlyPoong": "500",
+      "peakViewers": "24",
       "monthlyRecord": "1전 0승 1패",
       "monthlyWinRate": "0.0%"
     },
@@ -108,8 +108,8 @@
       "monthlyViewers": "0",
       "monthlyPoong": "0",
       "peakViewers": "0",
-      "monthlyRecord": "8전 1승 7패",
-      "monthlyWinRate": "12.5%"
+      "monthlyRecord": "13전 4승 9패",
+      "monthlyWinRate": "30.8%"
     },
     {
       "name": "햇살",
@@ -130,8 +130,8 @@
       "monthlyViewers": "6,098",
       "monthlyPoong": "3,008",
       "peakViewers": "752",
-      "monthlyRecord": "8전 0승 8패",
-      "monthlyWinRate": "0.0%"
+      "monthlyRecord": "11전 3승 8패",
+      "monthlyWinRate": "27.3%"
     },
     {
       "name": "치리",
@@ -141,8 +141,8 @@
       "monthlyViewers": "33,712",
       "monthlyPoong": "23,840",
       "peakViewers": "1,212",
-      "monthlyRecord": "10전 5승 5패",
-      "monthlyWinRate": "50.0%"
+      "monthlyRecord": "15전 8승 7패",
+      "monthlyWinRate": "53.3%"
     },
     {
       "name": "주하랑",
@@ -163,7 +163,7 @@
       "monthlyViewers": "1,867",
       "monthlyPoong": "241",
       "peakViewers": "125",
-      "monthlyRecord": "4전 2승 2패",
+      "monthlyRecord": "6전 3승 3패",
       "monthlyWinRate": "50.0%"
     },
     {
@@ -185,27 +185,27 @@
       "monthlyViewers": "43,535",
       "monthlyPoong": "29,885",
       "peakViewers": "3,915",
-      "monthlyRecord": "23전 9승 14패",
-      "monthlyWinRate": "39.1%"
+      "monthlyRecord": "26전 9승 17패",
+      "monthlyWinRate": "34.6%"
     },
     {
       "name": "먼진",
       "userId": "2meonjin",
       "gender": "women",
-      "monthlyBroadcastTime": "11시간 26분",
-      "monthlyViewers": "13,135",
-      "monthlyPoong": "24,709",
+      "monthlyBroadcastTime": "17시간 58분",
+      "monthlyViewers": "18,251",
+      "monthlyPoong": "39,996",
       "peakViewers": "422",
-      "monthlyRecord": "8전 3승 5패",
-      "monthlyWinRate": "37.5%"
+      "monthlyRecord": "13전 6승 7패",
+      "monthlyWinRate": "46.2%"
     },
     {
       "name": "아리송이",
       "userId": "vldpfm2",
       "gender": "women",
-      "monthlyBroadcastTime": "09시간 36분",
-      "monthlyViewers": "8,575",
-      "monthlyPoong": "8,406",
+      "monthlyBroadcastTime": "14시간 58분",
+      "monthlyViewers": "12,008",
+      "monthlyPoong": "13,961",
       "peakViewers": "817",
       "monthlyRecord": "2전 1승 1패",
       "monthlyWinRate": "50.0%"
@@ -225,9 +225,9 @@
       "name": "낭니",
       "userId": "sksmsskdsl10",
       "gender": "women",
-      "monthlyBroadcastTime": "16시간 42분",
-      "monthlyViewers": "44,742",
-      "monthlyPoong": "77,703",
+      "monthlyBroadcastTime": "22시간 45분",
+      "monthlyViewers": "57,772",
+      "monthlyPoong": "94,898",
       "peakViewers": "823",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

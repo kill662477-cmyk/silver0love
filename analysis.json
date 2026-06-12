@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-06-11T21:03:30.107Z",
+  "checkedAt": "2026-06-12T15:04:38.535Z",
   "items": [
     {
       "name": "김윤환",
@@ -11,17 +11,6 @@
       "peakViewers": "21,547",
       "monthlyRecord": "20전 8승 12패",
       "monthlyWinRate": "40.0%"
-    },
-    {
-      "name": "김윤중",
-      "userId": "jk890202",
-      "gender": "men",
-      "monthlyBroadcastTime": "69시간 16분",
-      "monthlyViewers": "274,930",
-      "monthlyPoong": "93,613",
-      "peakViewers": "4,076",
-      "monthlyRecord": "28전 5승 23패",
-      "monthlyWinRate": "17.9%"
     },
     {
       "name": "박수범",
@@ -225,9 +214,9 @@
       "name": "낭니",
       "userId": "sksmsskdsl10",
       "gender": "women",
-      "monthlyBroadcastTime": "59시간 08분",
-      "monthlyViewers": "142,135",
-      "monthlyPoong": "172,876",
+      "monthlyBroadcastTime": "64시간 10분",
+      "monthlyViewers": "158,830",
+      "monthlyPoong": "198,738",
       "peakViewers": "823",
       "monthlyRecord": "전적없음",
       "monthlyWinRate": "-"

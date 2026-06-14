@@ -80,6 +80,17 @@
       "liveEnabled": true
     },
     {
+      "name": "변현제",
+      "userId": "bye1013",
+      "bbsNo": "91319013",
+      "gender": "men",
+      "poongUrl": "https://poonggo.com/station/bye1013?c=monthly&s=b",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
       "name": "토마토",
       "userId": "freshtomato",
       "bbsNo": "79127541",

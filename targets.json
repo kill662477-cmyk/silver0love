@@ -192,7 +192,9 @@
     {
       "name": "먼진",
       "userId": "2meonjin",
-      "bbsNo": "119304089",
+      "bbsNo": "100538483",
+      "authorFilter": true,
+      "boardName": "전체게시판",
       "gender": "women",
       "poongUrl": "https://poonggo.com/station/2meonjin?c=monthly&s=b",
       "enabled": true,

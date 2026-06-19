@@ -3,6 +3,8 @@ const path = require("path");
 const puppeteer = require("puppeteer");
 
 const TARGETS_FILE = path.join(__dirname, "targets.json");
+const OUTPUT_ITEM_LIMIT = Math.max(40, Number(process.env.NOTICE_OUTPUT_ITEM_LIMIT || 40));
+const OUTPUT_VISIBLE_COUNT = Math.max(20, Number(process.env.NOTICE_VISIBLE_COUNT || 20));
 
 function loadTargets() {
   try {
@@ -382,6 +384,45 @@ async function crawlTarget(browser, target) {
         return "";
       }
 
+      function compactText(text) {
+        return normalize(text).replace(/\s+/g, "");
+      }
+
+      function pickAuthorName(card) {
+        if (!card) return "";
+
+        const scopes = [
+          card.querySelector("[class*='PostHeader_postUserInfo']"),
+          card
+        ].filter(Boolean);
+        const selectors = [
+          "[class*='PostHeaderDetails_nick']",
+          "[class*='nick']",
+          "[class*='writer']",
+          "[class*='author']"
+        ];
+
+        for (const scope of scopes) {
+          for (const selector of selectors) {
+            for (const element of Array.from(scope.querySelectorAll(selector))) {
+              if (!isVisible(element)) continue;
+              const text = normalize(element.innerText || element.textContent || "");
+              if (text) return text;
+            }
+          }
+        }
+
+        const text = normalize(card.innerText || "");
+        const boardName = normalize(targetInfo.boardName || "전체게시판");
+        if (boardName) {
+          const marker = ` ${boardName}`;
+          const index = text.indexOf(marker);
+          if (index > 0) return normalize(text.slice(0, index));
+        }
+
+        return "";
+      }
+
       function isNoiseLine(line, time) {
         const text = normalize(line);
         if (!text) return true;
@@ -494,11 +535,16 @@ async function crawlTarget(browser, target) {
         if (!cardText && !ownText) continue;
 
         const time = pickTime(cardText);
+        const authorName = pickAuthorName(card);
+        if (targetInfo.authorFilter === true) {
+          const expectedAuthor = targetInfo.authorName || targetInfo.name;
+          if (!authorName || compactText(authorName) !== compactText(expectedAuthor)) continue;
+        }
         const text = pickTitleAndContent(a, card, time, targetInfo.name);
 
         result.push({
           stationName: targetInfo.name,
-          writer: targetInfo.name,
+          writer: authorName || targetInfo.name,
           userId: targetInfo.userId,
           title: text.title,
           content: text.content,
@@ -583,8 +629,8 @@ async function main() {
 
   const output = {
     checkedAt: new Date().toISOString(),
-    visibleCount: 20,
-    items: deduped.slice(0, 40)
+    visibleCount: Math.min(OUTPUT_VISIBLE_COUNT, deduped.length),
+    items: deduped.slice(0, OUTPUT_ITEM_LIMIT)
   };
 
   fs.writeFileSync("notices.json", JSON.stringify(output, null, 2), "utf-8");

@@ -68,18 +68,6 @@
       "liveEnabled": true
     },
     {
-      "name": "파도튜브",
-      "userId": "kthrs9207",
-      "bbsNo": "4130352",
-      "gender": "men",
-      "eloSource": "pado",
-      "poongUrl": "https://poonggo.com/station/kthrs9207?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
       "name": "변현제",
       "userId": "bye1013",
       "bbsNo": "91319013",
@@ -208,17 +196,6 @@
       "bbsNo": "89090859",
       "gender": "women",
       "poongUrl": "https://poonggo.com/station/vldpfm2?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
-      "name": "진땅콩",
-      "userId": "wlswn6565",
-      "bbsNo": "117225449",
-      "gender": "women",
-      "poongUrl": "https://poonggo.com/station/wlswn6565?c=monthly&s=b",
       "enabled": true,
       "noticeEnabled": true,
       "analysisEnabled": true,

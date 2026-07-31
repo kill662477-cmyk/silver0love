@@ -211,6 +211,17 @@
       "noticeEnabled": true,
       "analysisEnabled": true,
       "liveEnabled": true
+    },
+    {
+      "name": "왜냐맨",
+      "userId": "jmc06170",
+      "bbsNo": "12607756",
+      "gender": "men",
+      "poongUrl": "https://poonggo.com/station/jmc06170?c=monthly&s=b",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
     }
   ]
 }

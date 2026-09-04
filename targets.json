@@ -13,17 +13,6 @@
       "liveEnabled": true
     },
     {
-      "name": "박수범",
-      "userId": "jihoon002",
-      "bbsNo": "106970519",
-      "gender": "men",
-      "poongUrl": "https://poonggo.com/station/jihoon002?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
       "name": "사테",
       "userId": "hoonykkk",
       "bbsNo": "1371967",
@@ -46,33 +35,11 @@
       "liveEnabled": true
     },
     {
-      "name": "지동원",
-      "userId": "rondobba",
-      "bbsNo": "40202570",
-      "gender": "men",
-      "poongUrl": "https://poonggo.com/station/rondobba?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
       "name": "배성흠",
       "userId": "goodzerg",
       "bbsNo": "58482962",
       "gender": "men",
       "poongUrl": "https://poonggo.com/station/goodzerg?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
-      "name": "변현제",
-      "userId": "bye1013",
-      "bbsNo": "91319013",
-      "gender": "men",
-      "poongUrl": "https://poonggo.com/station/bye1013?c=monthly&s=b",
       "enabled": true,
       "noticeEnabled": true,
       "analysisEnabled": true,
@@ -106,28 +73,6 @@
       "bbsNo": "19332732",
       "gender": "women",
       "poongUrl": "https://poonggo.com/station/thelddl?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
-      "name": "찌킹",
-      "userId": "alaelddl97",
-      "bbsNo": "122264133",
-      "gender": "women",
-      "poongUrl": "https://poonggo.com/station/alaelddl97?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
-      "name": "치리",
-      "userId": "db001202",
-      "bbsNo": "102538363",
-      "gender": "women",
-      "poongUrl": "https://poonggo.com/station/db001202?c=monthly&s=b",
       "enabled": true,
       "noticeEnabled": true,
       "analysisEnabled": true,

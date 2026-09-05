@@ -2,6 +2,8 @@ name: Scrape Analysis
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 15,21 * * *"
 
 permissions:
   contents: write

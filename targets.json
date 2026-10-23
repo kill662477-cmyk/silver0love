@@ -1,5 +1,5 @@
 {
-  "updatedAt": "",
+  "updatedAt": "2026-10-23T07:44:20.628Z",
   "items": [
     {
       "name": "김윤환",
@@ -7,6 +7,35 @@
       "bbsNo": "54143154",
       "gender": "men",
       "poongUrl": "https://poonggo.com/station/brainzerg7?c=monthly&s=b",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "김민철",
+      "userId": "minchul",
+      "bbsNo": "28891822",
+      "enabled": true,
+      "noticeEnabled": true,
+      "liveEnabled": true,
+      "analysisEnabled": false
+    },
+    {
+      "name": "김지성",
+      "userId": "ho1godme",
+      "bbsNo": "28653663",
+      "enabled": true,
+      "noticeEnabled": true,
+      "liveEnabled": true,
+      "analysisEnabled": false
+    },
+    {
+      "name": "박준오",
+      "userId": "h78ert",
+      "bbsNo": "1489236",
+      "gender": "men",
+      "poongUrl": "https://poonggo.com/station/h78ert?c=monthly&s=b",
       "enabled": true,
       "noticeEnabled": true,
       "analysisEnabled": true,
@@ -24,11 +53,20 @@
       "liveEnabled": true
     },
     {
-      "name": "박준오",
-      "userId": "h78ert",
-      "bbsNo": "1489236",
+      "name": "진영화",
+      "userId": "jyh8610",
+      "bbsNo": "53646424",
+      "enabled": true,
+      "noticeEnabled": true,
+      "liveEnabled": true,
+      "analysisEnabled": false
+    },
+    {
+      "name": "왜냐맨",
+      "userId": "jmc06170",
+      "bbsNo": "12607756",
       "gender": "men",
-      "poongUrl": "https://poonggo.com/station/h78ert?c=monthly&s=b",
+      "poongUrl": "https://poonggo.com/station/jmc06170?c=monthly&s=b",
       "enabled": true,
       "noticeEnabled": true,
       "analysisEnabled": true,
@@ -46,15 +84,13 @@
       "liveEnabled": true
     },
     {
-      "name": "토마토",
-      "userId": "freshtomato",
-      "bbsNo": "79127541",
-      "gender": "women",
-      "poongUrl": "https://poonggo.com/station/freshtomato?c=monthly&s=b",
+      "name": "남덕선",
+      "userId": "rnaqpdrjf",
+      "bbsNo": "50713707",
       "enabled": true,
       "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
+      "liveEnabled": true,
+      "analysisEnabled": false
     },
     {
       "name": "지두두",
@@ -62,6 +98,17 @@
       "bbsNo": "41739132",
       "gender": "women",
       "poongUrl": "https://poonggo.com/station/wjswlgns09?c=monthly&s=b",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "토마토",
+      "userId": "freshtomato",
+      "bbsNo": "79127541",
+      "gender": "women",
+      "poongUrl": "https://poonggo.com/station/freshtomato?c=monthly&s=b",
       "enabled": true,
       "noticeEnabled": true,
       "analysisEnabled": true,
@@ -79,33 +126,22 @@
       "liveEnabled": true
     },
     {
-      "name": "주하랑",
-      "userId": "fpahsdltu1",
-      "bbsNo": "88012442",
-      "gender": "women",
-      "poongUrl": "https://poonggo.com/station/fpahsdltu1?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
-      "name": "소주양",
-      "userId": "soju2022",
-      "bbsNo": "94261895",
-      "gender": "women",
-      "poongUrl": "https://poonggo.com/station/soju2022?c=monthly&s=b",
-      "enabled": true,
-      "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
-    },
-    {
       "name": "임조이",
       "userId": "dlaguswl501",
       "bbsNo": "101549531",
       "gender": "women",
       "poongUrl": "https://poonggo.com/station/dlaguswl501?c=monthly&s=b",
+      "enabled": true,
+      "noticeEnabled": true,
+      "analysisEnabled": true,
+      "liveEnabled": true
+    },
+    {
+      "name": "주하랑",
+      "userId": "fpahsdltu1",
+      "bbsNo": "88012442",
+      "gender": "women",
+      "poongUrl": "https://poonggo.com/station/fpahsdltu1?c=monthly&s=b",
       "enabled": true,
       "noticeEnabled": true,
       "analysisEnabled": true,
@@ -156,17 +192,15 @@
       "noticeEnabled": true,
       "analysisEnabled": true,
       "liveEnabled": true
-    },
+    },
     {
-      "name": "왜냐맨",
-      "userId": "jmc06170",
-      "bbsNo": "12607756",
-      "gender": "men",
-      "poongUrl": "https://poonggo.com/station/jmc06170?c=monthly&s=b",
+      "name": "서희",
+      "userId": "omloa00",
+      "bbsNo": "66002744",
       "enabled": true,
       "noticeEnabled": true,
-      "analysisEnabled": true,
-      "liveEnabled": true
+      "liveEnabled": true,
+      "analysisEnabled": false
     }
   ]
 }

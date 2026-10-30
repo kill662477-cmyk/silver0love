@@ -1,13 +1,13 @@
 {
-  "checkedAt": "2026-10-29T21:04:24.196Z",
+  "checkedAt": "2026-10-30T15:04:32.442Z",
   "items": [
     {
       "name": "김윤환",
       "userId": "brainzerg7",
       "gender": "men",
-      "monthlyBroadcastTime": "153시간 21분 43초",
-      "monthlyViewers": "1,945,350",
-      "monthlyPoong": "280,907",
+      "monthlyBroadcastTime": "157시간 32분 18초",
+      "monthlyViewers": "2,094,836",
+      "monthlyPoong": "390,442",
       "peakViewers": "20,475",
       "monthlyRecord": "5전 2승 3패",
       "monthlyWinRate": "40.0%"
@@ -115,10 +115,10 @@
       "name": "비타밍",
       "userId": "seemin88",
       "gender": "women",
-      "monthlyBroadcastTime": "231시간 2분 25초",
-      "monthlyViewers": "373,494",
-      "monthlyPoong": "397,099",
-      "peakViewers": "2,716",
+      "monthlyBroadcastTime": "232시간 40분 17초",
+      "monthlyViewers": "400,673",
+      "monthlyPoong": "407,388",
+      "peakViewers": "6,108",
       "monthlyRecord": "40전 18승 22패",
       "monthlyWinRate": "45.0%"
     },

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-31T21:04:11.394Z",
+  "checkedAt": "2026-11-01T15:04:24.012Z",
   "items": [
     {
       "name": "김윤환",
@@ -16,9 +16,9 @@
       "name": "박준오",
       "userId": "h78ert",
       "gender": "men",
-      "monthlyBroadcastTime": "0시간 25분 14초",
-      "monthlyViewers": "138",
-      "monthlyPoong": "31,305",
+      "monthlyBroadcastTime": "5시간 30분 19초",
+      "monthlyViewers": "5,637",
+      "monthlyPoong": "35,007",
       "peakViewers": "304",
       "monthlyRecord": "1전 0승 1패",
       "monthlyWinRate": "0.0%"
@@ -27,10 +27,10 @@
       "name": "사테",
       "userId": "hoonykkk",
       "gender": "men",
-      "monthlyBroadcastTime": "6시간 3분 0초",
-      "monthlyViewers": "950",
-      "monthlyPoong": "48,536",
-      "peakViewers": "37",
+      "monthlyBroadcastTime": "10시간 57분 37초",
+      "monthlyViewers": "2,185",
+      "monthlyPoong": "48,797",
+      "peakViewers": "50",
       "monthlyRecord": "16전 9승 7패",
       "monthlyWinRate": "56.3%"
     },
@@ -71,9 +71,9 @@
       "name": "토마토",
       "userId": "freshtomato",
       "gender": "women",
-      "monthlyBroadcastTime": "6시간 3분 0초",
-      "monthlyViewers": "15,329",
-      "monthlyPoong": "58,478",
+      "monthlyBroadcastTime": "6시간 45분 39초",
+      "monthlyViewers": "16,788",
+      "monthlyPoong": "58,578",
       "peakViewers": "1,672",
       "monthlyRecord": "34전 12승 22패",
       "monthlyWinRate": "35.3%"
@@ -115,9 +115,9 @@
       "name": "비타밍",
       "userId": "seemin88",
       "gender": "women",
-      "monthlyBroadcastTime": "4시간 45분 5초",
-      "monthlyViewers": "3,803",
-      "monthlyPoong": "38,181",
+      "monthlyBroadcastTime": "12시간 11분 26초",
+      "monthlyViewers": "27,251",
+      "monthlyPoong": "51,384",
       "peakViewers": "1,265",
       "monthlyRecord": "40전 18승 22패",
       "monthlyWinRate": "45.0%"
